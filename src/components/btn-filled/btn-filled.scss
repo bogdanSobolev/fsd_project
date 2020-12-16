@@ -1,0 +1,14 @@
+.btn-filled{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    padding: 14px 20px;
+    @include small-title;
+    color: #FFFFFF;
+    text-decoration: none;
+    &:hover{
+        opacity: 0.5;
+    }
+    &:active{
+        opacity: 0.75;
+    }
+}

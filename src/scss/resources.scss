@@ -1,0 +1,76 @@
+$font-fanily: 'Montserrat', sans-serif;
+
+$color-dark-shade: #1f2041;
+$color-dark-shade-75: rgba($color-dark-shade, 0.75);
+$color-dark-shade-50: rgba($color-dark-shade, 0.5);
+$color-dark-shade-25: rgba($color-dark-shade, 0.25);
+$color-dark-shade-5: rgba($color-dark-shade, 0.5);
+$color-purple: #bc9cff;
+$color-green: #6fcf97;
+
+
+$header-bg: #ffffff;
+
+
+
+
+
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin breakpoint($size) {
+    @each $name, $value in $breakpoints {
+        @if $name == $size {
+            @media (min-width: $value) {
+                @content;
+              }
+        }
+    }
+}
+
+@mixin big-title {
+    font-family: $font-fanily;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: $color-dark-shade;
+}
+
+@mixin middle-title {
+    font-family: $font-fanily;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: $color-dark-shade;
+}
+
+@mixin small-title {
+    font-family: $font-fanily;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $color-dark-shade;
+}
+
+@mixin body-text {
+    font-family: $font-fanily;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-dark-shade-75;
+}
+
+
+.wrp-pd{
+    padding: 0 9.7%;
+}

@@ -1,0 +1,12 @@
+.block-two{
+    border: 3px solid black;
+    &__title{
+        font-size: 40px;
+        background-color: hotpink;
+        border-bottom: 2px solid black;
+    }
+    &__description{
+        font-size: 30px;
+        background-color: khaki;
+    }
+}

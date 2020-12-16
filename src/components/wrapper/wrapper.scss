@@ -1,0 +1,19 @@
+@import '../../scss/_fonts';
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 320px;
+    @include body-text();
+    // font-family: Montserrat, sans-serif;
+}
+
+.material-icons {
+    @include material-icons();
+  }

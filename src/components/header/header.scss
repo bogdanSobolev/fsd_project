@@ -1,0 +1,8 @@
+.header{
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: $header-bg;
+    box-sizing: border-box;
+}
