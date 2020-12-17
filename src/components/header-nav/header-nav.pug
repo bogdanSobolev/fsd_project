@@ -1,6 +1,11 @@
 include ../btn-outlined/btn-outlined
 include ../btn-filled/btn-filled
 
+//- if login
+//-     div login
+//- else
+//-     div no login
+
 .header-nav
     a.header-nav__btn-menu(href="#")
         span.header-nav__btn-menu-lines
@@ -24,5 +29,9 @@ include ../btn-filled/btn-filled
                     a.header-nav__drop-down-link.header-nav__link(href="#") Соглашение 2
                     a.header-nav__drop-down-link.header-nav__link(href="#") Соглашение 3
         
-        +btn-outlined('войти')(class="header-nav__btn-login btn-outlined_small")
-        +btn-filled('зарегистрироваться')(class="header-nav__btn-reg btn-filled_small")
+        
+        if login
+            a.header-nav__profile.header-nav__link(href="#") Юлий Цезарь
+        else
+            +btn-outlined('войти')(class="header-nav__btn-login btn-outlined_small")
+            +btn-filled('зарегистрироваться')(class="header-nav__btn-reg btn-filled_small")

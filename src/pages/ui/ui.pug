@@ -1,3 +1,5 @@
+- let login = true;
+
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -10,5 +12,8 @@ html(lang="en")
         //-     include ./ui.scss
     body
         .wrapper
-            section.section-header
+            section.section-header.ui-section
+                include ../../components/header/header
+            - login = false;
+            section.section-header.ui-section
                 include ../../components/header/header
