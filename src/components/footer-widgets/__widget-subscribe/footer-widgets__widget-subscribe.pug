@@ -1,0 +1,7 @@
+include ../../subscription-form/subscription-form
+mixin __widget-subscribe(title)
+    .footer-widgets__widget-subscribe(class!=attributes.class)
+        h3.footer-widgets__widget-title.title.title_small= title
+            span.material-icons expand_more
+        p.footer-widgets__subscribe-text Получайте специальные предложения и новости сервиса
+        +subscription-form()(class="footer-widgets__widget-subscribe-form")

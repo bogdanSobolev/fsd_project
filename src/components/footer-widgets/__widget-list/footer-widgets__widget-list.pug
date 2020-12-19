@@ -1,0 +1,8 @@
+mixin __widgets-list(title, items)
+    .footer-widgets__widget-list(class!=attributes.class)
+        h3.footer-widgets__widget-title.title.title_small= title
+            span.material-icons expand_more
+        ul.footer-widgets__widget-list-items
+            each link, name in items
+                li
+                    a.footer-widgets__widget-list-link(href=link)= name

@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "bemdecl-to-fs-loader": "0.0.4",
     "material-icons": "^0.5.1",
     "pug-html-loader": "^1.1.5"
