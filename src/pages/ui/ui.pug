@@ -1,4 +1,5 @@
 - let login = true;
+include ../../components/footer-creative/footer-creative
 
 <!DOCTYPE html>
 html(lang="en")
@@ -17,3 +18,7 @@ html(lang="en")
             - login = false;
             section.section-header.ui-section
                 include ../../components/header/header
+            section.section-footer.ui-section
+                include ../../components/footer/footer
+            section.section-footer-creative.ui-section
+                +footer-creative()(class="section-footer-creative__elem footer-creative_mobile-for-desc")

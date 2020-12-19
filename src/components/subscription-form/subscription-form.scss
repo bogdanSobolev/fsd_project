@@ -1,0 +1,48 @@
+.subscription-form{
+    $form-border-color: $color-dark-shade-25;
+    $form-border-color-hover-focus: $color-dark-shade-50;
+    $form-btn-width: 44px;
+    $form-btn-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    &__field{
+        border: none;
+        outline: none;
+        padding: 10px $form-btn-width 10px 15px;
+        width: 100%;
+        border: 1px solid $form-border-color;
+        border-radius: 4px;
+        &:focus{
+            border-color: $form-border-color-hover-focus;
+        }
+    }
+    &__btn{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: $form-btn-width;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+            transition: transform .15s;
+        }
+        &:active{
+            transform: scale(0.9);
+            transition: transform .15s;
+        }
+        span{
+            color: transparent;
+            background-clip: text;
+            background-image: $form-btn-gradient;
+        }
+    }
+}
