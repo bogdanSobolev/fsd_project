@@ -11,11 +11,11 @@ function getNowDate(){
 }
 
 dateMasks.forEach((item) => {
-    item.setAttribute('placeholder', 'ДД.ММ.ГГ');
+    item.setAttribute('placeholder', 'ДД.ММ.ГГГГ');
     new Cleave(item, {
         date: true,
         delimiter: '.',
-        dateMax: getNowDate(),
+        //dateMax: getNowDate(),
         //datePattern: ['Y', 'm', 'd']
     });
 });
