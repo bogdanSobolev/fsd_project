@@ -16,6 +16,9 @@
         &:focus{
             border-color: $form-border-color-hover-focus;
         }
+        &:hover{
+            border-color: $form-border-color-hover-focus;
+        }
     }
     &__btn{
         position: absolute;

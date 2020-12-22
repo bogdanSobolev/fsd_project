@@ -22,3 +22,44 @@ body{
         padding: 120px 0;
     }
 }
+
+.section-form-elements{
+    $state-color: $color-dark-shade-50;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    &__fields{
+
+    }
+    &__field-block{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 320px;
+        justify-content: space-between;
+    }
+    &__text-field-block{
+        margin-bottom: 20px;
+    }
+    &__text-field-block-focus{
+        margin-bottom: 20px;
+    }
+    &__text-date-field-block{
+        margin-bottom: 20px;
+    }
+    &__email-field-block{
+        margin-bottom: 20px;
+    }
+    &__name-field{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__state{
+        color: $state-color;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    &__field-input{
+        width: 100%;
+    }
+}

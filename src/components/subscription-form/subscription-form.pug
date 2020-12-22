@@ -1,5 +1,6 @@
-mixin subscription-form()
+mixin subscription-form(inputClass)
+    - const getInputClass = inputClass ? inputClass : "";
     form.subscription-form(class!=attributes.class name="subscription-form")
-        input.subscription-form__field(name="email" type="email" placeholder="Email")
+        input.subscription-form__field(name="email" type="email" placeholder="Email" class=getInputClass)
         button.subscription-form__btn
             span.material-icons arrow_forward

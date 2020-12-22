@@ -1,0 +1,17 @@
+.text-field{
+    //$input-text-color: $color-dark-shade-75;
+    $input-border-color: $color-dark-shade-25;
+    $input-border-color-hover-focus: $color-dark-shade-50;
+    outline: none;
+    padding: 10px 15px;
+    //width: 100%;
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+    // color: $input-text-color;
+    &:focus{
+        border-color: $input-border-color-hover-focus;
+    }
+    &:hover{
+        border-color: $input-border-color-hover-focus;
+    }
+}

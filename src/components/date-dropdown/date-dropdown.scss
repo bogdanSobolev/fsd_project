@@ -1,0 +1,34 @@
+.date-dropdown{
+    $calendar-arrow-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    $input-border-color: $color-dark-shade-25;
+    $input-border-color-hover-focus: $color-dark-shade-50;
+    outline: none;
+    padding: 10px 15px;
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+    &:focus{
+        border-color: $input-border-color-hover-focus;
+    }
+    &:hover{
+        border-color: $input-border-color-hover-focus;
+    }
+    &__calendar-arrow{
+        color: transparent;
+        background-clip: text;
+        background-image: $calendar-arrow-gradient;
+        &_prev{
+            transform: rotate(180deg);
+        }
+    }
+}
+.datepicker--nav-action{
+    &:hover{
+        transform: scale(1.2);
+        transition: transform .15s;
+        background: none;
+    }
+    &:active{
+        transform: scale(0.9);
+        transition: transform .15s;
+    }
+}

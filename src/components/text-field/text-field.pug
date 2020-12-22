@@ -1,0 +1,13 @@
+//- mixin text-field(name, placeholder, typeInput)
+//-     if typeInput
+//-         input.text-field(class!=attributes.class name=name type=typeInput placeholder=placeholder)
+//-     else
+//-         input.text-field(class!=attributes.class name=name type="text" placeholder=placeholder)
+
+mixin text-field(name, placeholder, typeInput, value)
+
+    - const getType = typeInput ? typeInput : 'text';
+    - const getValue = value ? value : "";
+
+
+    input.text-field(class!=attributes.class name=name type=getType placeholder=placeholder value=getValue)

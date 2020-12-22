@@ -1,6 +1,7 @@
 .title{
+    $color-text: $color-dark-shade;
     font-family: $font-fanily;
-    color: $color-dark-shade;
+    color: $color-text;
     font-weight: 700;
     text-transform: uppercase;
 }

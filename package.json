@@ -42,7 +42,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "air-datepicker": "^2.2.3",
     "bemdecl-to-fs-loader": "0.0.4",
+    "cleave.js": "^1.6.0",
+    "imask": "^6.0.5",
+    "jquery": "^3.5.1",
     "material-icons": "^0.5.1",
     "pug-html-loader": "^1.1.5"
   }
