@@ -1,48 +1,29 @@
 import $ from 'jquery';
-import 'air-datepicker/dist/css/datepicker.min.css';
-import 'air-datepicker';
-import testPug from './__buttons/calendar__buttons.js';
 
+import CalendarClass from './CalendarClass'
+import calendar_range from '../calendar/_range/calendar_range';
 
-const dataPickerOptions = {
-    minDate: new Date(),
-    // range: true,
-    toggleSelected: false,
-    keyboardNav: false,
-    clearButton: true,
-    navTitles: {
-        // days: 'MM yyyy',
-        days: "<h3 class='title title_middle'>MM yyyy<h3/>"
-    },
-    dateFormat: "d M",
-    nextHtml: "<span class='material-icons calendar__calendar-arrow'>arrow_forward</span>",
-    prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",
-    //inline: true,
+const modificatorList = [
+    {
+        name: 'calendar_range',
+        options: calendar_range,
+    }
+]
+
+function searchModificator(item){
+    let modificator = null;
+    modificatorList.forEach(el => {
+
+        if (item.hasClass(el.name)){
+            modificator = el.options;
+        }
+    });
+    return modificator;
 }
 
-function upgradeCalendarOptions(){
+let $calendarList = $('.calendar');
 
-}
-
-function creaeteCalendar() {
-    let $calendarList = $('.calendar');
-    // let $calendarRangeList = $('.calendar + .calendar_range');
-    // $calendarRangeList.attr('data-multiple-dates-separator', " - ");
-    $calendarList.attr('data-multiple-dates-separator', " - ");
-    let $calendarPickers = $calendarList.datepicker(dataPickerOptions).data('datepicker');
-    
-    $('.datepicker--buttons').append(testPug);
-    $('.calendar__btn').on('click', (e) => {
-        e.preventDefault();
-    });
-    $('.calendar__btn_clear').on('click', (e) => {
-        $calendarPickers.clear();
-    });
-    $('.calendar__btn_apply').on('click', (e) => {
-        $calendarPickers.hide();
-        //console.log(e.target);
-    });
-
-}
-
-creaeteCalendar();
+$calendarList.each(function(){
+    let calendarInput = new CalendarClass($(this), searchModificator($(this)));
+    calendarInput.creaeteCalendar();
+});
