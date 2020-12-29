@@ -19,12 +19,22 @@ export default class CalendarClass {
         //clearButton: true,
         navTitles: {
             // days: 'MM yyyy',
-            days: "<h3 class='title title_middle'>MM yyyy<h3/>"
+            days: "<h3 class='title title_middle datepicker__title'>MM yyyy<h3/>"
         },
         //dateFormat: "d M",
         nextHtml: "<span class='material-icons calendar__calendar-arrow'>arrow_forward</span>",
         prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",
-        //inline: true,
+        offset: 5,
+        //showEvent: null,
+        onShow: function(inst) {
+            inst.$el.siblings(".calendar-field__arrow").addClass("calendar-field__arrow_active");
+        },
+        onHide: function(inst) {
+            // setTimeout((() => {
+            //     inst.$el.siblings(".calendar-field__arrow").removeClass("calendar-field__arrow_active");
+            // }), 30);
+            inst.$el.siblings(".calendar-field__arrow").removeClass("calendar-field__arrow_active");
+        },
     }
 
     getOptions(){
@@ -34,6 +44,7 @@ export default class CalendarClass {
 
     creaeteCalendar(){
         this.input.attr('data-multiple-dates-separator', " - ");
+        this.input.attr('autocomplete', "off");
         let $calendar = this.input.datepicker(this.getOptions()).data('datepicker');
         $calendar.$datepicker.append(buttons);
         $('.calendar__btn').on('click', (e) => {
@@ -45,5 +56,52 @@ export default class CalendarClass {
         $calendar.$datepicker.find('.calendar__btn_apply').on('click', (e) => {
             $calendar.hide();
         });
+
+        this.input.siblings(".calendar-field__arrow").on('click', e => {
+            this.input.focus();
+            // console.log(e.target);
+            // console.log($calendar.$datepicker);
+            // console.log(this.input);
+            // if(!$(e.target).hasClass('calendar-field__arrow_active')){
+            //     // $calendar.show();
+            //     //this.input.focus();
+            //     console.log('net active');
+            //     $calendar.show();
+            // } else {
+            //     console.log('active');
+            // }
+            // this.input.focus();
+            // $calendar.show();
+        });
+
+        // this.input.siblings(".calendar-field__arrow").on('click', e => {
+        //     // this.input.focus();
+        //     // console.log(e.target);
+        //     // console.log($calendar.$datepicker);
+        //     // console.log(this.input);
+        //     if(!$(e.target).hasClass('calendar-field__arrow_active')){
+        //         // $calendar.show();
+        //         //this.input.focus();
+        //         console.log('net active');
+        //         $calendar.show();
+        //     } else {
+        //         console.log('active');
+        //     }
+        //     // this.input.focus();
+        //     // $calendar.show();
+        // });
+
+
+
+
+
+        // this.input.on('focus', e => {
+        //     //this.input.siblings(".calendar-field__arrow").addClass("calendar-field__arrow_active");
+        //     //$calendar.show();
+        //     this.input.siblings(".calendar-field__arrow").click();
+        // });
+        // this.input.on('focusout', e => {
+        //     e.preventDefault;
+        // });
     }
 };

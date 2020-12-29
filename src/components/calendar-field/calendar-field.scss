@@ -1,0 +1,40 @@
+.calendar-field{
+    //$input-text-color: $color-dark-shade-75;
+    $input-border-color: $color-dark-shade-25;
+    $input-border-color-hover-focus: $color-dark-shade-50;
+
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    &__input{
+        outline: none;
+        padding: 10px 40px 10px 15px;
+        //width: 100%;
+        border: 1px solid $input-border-color;
+        border-radius: 4px;
+        // color: $input-text-color;
+        &:focus{
+            border-color: $input-border-color-hover-focus;
+        }
+        &:hover{
+            border-color: $input-border-color-hover-focus;
+        }
+    }
+    &__arrow{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        cursor: pointer;
+        //vertical-align: middle;
+        transition: transform .2s;
+        &_active{
+            transform: rotate(-180deg);
+            transition: transform .2s;
+        }
+    }
+}

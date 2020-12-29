@@ -61,5 +61,17 @@ body{
     }
     &__field-input{
         width: 100%;
+        box-sizing: border-box;
+    }
+    &__date-dropdown-fields-block{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    &__date-dropdown{
+
+        &:nth-child(1){
+            margin-right: 20px;
+        }
     }
 }

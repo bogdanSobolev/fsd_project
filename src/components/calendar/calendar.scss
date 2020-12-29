@@ -19,14 +19,27 @@
     font-weight: 400;
     color: $day-of-month;
     font-size: 12px;
+    padding: 20px;
+    &--pointer{
+        display: none;
+    }
     &--day-name{
         color: $day-of-week-color
     }
     &--nav{
         border-bottom: none;
+        padding: 0;
+    }
+    &__title{
+        line-height: normal;
+    }
+    &--content{
+        padding: 0;
+        margin: 0 0 20px;
     }
     &--buttons, .datepicker--time {
         border-top: none;
+
     }
     &--nav-action{
         &:hover{

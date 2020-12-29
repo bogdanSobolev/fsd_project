@@ -11,6 +11,7 @@ const calendar_range = {
     dateFormat: "d M",
     nextHtml: "<span class='material-icons calendar__calendar-arrow'>arrow_forward</span>",
     prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",
+    offset: 5,
     //inline: true,
 }
 

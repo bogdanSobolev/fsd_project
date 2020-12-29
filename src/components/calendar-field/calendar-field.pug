@@ -1,0 +1,4 @@
+mixin calendar-field(name, placeholder=false, value=false)
+    .calendar-field
+        input.calendar-field__input(class!=attributes.class name=name type="text" placeholder=placeholder value=value)
+        span.material-icons.calendar-field__arrow expand_more
