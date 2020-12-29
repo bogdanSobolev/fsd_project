@@ -13,6 +13,12 @@ const calendar_range = {
     prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",
     offset: 5,
     //inline: true,
+    onShow: function(inst) {
+        inst.$el.siblings(".calendar-field__arrow").addClass("calendar-field__arrow_active");
+    },
+    onHide: function(inst) {
+        inst.$el.siblings(".calendar-field__arrow").removeClass("calendar-field__arrow_active");
+    },
 }
 
 export default calendar_range;
