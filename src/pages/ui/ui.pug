@@ -4,6 +4,7 @@ include ../../components/text-field/text-field
 include ../../components/subscription-form/subscription-form
 include ../../components/date-dropdown/date-dropdown
 include ../../components/calendar-field/calendar-field
+include ../../components/dropdown/dropdown
 
 <!DOCTYPE html>
 html(lang="en")
@@ -23,7 +24,7 @@ html(lang="en")
             section.section-footer-creative.ui-section
                 +footer-creative()(class="section-footer-creative__elem footer-creative_mobile-for-desc")
             section.section-form-elements.ui-section.wrp-pd
-                .section-form-elements__fields
+                .section-form-elements__fields-list
                     .section-form-elements__field-block.section-form-elements__text-field-block
                         h3.section-form-elements__name-field.title.title_small Text Field
                         span.section-form-elements__state Default
@@ -47,3 +48,11 @@ html(lang="en")
                             h3.section-form-elements__name-field.title.title_small date dropdown
                                 //- +date-dropdown("date-dropdown-field-default")(class="section-form-elements__field-input body-text")
                             +calendar-field('date-dropdown-field-default', false, "19.08.2019")(class="section-form-elements__field-input body-text calendar text-field_date-mask")
+                    .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
+                        h3.section-form-elements__name-field.title.title_small filter date dropdown
+                        +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input body-text calendar calendar_range")
+                .section-form-elements__dropdowns-list
+                    .section-form-elements__field-block.section-form-elements__dropdown-block
+                        h3.section-form-elements__name-field.title.title_small dropdown
+                        span.section-form-elements__state Default
+                        +dropdown()(class="section-form-elements__dropdown")

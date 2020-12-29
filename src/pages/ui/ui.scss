@@ -27,7 +27,7 @@ body{
     $state-color: $color-dark-shade-50;
     padding-top: 140px;
     padding-bottom: 140px;
-    &__fields{
+    &__fields-list{
 
     }
     &__field-block{
@@ -67,11 +67,15 @@ body{
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
+        margin: 0 0 40px;
     }
     &__date-dropdown{
 
         &:nth-child(1){
             margin-right: 20px;
         }
+    }
+    &__date-dropdown-filter-field-block{
+        margin: 0 0 40px;
     }
 }
