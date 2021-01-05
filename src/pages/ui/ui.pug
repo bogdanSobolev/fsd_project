@@ -33,6 +33,9 @@ html(lang="en")
                         h3.section-form-elements__name-field.title.title_small Text Field
                         span.section-form-elements__state Hover / Focus
                         +text-field("text-field-focus", "text", "text", "This is pretty awesome")(class="section-form-elements__field-input text-field_focus body-text")
+                    .section-form-elements__field-block.section-form-elements__dropdown-block
+                        h3.section-form-elements__name-field.title.title_small dropdown
+                        +dropdown()(class="section-form-elements__dropdown dropdown_guests")
                     .section-form-elements__field-block.section-form-elements__text-date-field-block
                         h3.section-form-elements__name-field.title.title_small masked text field
                         +text-field("text-date-field", "")(class="section-form-elements__field-input body-text text-field_date-mask")
@@ -58,5 +61,11 @@ html(lang="en")
                         +dropdown()(class="section-form-elements__dropdown dropdown_location", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
                     .section-form-elements__field-block.section-form-elements__dropdown-block
                         h3.section-form-elements__name-field.title.title_small dropdown
-                        span.section-form-elements__state Default
-                        +dropdown()(class="section-form-elements__dropdown dropdown_guests")
+                        span.section-form-elements__state expanded
+                        +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
+                .section-form-elements__dropdowns-guests-list
+                    h3.section-form-elements__name-field.title.title_small dropdown
+                    +dropdown()(class="section-form-elements__dropdown dropdown_guests")
+                .section-form-elements__dropdowns-guests-list-expanded
+                    h3.section-form-elements__name-field.title.title_small dropdown
+                    +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])
