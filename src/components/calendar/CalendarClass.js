@@ -59,49 +59,6 @@ export default class CalendarClass {
 
         this.input.siblings(".calendar-field__arrow").on('click', e => {
             this.input.focus();
-            // console.log(e.target);
-            // console.log($calendar.$datepicker);
-            // console.log(this.input);
-            // if(!$(e.target).hasClass('calendar-field__arrow_active')){
-            //     // $calendar.show();
-            //     //this.input.focus();
-            //     console.log('net active');
-            //     $calendar.show();
-            // } else {
-            //     console.log('active');
-            // }
-            // this.input.focus();
-            // $calendar.show();
         });
-
-        // this.input.siblings(".calendar-field__arrow").on('click', e => {
-        //     // this.input.focus();
-        //     // console.log(e.target);
-        //     // console.log($calendar.$datepicker);
-        //     // console.log(this.input);
-        //     if(!$(e.target).hasClass('calendar-field__arrow_active')){
-        //         // $calendar.show();
-        //         //this.input.focus();
-        //         console.log('net active');
-        //         $calendar.show();
-        //     } else {
-        //         console.log('active');
-        //     }
-        //     // this.input.focus();
-        //     // $calendar.show();
-        // });
-
-
-
-
-
-        // this.input.on('focus', e => {
-        //     //this.input.siblings(".calendar-field__arrow").addClass("calendar-field__arrow_active");
-        //     //$calendar.show();
-        //     this.input.siblings(".calendar-field__arrow").click();
-        // });
-        // this.input.on('focusout', e => {
-        //     e.preventDefault;
-        // });
     }
 };

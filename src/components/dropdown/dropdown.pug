@@ -1,4 +1,8 @@
 mixin dropdown
-    .dropdown(class!=attributes.class)
+    //- .dropdown.body-text(class!=attributes.class)
+    .dropdown.body-text&attributes(attributes)
         .dropdown__values-input
-        ul.dropdown__input-list
+            span.dropdown__values-input-text
+            span.material-icons.dropdown__arrow expand_more
+        .dropdown__wrp
+            ul.dropdown__input-list

@@ -51,8 +51,12 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
                         h3.section-form-elements__name-field.title.title_small filter date dropdown
                         +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input body-text calendar calendar_range")
-                .section-form-elements__dropdowns-list
+                .section-form-elements__dropdowns-location-list
                     .section-form-elements__field-block.section-form-elements__dropdown-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state Default
-                        +dropdown()(class="section-form-elements__dropdown")
+                        +dropdown()(class="section-form-elements__dropdown dropdown_location", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
+                    .section-form-elements__field-block.section-form-elements__dropdown-block
+                        h3.section-form-elements__name-field.title.title_small dropdown
+                        span.section-form-elements__state Default
+                        +dropdown()(class="section-form-elements__dropdown dropdown_guests")

@@ -30,7 +30,6 @@
         justify-content: center;
         width: 44px;
         cursor: pointer;
-        //vertical-align: middle;
         transition: transform .2s;
         &_active{
             transform: rotate(-180deg);

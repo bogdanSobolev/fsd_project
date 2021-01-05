@@ -78,4 +78,10 @@ body{
     &__date-dropdown-filter-field-block{
         margin: 0 0 40px;
     }
+    &__dropdowns-location-list{
+        max-width: 266px;
+    }
+    &__dropdown{
+        width: 100%;
+    }
 }
