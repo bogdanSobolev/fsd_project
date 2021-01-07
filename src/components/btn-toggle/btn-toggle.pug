@@ -1,0 +1,6 @@
+mixin btn-toggle(name, btnText, checkedBtn=false)
+    label.btn-toggle(class!=attributes.class)
+        input.btn-toggle__input(type="checkbox", name=name, checked=checkedBtn)
+        .btn-toggle__toggle
+            .btn-toggle__check-mark
+        span.btn-toggle__text= btnText

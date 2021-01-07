@@ -28,7 +28,7 @@ body{
     padding-top: 140px;
     padding-bottom: 140px;
     &__fields-list{
-
+        border: 1px solid black;
     }
     &__field-block{
         display: flex;
@@ -80,14 +80,43 @@ body{
     }
     &__dropdowns-location-list{
         max-width: 266px;
+        border: 1px solid black;
     }
     &__dropdown{
         width: 100%;
     }
+
+    &__btns-list{
+        max-width: 260px;
+    }
+
+    
+
+    &__checkbox-btn{
+        margin: 0 0 10px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+
+    // &__radio-btns-block-wrp{
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+
+    &__radio-btn{
+        margin-right: 20px;
+    }
+
+
     &__dropdowns-guests-list{
         max-width: 320px;
     }
     &__dropdowns-guests-list-expanded{
         max-width: 320px;
+        border: 1px solid black;
+    }
+    &__btns-list{
+        border: 1px solid black;
     }
 }
