@@ -1,0 +1,14 @@
+mixin btn-rate(name, value)
+    -   let rateValue = 0
+    -if(value && value >= 0)
+    - rateValue = value
+
+    -let quantityBtn = 5;
+
+    div.btn-rate(class!=attributes.class)
+        input(type="hidden" value = rateValue).btn-rate__input
+
+        - for (let i = 0; i < quantityBtn; i++)
+            .btn-rate__btn-block
+                span.btn-rate__icon.material-icons star_border
+                span.btn-rate__icon.btn-rate__icon-active.material-icons star

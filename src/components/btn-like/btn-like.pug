@@ -1,0 +1,12 @@
+mixin btn-like(name, value, checkedBtn=false)
+    -   let likeValue = 0
+    -if(value && value >= 0)
+    - likeValue = value
+
+    label.btn-like(class!=attributes.class)
+        input.btn-like__input(type="checkbox", name=name, checked=checkedBtn)
+        .btn-like__like
+            .btn-like__like-icon-wrp
+                span.btn-like__like-icon-default.btn-like__like-icon.material-icons favorite_border
+                span.btn-like__like-icon-active.btn-like__like-icon.material-icons favorite
+            .btn-like__text= likeValue

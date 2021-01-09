@@ -196,11 +196,5 @@ export default class DropdownClass {
             });
             $dropdownInputList.append($inputItem);
         });
-        if(this.renderMod){
-            console.log('mod est');
-            this.renderMod();
-        } else {
-            console.log('mod net');
-        }
     }
 }

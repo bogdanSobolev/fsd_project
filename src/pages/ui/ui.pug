@@ -8,6 +8,10 @@ include ../../components/dropdown/dropdown
 include ../../components/btn-checkbox/btn-checkbox
 include ../../components/btn-radio/btn-radio
 include ../../components/btn-toggle/btn-toggle
+include ../../components/btn-like/btn-like
+include ../../components/btn-rate/btn-rate
+
+
 
 <!DOCTYPE html>
 html(lang="en")
@@ -55,6 +59,11 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__email-field-block
                         h3.section-form-elements__name-field.title.title_small subscription text field
                         +subscription-form("body-text")(class="section-form-elements__field-input")
+
+
+
+
+
                     
 
                 .section-form-elements__btns-list
@@ -72,6 +81,21 @@ html(lang="en")
                         h3.section-form-elements__name-field.title.title_small Toggle
                         +btn-toggle("offer", "Получать спецпредложения")(class="section-form-elements__toggle-btn")
                         +btn-toggle("offer", "Получать спецпредложения", true)(class="section-form-elements__toggle-btn")
+                    .section-form-elements__btns-block.section-form-elements__like-btns-block
+                        h3.section-form-elements__name-field.title.title_small Like button
+                        +btn-like("like", "2")(class="section-form-elements__like-btn")
+                        +btn-like("like", "12")(class="section-form-elements__like-btn btn-like_active")
+                    .section-form-elements__btns-block.section-form-elements__rate-btns-block
+                        h3.section-form-elements__name-field.title.title_small rate button
+                        +btn-rate("like", "4")(class="section-form-elements__rate-btn")
+                        +btn-rate("like", "5")(class="section-form-elements__rate-btn")
+
+
+
+
+
+
+
 
                 
                 .section-form-elements__dropdowns-location-list
@@ -85,11 +109,13 @@ html(lang="en")
                         +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
                 
                 
+
                 .section-form-elements__dropdowns-guests-list
                     h3.section-form-elements__name-field.title.title_small dropdown
                     +dropdown()(class="section-form-elements__dropdown dropdown_guests")
                 
                 
+
                 .section-form-elements__dropdowns-guests-list-expanded
                     h3.section-form-elements__name-field.title.title_small dropdown
                     +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])
