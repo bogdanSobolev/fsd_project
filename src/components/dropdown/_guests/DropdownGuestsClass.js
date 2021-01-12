@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import DropdownClass from '../DropdownClass';
-import buttonsMod from '../__buttons-mod/dropdown__button-mod.pug';
-import '../__buttons-mod/dropdown__button-mod.scss';
+import buttonMod from '../__button-mod/dropdown__button-mod.pug';
+import '../__button-mod/dropdown__button-mod.scss';
 
 export default class DropdownGuestsClass extends DropdownClass {
     constructor(dropdown, inputList){
@@ -33,14 +33,16 @@ export default class DropdownGuestsClass extends DropdownClass {
             console.log(this.inputList[i]);
         }
         this.renderInputList();
+        this.renderMod();
     }
 
     renderMod(){
         console.log('ya mod');
-        const $buttonsMod = jQuery(buttonsMod);
+        const $buttonMod = jQuery(buttonMod);
         const $dropdownWrp = this.$dropdown.find(".dropdown__wrp");
         $dropdownWrp.find('.dropdown__button-mod').remove();
-        $dropdownWrp.append($buttonsMod);
+        console.log($buttonMod);
+        $dropdownWrp.append($buttonMod);
         this.$dropdown.find('.dropdown__btn_clear').on('click', e => {
             e.preventDefault();
             this.clearValues();

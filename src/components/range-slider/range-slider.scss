@@ -1,0 +1,63 @@
+.range-slider{
+    $range-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    $range-btn-border: #fff;
+    $valur-color: $color-dark-shade-50;
+
+    
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__value{
+        color: $valur-color;
+    }
+
+    &__slider{
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .noUi{
+        &-base{
+        }
+        &-target{
+            border-radius: 3px;
+            box-shadow: unset;
+        }
+        &-horizontal{
+            height: 6px;
+            .noUi{
+                &-handle{
+                    height: 12px;
+                    width: 12px;
+                    right: -6px;
+                    top: -4px;
+                    outline: none;
+                }
+            }
+        }
+        &-handle{
+            border-radius: 50%;
+            background: $range-gradient;
+            border: 2px solid $range-btn-border;
+            box-shadow: unset;
+            cursor: pointer;
+            &::after{
+                display: none;
+            }
+            &:before{
+                display: none;
+            }
+        }
+        &-connects{
+            overflow: visible;
+        }
+        &-connect{
+            background: $range-gradient;
+            height: 6px;
+            position: relative;
+            top: -1px;
+        }
+    }
+    
+}

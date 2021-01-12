@@ -27,4 +27,7 @@ $dropdownList.each(function(){
     ]
     let dropdown = new DropdownGuestsClass($(this), inputList);
     dropdown.renderInputList();
+    dropdown.renderMod();
+
+    console.log('dropdown_guests');
 });

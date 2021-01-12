@@ -10,6 +10,13 @@ include ../../components/btn-radio/btn-radio
 include ../../components/btn-toggle/btn-toggle
 include ../../components/btn-like/btn-like
 include ../../components/btn-rate/btn-rate
+include ../../components/btn-filled/btn-filled
+include ../../components/btn-outlined/btn-outlined
+include ../../components/btn-text/btn-text 
+include ../../components/btn-with-arrow/btn-with-arrow 
+include ../../components/range-slider/range-slider
+include ../../components/pagination/pagination
+
 
 
 
@@ -31,7 +38,7 @@ html(lang="en")
             section.section-footer-creative.ui-section
                 +footer-creative()(class="section-footer-creative__elem footer-creative_mobile-for-desc")
             section.section-form-elements.ui-section.wrp-pd
-                .section-form-elements__fields-list
+                .section-form-elements__item.section-form-elements__fields-list
                     .section-form-elements__field-block.section-form-elements__text-field-block
                         h3.section-form-elements__name-field.title.title_small Text Field
                         span.section-form-elements__state Default
@@ -60,13 +67,7 @@ html(lang="en")
                         h3.section-form-elements__name-field.title.title_small subscription text field
                         +subscription-form("body-text")(class="section-form-elements__field-input")
 
-
-
-
-
-                    
-
-                .section-form-elements__btns-list
+                .section-form-elements__item.section-form-elements__btns-list
                     .section-form-elements__btns-block.section-form-elements__checkbox-btns-block
                         h3.section-form-elements__name-field.title.title_small Checkbox Buttons
                         +btn-checkbox("Можно курить", "Можно курить")(class="section-form-elements__checkbox-btn")
@@ -90,15 +91,30 @@ html(lang="en")
                         +btn-rate("like", "4")(class="section-form-elements__rate-btn")
                         +btn-rate("like", "5")(class="section-form-elements__rate-btn")
 
+                .section-form-elements__item.section-form-elements__btns-list
+                    .section-form-elements__btns-block.section-form-elements__range-slider-block
+                        //- h3.section-form-elements__name-field.title.title_small range slider
+                        +range-slider('Range Slider', 0, 15000, 5000, 10000)(class='section-form-elements__range-slider')
+                    .section-form-elements__btns-block.section-form-elements__btns-block
+                        h3.section-form-elements__name-field.title.title_small Buttons
+                        .section-form-elements__btns-block-conten-tblock
+                            +btn-filled('click me')(class="section-form-elements__click-me ")
+                            +btn-filled('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover")
 
-
-
-
-
-
-
-                
-                .section-form-elements__dropdowns-location-list
+                        .section-form-elements__btns-block-conten-tblock
+                            +btn-outlined('click me')(class=" section-form-elements__click-me ")
+                            +btn-outlined('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover")
+                        
+                        .section-form-elements__btns-block-conten-tblock
+                            +btn-text('click me')(class="section-form-elements__click-me title title_small")
+                            +btn-text('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover title title_small")
+                        .section-form-elements__btns-block-conten-tblock
+                            +btn-with-arrow('перейти к оплате')
+                    .section-form-elements__btns-block.section-form-elements__pagination-block
+                        h3.section-form-elements__name-field.title.title_small pagination
+                        +pagination()(class="section-form-elements__pagination")
+             
+                .section-form-elements__item.section-form-elements__dropdowns-location-list
                     .section-form-elements__field-block.section-form-elements__dropdown-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state Default
@@ -108,14 +124,10 @@ html(lang="en")
                         span.section-form-elements__state expanded
                         +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
                 
-                
-
-                .section-form-elements__dropdowns-guests-list
+                .section-form-elements__item.section-form-elements__dropdowns-guests-list
                     h3.section-form-elements__name-field.title.title_small dropdown
                     +dropdown()(class="section-form-elements__dropdown dropdown_guests")
                 
-                
-
-                .section-form-elements__dropdowns-guests-list-expanded
+                .section-form-elements__item.section-form-elements__dropdowns-guests-list-expanded
                     h3.section-form-elements__name-field.title.title_small dropdown
                     +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])

@@ -1,0 +1,6 @@
+mixin range-slider(title, minValue=false, maxValue=false, startValue=false, endValue=false)
+    .range-slider(data-min-value=minValue, data-max-value=maxValue, data-start-value=startValue, data-end-value=endValue)&attributes(attributes)
+        .range-slider__title.title.title_small= title
+        .range-slider__value
+        .range-slider__slider
+        input.range-slider__input(type="hidden")

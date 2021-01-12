@@ -1,0 +1,30 @@
+.btn-with-arrow{
+    display: inline-flex;
+    justify-content: center;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    padding: 14px 20px;
+    width: 100%;
+    //@include small-title;
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+    box-sizing: border-box;
+    &:hover{
+        opacity: 0.5;
+    }
+    &:active{
+        opacity: 0.75;
+    }
+    span{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        padding: 0 10px 0 0;
+    }
+}
