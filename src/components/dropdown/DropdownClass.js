@@ -7,7 +7,8 @@ export default class DropdownClass {
         this.inputList = null;
         this.values = null;
         this.inputList = inputList ? inputList : null; // [{name: string, value: int, maxValue: int, minValue: int}]
-
+        this.handlersInstalled = false;
+        //this.handlersInputListInstalled = false;
     }
 
     getCase(_number, _cases){
@@ -26,6 +27,82 @@ export default class DropdownClass {
         }
 
         return result;
+    }
+
+
+    setValues(){
+        console.error('метод setValues() не определен');
+    }
+
+    setHandlersInstalled(){
+        this.handlersInstalled = !this.handlersInstalled;
+    }
+
+    // setHandlersInputListInstalled(){
+    //     this.handlersInputListInstalled = !this.handlersInputListInstalled;
+    // }
+
+    setInputValue(input, value){
+        if(Number.isInteger(input.minValue) && Number.isInteger(input.maxValue)){
+            if(input.minValue > value){
+                input.value = +input.minValue;
+            } else if (input.maxValue < value){
+                input.value = +input.maxValue;
+            } else {
+                input.value = value;
+            }
+        } else if(Number.isInteger(input.minValue)){
+            if(input.minValue > value){
+                input.value = +input.minValue;
+            } else {
+                input.value = value;
+            }
+        } else if(Number.isInteger(input.maxValue)){
+            if(input.maxValue < value){
+                input.value = +input.maxValue;
+            } else {
+                input.value = value;
+            }
+        } else {
+            input.value = value;
+        }
+    }
+
+
+    setValuesFromDataValues(values){
+        values.forEach(value => {
+            //console.log(value.name)
+            let input = this.searchInputByName(value.name);
+            this.setInputValue(input, value.value);
+        });
+    }
+
+    setHandlers(){
+        if(!this.handlersInstalled){
+            $(document).on('click', e => {
+                if (!this.$dropdown.is(e.target) && this.$dropdown.has(e.target).length === 0){
+                    this.$dropdown.removeClass('dropdown_active');
+                }
+            });
+    
+            this.$dropdown.children('.dropdown__values-input').on('click', e => {
+                this.$dropdown.toggleClass('dropdown_active');
+            });
+            this.setHandlersInstalled();
+        }
+        
+    }
+
+    setInputItemHandlers($inputItem, $inputField, $inputValue, input){
+
+
+        $inputItem.find('.dropdown__set-value-plus').on('click', e => {
+            this.updateInput($inputItem, $inputField, $inputValue, input, "+");
+        });
+
+        $inputItem.find('.dropdown__set-value-minus').on('click', e => {
+            this.updateInput($inputItem, $inputField, $inputValue, input, "-");
+        });
     }
 
 
@@ -62,35 +139,7 @@ export default class DropdownClass {
         this.whichBtnIsDisabled($inputItem, $inputValue, input);
     }
 
-    setValues(){
-        console.error('метод setValues() не определен');
-    }
-
-    setInputValue(input, value){
-        if(Number.isInteger(input.minValue) && Number.isInteger(input.maxValue)){
-            if(input.minValue > value){
-                input.value = +input.minValue;
-            } else if (input.maxValue < value){
-                input.value = +input.maxValue;
-            } else {
-                input.value = value;
-            }
-        } else if(Number.isInteger(input.minValue)){
-            if(input.minValue > value){
-                input.value = +input.minValue;
-            } else {
-                input.value = value;
-            }
-        } else if(Number.isInteger(input.maxValue)){
-            if(input.maxValue < value){
-                input.value = +input.maxValue;
-            } else {
-                input.value = value;
-            }
-        } else {
-            input.value = value;
-        }
-    }
+    
 
     printValues(){
         this.setValues();
@@ -123,6 +172,9 @@ export default class DropdownClass {
 
     btnStateDisabled($btn, state){
         const disbledClass = 'dropdown__set-value-btn_disabled';
+        if(this.renderMod){
+            this.renderMod();
+        }
         if(state){
             if($btn.hasClass(disbledClass)){
                 return
@@ -146,30 +198,20 @@ export default class DropdownClass {
         return input;
     }
 
-    setValuesFromDataValues(values){
-        values.forEach(value => {
-            //console.log(value.name)
-            let input = this.searchInputByName(value.name);
-            this.setInputValue(input, value.value);
-        });
-    }
+    
 
     renderInputList(){
         //console.log(this.$dropdown);
         let $dropdownInputList = this.$dropdown.find('.dropdown__input-list');
 
+        //console.log($dropdownInputList);
+
         if(this.$dropdown.data('values')){
             this.setValuesFromDataValues(this.$dropdown.data('values'));
         }
 
-        $(document).on('click', e => {
-            if (!this.$dropdown.is(e.target) && this.$dropdown.has(e.target).length === 0){
-                this.$dropdown.removeClass('dropdown_active');
-            }
-        });
-        this.$dropdown.children('.dropdown__values-input').on('click', e => {
-            this.$dropdown.toggleClass('dropdown_active');
-        });
+        this.setHandlers();
+
         this.printValues();
         $dropdownInputList.empty ();
         this.inputList.forEach(input => {
@@ -187,14 +229,16 @@ export default class DropdownClass {
 
             this.whichBtnIsDisabled($inputItem, $inputValue, input);
 
-            $inputItem.find('.dropdown__set-value-plus').on('click', e => {
-                this.updateInput($inputItem, $inputField, $inputValue, input, "+");
-            });
+            $inputItem.find('.dropdown__set-value-plus').off();
+            $inputItem.find('.dropdown__set-value-minus').off();
 
-            $inputItem.find('.dropdown__set-value-minus').on('click', e => {
-                this.updateInput($inputItem, $inputField, $inputValue, input, "-");
-            });
+            this.setInputItemHandlers($inputItem, $inputField, $inputValue, input);
+
             $dropdownInputList.append($inputItem);
+
+            if(this.renderMod){
+                this.renderMod();
+            }
         });
     }
 }

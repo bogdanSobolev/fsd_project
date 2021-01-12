@@ -9,7 +9,7 @@ $dropdownList.each(function(){
         {
             name: 'взрослые',
             value: 0,
-            minValue: 0,
+            minValue: 1,
             maxValue: null,
         },
         {
@@ -27,7 +27,7 @@ $dropdownList.each(function(){
     ]
     let dropdown = new DropdownGuestsClass($(this), inputList);
     dropdown.renderInputList();
-    dropdown.renderMod();
+    //dropdown.renderMod();
 
-    console.log('dropdown_guests');
+    //console.log('dropdown_guests');
 });
