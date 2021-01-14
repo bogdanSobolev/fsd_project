@@ -28,13 +28,13 @@ body{
 
 
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 130px;
 
     display: flex;
     flex-wrap: wrap;
     &__item{
         width: (100%/3)-((10.9%+6.2%)/3);
-        margin: 0 0 40px;
+        margin: 0 0 100px;
         &:first-child{
             margin-right: 10.9%;
         }
@@ -44,6 +44,12 @@ body{
         &:nth-child(3n+2){
             margin-right: 6.2%;
         }
+    }
+
+
+    &__short-block{
+        width: 100%;
+        max-width: 266px;
     }
 
 
@@ -67,6 +73,11 @@ body{
     &__text-date-field-block{
         margin-bottom: 20px;
     }
+
+    &__dropdown-block{
+        margin-bottom: 20px;
+    }
+
     &__email-field-block{
         margin-bottom: 20px;
     }
@@ -105,13 +116,21 @@ body{
         //border: 1px solid black;
     }
     &__dropdown{
+        //width: 100%;
+        //max-width: 266px;
         width: 100%;
     }
 
     &__btns-list{
         //max-width: 260px;
+        .section-form-elements__name-field{
+            margin-bottom: 16px;
+        }
     }
 
+    &__btns-block{
+        margin-bottom: 40px;
+    }
     
 
     &__checkbox-btn{
@@ -153,6 +172,11 @@ body{
 
 
 
+
+    &__dropdowns-location-list{
+        height: 250px;
+    }
+
     &__dropdowns-guests-list{
         //max-width: 320px;
     }
@@ -160,7 +184,33 @@ body{
         //max-width: 320px;
         //border: 1px solid black;
     }
-    &__btns-list{
-        //border: 1px solid black;
+
+
+    &__rich-checkbox-btns-list{
+        .section-form-elements__name-field{
+            margin-bottom: 16px;
+        }
+    }
+
+    &__bullet-list-list{
+        .section-form-elements__name-field{
+            margin-bottom: 16px;
+        }
+    }
+
+
+    &__dignity{
+        margin-bottom: 20px;
+    }
+    
+
+    &__item.section-form-elements__dignity-list{
+        margin-bottom: 0;
+    }
+
+    &__item.section-form-elements__review-list{
+        width: (100%/3*2)-(10.9/2);
+        margin-right: 0;
+        margin-bottom: 0;
     }
 }

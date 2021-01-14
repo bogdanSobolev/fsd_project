@@ -1,0 +1,22 @@
+include ../btn-like/btn-like
+
+
+mixin review(authorName, authorWasOnline, authorIcon, reviewText, likeName, likeValue=0, likeActive=false)
+
+
+    -
+        let btnLikeActive = likeActive ? 'btn-like_active' :'';
+    //- btn-like_active
+
+    .review
+        .review__author-block
+            //- .review__author-icon
+            //- img.review__author-icon(src=authorIcon)
+            img.review__author-icon(src=authorIcon)
+            .review__author-text-block
+                .review__author-name.title.title_small= authorName
+                .review__author-was-online= authorWasOnline
+        .review__content-block
+            .review__btn-like-wrp
+                +btn-like(likeName, likeValue)(class='review__btn-like '+btnLikeActive)
+            .review__content-text= reviewText

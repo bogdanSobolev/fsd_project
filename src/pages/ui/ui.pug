@@ -15,7 +15,12 @@ include ../../components/btn-outlined/btn-outlined
 include ../../components/btn-text/btn-text 
 include ../../components/btn-with-arrow/btn-with-arrow 
 include ../../components/range-slider/range-slider
-include ../../components/pagination/pagination
+include ../../components/pagination/pagination 
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
+include ../../components/btn-checkbox-rich/btn-checkbox-rich
+include ../../components/bullet-list/bullet-list
+include ../../components/dignity/dignity
+include ../../components/review/review
 
 
 
@@ -62,8 +67,8 @@ html(lang="en")
                             +calendar-field('date-dropdown-field-default', false, "19.08.2019")(class="section-form-elements__field-input body-text calendar text-field_date-mask")
                     .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
                         h3.section-form-elements__name-field.title.title_small filter date dropdown
-                        +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input body-text calendar calendar_range")
-                    .section-form-elements__field-block.section-form-elements__email-field-block
+                        +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input section-form-elements__dropdown body-text calendar calendar_range")
+                    .section-form-elements__field-block.section-form-elements__email-field-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small subscription text field
                         +subscription-form("body-text")(class="section-form-elements__field-input")
 
@@ -115,11 +120,11 @@ html(lang="en")
                         +pagination()(class="section-form-elements__pagination")
              
                 .section-form-elements__item.section-form-elements__dropdowns-location-list
-                    .section-form-elements__field-block.section-form-elements__dropdown-block
+                    .section-form-elements__field-block.section-form-elements__dropdown-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state Default
                         +dropdown()(class="section-form-elements__dropdown dropdown_location", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
-                    .section-form-elements__field-block.section-form-elements__dropdown-block
+                    .section-form-elements__field-block.section-form-elements__dropdown-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state expanded
                         +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
@@ -131,3 +136,69 @@ html(lang="en")
                 .section-form-elements__item.section-form-elements__dropdowns-guests-list-expanded
                     h3.section-form-elements__name-field.title.title_small dropdown
                     +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])
+
+                .section-form-elements__item.section-form-elements__expandable-checkbox-list-list
+                    //- h3.section-form-elements__name-field.title.title_small dropdown
+                    -
+                        let checkboxData = [
+                            {
+                                name: "Завтрак",
+                                text: "Завтрак",
+                                checked: false
+                            },
+                            {
+                                name: "Письменный стол",
+                                text: "Письменный стол",
+                                checked: true
+                            },
+                            {
+                                name: "Стул для кормления",
+                                text: "Стул для кормления",
+                                checked: true
+                            },
+                            {
+                                name: "Кроватка",
+                                text: "Кроватка",
+                                checked: true
+                            },
+                            {
+                                name: "Телевизор",
+                                text: "Телевизор",
+                                checked: false
+                            },
+                            {
+                                name: "Шампунь",
+                                text: "Шампунь",
+                                checked: false
+                            },
+                        ];
+                    +expandable-checkbox-list('expandable checkbox list', checkboxData)(class="section-form-elements__expandable-checkbox-list section-form-elements__short-block")
+                    +expandable-checkbox-list('expandable checkbox list', checkboxData)(class="section-form-elements__expandable-checkbox-list expandable-checkbox-list_active section-form-elements__short-block")
+                
+                .section-form-elements__item.section-form-elements__rich-checkbox-btns-list
+                    h3.section-form-elements__name-field.title.title_small rich Checkbox Buttons
+                    +btn-checkbox-rich('Широкий коридор', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', false)(class="section-form-elements__rich-checkbox-btn")
+                    +btn-checkbox-rich('Помощник для инвалидов', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.', false)(class="section-form-elements__rich-checkbox-btn")
+
+                .section-form-elements__item.section-form-elements__bullet-list-list
+                    h3.section-form-elements__name-field.title.title_small bullet list
+                    -
+                        let bulletListData = [
+                            'Нельзя с питомцами',
+                            'Без вечеринок и мероприятий',
+                            'Время прибытия — после 13:00, а выезд до 12:00'
+                        ]
+                    +bullet-list(bulletListData)(class="section-form-elements__bullet-list")
+
+
+                .section-form-elements__item.section-form-elements__dignity-list
+                    +dignity('Комфорт', 'Шумопоглощающие стены', 'tag_faces', 'material-icons')(class='section-form-elements__dignity')
+                    +dignity('Удобство', 'Окно в каждой из спален', 'location_city', 'material-icons')(class='section-form-elements__dignity')
+
+                .section-form-elements__item.section-form-elements__review-list
+                    +review('Мурад Сарафанов', '5 дней назад', './assets/img/author-avatar.png', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'like-name', 12, true)(class='section-form-elements__review')
+
+
+
+
+

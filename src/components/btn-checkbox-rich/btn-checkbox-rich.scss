@@ -1,4 +1,4 @@
-.btn-checkbox{
+.btn-checkbox-rich{
     $btn-border-color: $color-dark-shade-25;
     $btn-border-color-checked: $color-purple;
     $btn-text-color: $color-dark-shade-50;
@@ -19,9 +19,9 @@
         position: absolute;
         z-index: -1;
         opacity: 0;
-        &:checked+.btn-checkbox__checkbox{
+        &:checked+.btn-checkbox-rich__checkbox{
             border: 1px solid $btn-border-color-checked;
-            .btn-checkbox__check-mark{
+            .btn-checkbox-rich__check-mark{
                 //display: block;
                 opacity: 1;
             }

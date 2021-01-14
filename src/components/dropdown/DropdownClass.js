@@ -149,7 +149,7 @@ export default class DropdownClass {
 
     whichBtnIsDisabled($inputItem, $inputValue, input){
         if (input.minValue){
-            if(input.minValue == $inputValue.text()){
+            if(input.minValue >= $inputValue.text()){
                 this.btnStateDisabled($inputItem.find('.dropdown__set-value-minus'), true);
             } else if (input.minValue < $inputValue.text()){
                 this.btnStateDisabled($inputItem.find('.dropdown__set-value-minus'), false);
@@ -162,7 +162,7 @@ export default class DropdownClass {
             }
         }
         if (input.maxValue){
-            if(input.maxValue == $inputValue.text()){
+            if(input.maxValue <= $inputValue.text()){
                 this.btnStateDisabled($inputItem.find('.dropdown__set-value-plus'), true);
             } else if (input.maxValue > $inputValue.text()){
                 this.btnStateDisabled($inputItem.find('.dropdown__set-value-plus'), false);

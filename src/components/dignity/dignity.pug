@@ -1,0 +1,15 @@
+mixin dignity(title, description, icon, iconClass=false)
+    .dignity&attributes(attributes)
+        span.dignity__icon(class=iconClass)= icon
+        .dignity__text-block
+            span.dignity__title.title.title_small= title
+            p.dignity__description= description
+
+        
+        //- img(src="../123.png")
+
+        //- img(src=require("./123.png").default)
+
+        //- include ./account_balance-black-18dp.svg
+        
+        //- object(data="./account_balance-black-18dp.svg", type="image/svg+xml")

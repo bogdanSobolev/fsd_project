@@ -1,0 +1,10 @@
+mixin expandable-checkbox-list(name, checkboxData)
+
+
+    .expandable-checkbox-list&attributes(attributes)
+        .expandable-checkbox-list__title.title.title_small= name
+            span.material-icons.expandable-checkbox-list__arrow expand_more
+        .expandable-checkbox-list__list
+
+            each elem in checkboxData
+                +btn-checkbox(elem.name, elem.text, elem.checked)(class="expandable-checkbox-list__list-item")
