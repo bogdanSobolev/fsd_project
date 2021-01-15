@@ -12,6 +12,8 @@
         //width: 100%;
         border: 1px solid $input-border-color;
         border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
         // color: $input-text-color;
         &:focus{
             border-color: $input-border-color-hover-focus;

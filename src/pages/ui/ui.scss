@@ -96,6 +96,8 @@ body{
         width: 100%;
         box-sizing: border-box;
     }
+    &__date-dropdown-filter-wrp{
+    }
     &__date-dropdown-fields-block{
         display: flex;
         justify-content: space-between;
@@ -212,5 +214,14 @@ body{
         width: (100%/3*2)-(10.9/2);
         margin-right: 0;
         margin-bottom: 0;
+    }
+}
+
+.section-cards{
+    background: none;
+    border: 1px solid black;
+    box-shadow: none;
+    &__item{
+        width: 380px;
     }
 }

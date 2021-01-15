@@ -1,3 +1,4 @@
+import './dropdown_guests.scss';
 import DropdownGuestsClass from './DropdownGuestsClass';
 
 

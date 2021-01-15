@@ -4,11 +4,9 @@
     position: relative;
     &__values-input{
         width: 100%;
-        //height: 40px;
         padding: 10px 87px 10px 15px;
         box-sizing: border-box;
         border: 1px solid $border-color;
-        //border-bottom: none;
         border-radius: 4px 4px 0 0;
         position: relative;
         &:hover{
@@ -33,13 +31,8 @@
         width: 44px;
         cursor: pointer;
         transition: transform .2s;
-        // &_active{
-        //     transform: rotate(-180deg);
-        //     transition: transform .2s;
-        // }
     }
     &__wrp{
-        //display: none;
         opacity: 0;
         position: absolute;
         width: 100%;
@@ -50,7 +43,6 @@
         border-radius: 0 0 4px 4px;
         z-index: 5;
         padding: 0 7px 0 15px;
-        //margin: 7px 7px 7px 15px;
         overflow: hidden;
         max-height: 0;
         transition: max-height .3s, opacity 0s .3s;
@@ -59,7 +51,6 @@
         list-style: none;
         padding: 0;
         margin: 7px 0;
-        //margin: 7px 7px 7px 15px;
     }
     &_active{
         .dropdown{
@@ -67,7 +58,6 @@
                 border-color: $border-color-hover-focus;
             }
             &__wrp{
-                //display: block;
                 opacity: 1;
                 border-color: $border-color-hover-focus;
 

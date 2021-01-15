@@ -1,0 +1,20 @@
+include ../calendar-field/calendar-field
+include ../dropdown/dropdown
+include ../btn-with-arrow/btn-with-arrow
+
+
+mixin card-search()
+    .card-search&attributes(attributes)
+        h1.card-search__title.title.title_big Найдём номера под ваши пожелания
+
+        .card-search__date-dropdown-fields-block
+            .card-search__date-dropdown-wrp
+                h3.card-search__name-field.title.title_small прибытие
+                +calendar-field('date-dropdown-field-default', false)(class="card-search__date-dropdown body-text calendar text-field_date-mask")
+            .card-search__date-dropdown-wrp 
+                h3.card-search__name-field.title.title_small выезд
+                +calendar-field('date-dropdown-field-default', false)(class="card-search__date-dropdown body-text calendar text-field_date-mask")
+        .card-search__dropdown-block
+            h3.card-search__name-field.title.title_small гости
+            +dropdown()(class="card-search__dropdown dropdown_guests")
+        +btn-with-arrow('подобрать номер')(class='card-search__btn-with-arrow')
