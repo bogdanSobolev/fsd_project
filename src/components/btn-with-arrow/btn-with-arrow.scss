@@ -10,6 +10,8 @@
     text-decoration: none;
     position: relative;
     box-sizing: border-box;
+    outline: none;
+    border: none;
     &:hover{
         opacity: 0.5;
     }
