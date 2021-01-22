@@ -219,9 +219,43 @@ body{
 
 .section-cards{
     background: none;
-    border: 1px solid black;
     box-shadow: none;
+    padding-top: 150px;
+    padding-bottom: 140px;
+
+    display: flex;
+    justify-content: space-between;
+    &__column{
+        //margin: 0 40px 0 0;
+        width: 32.75%;
+        &:last-child{
+            //margin: 0;
+        }
+        &_short{
+            width: 27.58%;
+        }
+    }
+
     &__item{
-        width: 380px;
+        //max-width: 380px;
+        //width: 30%;
+        width: 100%;
+        margin-bottom: 40px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+    
+    &__search-card{
+
+    }
+    &__order-card{
+
+    }
+    &__calendar{
+        max-width: 320px;
+    }
+    &__room-card{
+        max-width: 270px;
     }
 }

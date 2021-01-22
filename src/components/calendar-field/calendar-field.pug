@@ -1,4 +1,11 @@
-mixin calendar-field(name, placeholder=false, value=false)
+mixin calendar-field(name, placeholder=false, value=false, elem=false)
+
+    -
+        let widthElem = 'calendar-field';
+        if(elem){
+            widthElem = elem;
+        }
+
     .calendar-field
-        input.calendar-field__input(class!=attributes.class name=name type="text" placeholder=placeholder value=value)
+        input.calendar-field__input.calendar(class!=attributes.class name=name type="text" placeholder=placeholder value=value data-width-elem=elem data-test='test data')
         span.material-icons.calendar-field__arrow expand_more

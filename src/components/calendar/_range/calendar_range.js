@@ -15,6 +15,16 @@ const calendar_range = {
     //inline: true,
     onShow: function(inst) {
         inst.$el.siblings(".calendar-field__arrow").addClass("calendar-field__arrow_active");
+
+        let $positionElem = null;
+
+        if(inst.$el.data('width-elem')){
+            console.log(inst.$el.data('width-elem'));
+            $positionElem = inst.$el.closest('.'+inst.$el.data('width-elem'));
+        } else {
+            $positionElem = inst.$el;
+        }
+        inst.$datepicker.css({'left': `${$positionElem.offset().left}px`});
     },
     onHide: function(inst) {
         inst.$el.siblings(".calendar-field__arrow").removeClass("calendar-field__arrow_active");

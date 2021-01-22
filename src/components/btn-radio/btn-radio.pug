@@ -1,6 +1,6 @@
-mixin btn-radio(name, btnText, checkedBtn=false)
+mixin btn-radio(name, btnText, value, checkedBtn=false)
     label.btn-radio(class!=attributes.class)
-        input.btn-radio__input(type="radio", name=name, checked=checkedBtn)
+        input.btn-radio__input(type="radio", name=name, checked=checkedBtn, value=value)
         .btn-radio__radio
             .btn-radio__check-mark
         span.btn-radio__text= btnText

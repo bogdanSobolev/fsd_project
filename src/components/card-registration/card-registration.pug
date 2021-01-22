@@ -1,0 +1,32 @@
+include ../text-field/text-field
+include ../btn-with-arrow/btn-with-arrow
+include ../btn-radio/btn-radio
+include ../btn-toggle/btn-toggle
+include ../btn-outlined/btn-outlined
+
+
+mixin card-registration()
+    form(action="", method="get", name="card-registration").card-registration&attributes(attributes)
+        h1.card-registration__title.title.title_big Регистрация аккаунта
+
+        +text-field('имя', placeholder='Имя', typeInput="text", value=false)(class='card-registration__input-name card-registration__input')
+        +text-field('фамилия', placeholder='Фамилия', typeInput="text", value=false)(class='card-registration__input-last-name card-registration__input')
+
+        .card-registration__sex-block
+            +btn-radio('sex', 'Мужчина', 'мужчина', true)(class="card-registration__btn-sex")
+            +btn-radio('sex', 'Женщина', 'женщина')(class="card-registration__btn-sex")
+        
+        .card-registration__date-of-birth
+            h3.card-registration__name-field.title.title_small дата рождения
+            +text-field('день-рождения')(class="text-field_date-of-birth card-registration__input") 
+        
+        .card-registration__service-login-data
+            h3.card-registration__name-field.title.title_small данные для входа в сервис
+            +text-field('email', placeholder='Email', typeInput="email", value=false)(class='card-registration__input-email card-registration__input')
+            +text-field('password', placeholder='Пароль', typeInput="password", value=false)(class='card-registration__input-password card-registration__input')
+            +btn-toggle('subscribe', 'Получать спецпредложения', checkedBtn=false)(class='card-registration__toggle')
+        +btn-with-arrow('перейти к оплате')(class='card-registration__btn-with-arrow')
+
+        .card-registration__login-block
+            span.card-registration__login-text Уже есть аккаунт на Toxin
+            +btn-outlined('войти')(class='card-registration__login-btn')

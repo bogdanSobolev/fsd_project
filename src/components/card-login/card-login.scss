@@ -1,0 +1,36 @@
+.card-login{
+    $card-bg: #fff; 
+    $color-text: $color-dark-shade;
+
+    padding: 30px;
+    background: $card-bg;
+    box-sizing: border-box;
+
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    &__title{
+
+    }
+
+    &__input{
+        margin: 0 0 10px;
+        width: 100%;
+    }
+
+    &__service-login-data{
+        margin: 0 0 20px;
+    }
+    
+    &__btn-with-arrow{
+        margin: 0 0 30px;
+    }
+
+    &__login-block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__login-text{
+        color: $color-text;
+    }
+}

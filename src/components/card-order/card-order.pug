@@ -1,0 +1,93 @@
+include ../calendar-field/calendar-field
+include ../dropdown/dropdown
+include ../btn-with-arrow/btn-with-arrow
+
+
+mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub')
+
+    -
+        let currencyIcon = null;
+        switch(currency.toLowerCase()){
+            case 'rub':
+                currencyIcon = '&#8381';
+                break;
+            case 'usd':
+                currencyIcon = '&#36';
+                break;
+            default: 
+                break;
+        }
+
+
+
+
+    form(action="", method="get", name="card-order").card-order&attributes(attributes)
+        .card-order__header
+            h1.card-order__title
+                span.card-order__title-number-symbol.title.title_big &#8470 
+                span.card-order__title-number.title.title_big= number
+                span.card-order__title-type.title.title_small= type
+            .card-order__room-price
+                span.card-order__room-price-wrp
+                    span.card-order__room-price-price= price
+                    span!= currencyIcon
+                |  в сутки
+
+        .card-order__date-dropdown-fields-block
+            .card-order__date-dropdown-wrp
+                h3.card-order__name-field.title.title_small прибытие
+                +calendar-field('прибытие', false, '23.01.2021', 'card-order__date-dropdown-fields-block')(class="card-order__date-dropdown card-order__date-dropdown-arrival body-text calendar text-field_date-mask")
+            .card-order__date-dropdown-wrp 
+                h3.card-order__name-field.title.title_small выезд
+                +calendar-field('выезд', false, '27.01.2021', 'card-order__date-dropdown-fields-block')(class="card-order__date-dropdown card-order__date-dropdown-departure body-text calendar text-field_date-mask")
+        .card-order__dropdown-block
+            h3.card-order__name-field.title.title_small гости
+            +dropdown()(class="card-order__dropdown dropdown_guests", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])
+
+
+        .card-order__list
+            .card-order__list-item.card-order__list-item-row-name
+                .card-order__list-item-row-name-wrp
+                    span.card-order__list-item-price-per-day= price 
+                    span!= currencyIcon   
+                    |  x 
+                    span.card-order__list-item-sum-day 4
+                    = ' '
+                    |суток  
+            .card-order__list-item.card-order__list-item-info
+                .card-order__list-item-info-icon.card-order__list-item-info-icon_no-info i
+            .card-order__list-item.card-order__list-item-row-total-prise
+                span.card-order__list-item-price-for-all-days 0
+                span!= currencyIcon
+
+            .card-order__list-item.card-order__list-item-row-name
+                .card-order__list-item-row-name-wrp
+                    span.card-order__list-item-service-charge Сбор за услуги: скидка  
+                    span.card-order__list-item-service-charge-discount= serviceChargeDiscount
+                    span!= currencyIcon
+            .card-order__list-item.card-order__list-item-info
+                .card-order__list-item-info-icon i
+                .card-order__list-item-info-block информация
+            .card-order__list-item.card-order__list-item-row-total-prise 0
+                span!= currencyIcon
+
+            .card-order__list-item.card-order__list-item-row-name Сбор за дополнительные услуги
+            .card-order__list-item.card-order__list-item-info
+                .card-order__list-item-info-icon i
+            .card-order__list-item.card-order__list-item-row-total-prise
+                span.card-order__list-item-additional-service-fee 300
+                span!= currencyIcon
+
+
+
+
+        
+        .card-order__total-price-block.title.title_middle
+            .card-order__total-price-title Итого
+            .card-order__total-price-line
+            .card-order__total-price-wrp
+                span.card-order__total-price 38 081
+                span!= currencyIcon
+
+
+        +btn-with-arrow('подобрать номер')(class='card-order__btn-with-arrow')

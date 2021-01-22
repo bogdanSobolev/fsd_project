@@ -55,8 +55,8 @@ export default class DropdownGuestsClass extends DropdownClass {
                     areTheValuesMinimal = true;
                     //i++;
                 }
-                console.log(this.inputList[i]);
-                console.log('minValue');
+                //onsole.log(this.inputList[i]);
+                //console.log('minValue');
             }else{
                 if(this.inputList[i].value > 0){
                     areTheValuesMinimal = false;
@@ -111,13 +111,13 @@ export default class DropdownGuestsClass extends DropdownClass {
         //console.log('ya mod');
         const $buttonMod = jQuery(buttonMod);
 
-        console.log(this.areTheValuesMinimal());
+        //console.log(this.areTheValuesMinimal());
 
 
         const $dropdownWrp = this.$dropdown.find(".dropdown__wrp");
 
         if(this.areTheValuesMinimal()){
-            console.log('minimum');
+            //console.log('minimum');
             let $clearBtn = $buttonMod.find('.dropdown__btn_clear');
             $clearBtn.remove();
         }

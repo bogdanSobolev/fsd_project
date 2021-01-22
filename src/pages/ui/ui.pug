@@ -24,6 +24,10 @@ include ../../components/dignity/dignity
 include ../../components/review/review
 
 include ../../components/card-search/card-search
+include ../../components/card-registration/card-registration
+include ../../components/card-login/card-login
+include ../../components/card-order/card-order
+include ../../components/card-room/card-room
 
 
 
@@ -65,14 +69,14 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__date-dropdown-fields-block
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            +calendar-field('date-dropdown-field-default', false)(class="section-form-elements__field-input body-text calendar text-field_date-mask")
+                            +calendar-field('date-dropdown-field-default', false, false, 'section-form-elements__date-dropdown-fields-block')(class="section-form-elements__field-input body-text calendar text-field_date-mask")
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            +calendar-field('date-dropdown-field-default', false, "19.08.2019")(class="section-form-elements__field-input body-text calendar text-field_date-mask")
+                            +calendar-field('date-dropdown-field-default', false, "19.08.2019", 'section-form-elements__date-dropdown-fields-block')(class="section-form-elements__field-input body-text calendar text-field_date-mask")
                     .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
                         h3.section-form-elements__name-field.title.title_small filter date dropdown
                         .section-form-elements__date-dropdown-filter-wrp.section-form-elements__short-block
-                            +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input section-form-elements__dropdown body-text calendar calendar_range")
+                            +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input section-form-elements__dropdown body-text calendar_range")
                     .section-form-elements__field-block.section-form-elements__email-field-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small subscription text field
                         +subscription-form("body-text")(class="section-form-elements__field-input")
@@ -86,8 +90,8 @@ html(lang="en")
                     .section-form-elements__btns-block.section-form-elements__radio-btns-block
                         h3.section-form-elements__name-field.title.title_small Radio Buttons
                         //- form(action="section-form-elements__radio-btns-block-field" name)
-                        +btn-radio("sex", "Мужчина", true)(class="section-form-elements__radio-btn")
-                        +btn-radio("sex", "Женщина")(class="section-form-elements__radio-btn")
+                        +btn-radio("sex", "Мужчина", 'мужчина', true)(class="section-form-elements__radio-btn")
+                        +btn-radio("sex", "Женщина", 'женщина')(class="section-form-elements__radio-btn")
                     .section-form-elements__btns-block.section-form-elements__toggle-btns-block
                         h3.section-form-elements__name-field.title.title_small Toggle
                         +btn-toggle("offer", "Получать спецпредложения")(class="section-form-elements__toggle-btn")
@@ -204,7 +208,17 @@ html(lang="en")
                     +review('Мурад Сарафанов', '5 дней назад', './assets/img/author-avatar.png', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'like-name', 12, true)(class='section-form-elements__review')
 
             section.section-cards.ui-section.wrp-pd
-                +card-search(class='section-cards__search-card section-cards__item')
+                .section-cards__column.section-cards__column
+                    +card-search(class='section-cards__search-card section-cards__item ')
+                    +card-registration(class='section-cards__registration-card section-cards__item')
 
+                .section-cards__column
+                    +card-order(888, 'люкс', '9990', '2179', 'rub')(class='section-cards__order-card section-cards__item')
+                    +card-login(class='section-cards__login-card section-cards__item')
+                
+                .section-cards__column_short
+                    .section-cards__calendar.calendar.calendar_range.section-cards__item
+                    +card-room(888, 'люкс', '9990', 5, 145, ["./assets/img/room_1.jpg", "./assets/img/room_1.jpg", "./assets/img/room_1.jpg"])(class='section-cards__room-card section-cards__item')
+                    +card-room(840, 'люкс', '9900', 4, 65, ["./assets/img/room_2.jpg", "./assets/img/room_2.jpg", "./assets/img/room_2.jpg"])(class='section-cards__room-card section-cards__item')
 
 

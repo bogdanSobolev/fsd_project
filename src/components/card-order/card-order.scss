@@ -1,0 +1,146 @@
+.card-order{
+    $card-bg: #fff; 
+    $type-color: $color-purple;
+    $price-line-color: $color-dark-shade-25;
+    $info-icon-color: $color-dark-shade-25;
+    $info-border-color: $color-purple;
+
+    padding: 30px;
+    background: $card-bg;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+        margin: 0;
+        &-number-symbol{
+            font-size: 14px;
+        }
+        &-number{
+
+        }
+        &-type{
+            color: $type-color;
+        }
+    }
+    &__room-price{
+        font-size: 12px;
+        &-wrp{
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+
+
+    &__date-dropdown-fields-block{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 20px;
+    }
+    &__date-dropdown-wrp{
+        
+        &:first-child{
+            margin-right: 20px;
+        }
+    }
+    &__name-field{
+
+    }
+    &__date-dropdown{
+
+    }
+    &__dropdown-block{
+        margin: 0 0 30px;
+    }
+    &__dropdown{
+
+    }
+
+
+    &__list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(min-content, max-content) auto minmax(20px, max-content);
+        gap: 16px 5px;
+        margin: 0 0 30px 0;
+        &-item{
+            display: inline-flex;
+            //justify-content: center;
+            align-items: flex-start;
+            flex-shrink: 0;
+            //border: 1px solid red;
+            &-row-name{
+                line-height: 18px;
+            }
+            &-price-per-day{
+
+            }
+            &-sum-day{
+
+            }
+            &-info{
+                position: relative;
+                &-icon{
+                    color: $info-icon-color;
+                    border: 1px solid $info-icon-color;
+                    border-radius: 50%;
+                    height: 20px;
+                    width: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &_no-info{
+                        display: none;
+                    }
+                }
+                &-block{
+                    display: none;
+                    position: absolute;
+                    padding: 5px;
+                    border: 1px solid $info-border-color;
+                    bottom: 100%;
+                    background: #fff;
+                }
+            }
+            &-row-total-prise{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+            }
+        }
+    }
+
+
+
+
+
+
+    &__total-price-block{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 20px;
+    }
+    &__total-price-title{
+
+    }
+    &__total-price-line{
+        width: 100%;
+        padding: 0 0 5px;
+        margin: 0px 4px;
+        &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px dashed $price-line-color;
+        }
+    }
+    &__total-price{
+        flex-shrink: 0;
+    }
+}

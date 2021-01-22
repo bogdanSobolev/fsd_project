@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack",
     "serve": "webpack-dev-server",
-    "start": "webpack serve"
+    "start": "webpack serve --host 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
@@ -48,10 +48,14 @@
     "imask": "^6.0.5",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
+    "jquery-bridget": "^3.0.0",
+    "masonry-layout": "^4.2.2",
     "material-icons": "^0.5.1",
     "nouislider": "^14.6.3",
     "paginationjs": "^2.1.5",
     "pug-html-loader": "^1.1.5",
-    "raty-js": "^3.0.0"
+    "raty-js": "^3.0.0",
+    "save": "^2.4.0",
+    "slick-carousel": "^1.8.1"
   }
 }
