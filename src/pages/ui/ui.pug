@@ -94,8 +94,8 @@ html(lang="en")
                         +btn-radio("sex", "Женщина", 'женщина')(class="section-form-elements__radio-btn")
                     .section-form-elements__btns-block.section-form-elements__toggle-btns-block
                         h3.section-form-elements__name-field.title.title_small Toggle
-                        +btn-toggle("offer", "Получать спецпредложения")(class="section-form-elements__toggle-btn")
                         +btn-toggle("offer", "Получать спецпредложения", true)(class="section-form-elements__toggle-btn")
+                        +btn-toggle("offer", "Получать спецпредложения")(class="section-form-elements__toggle-btn")
                     .section-form-elements__btns-block.section-form-elements__like-btns-block
                         h3.section-form-elements__name-field.title.title_small Like button
                         +btn-like("like", "2")(class="section-form-elements__like-btn")
@@ -109,7 +109,7 @@ html(lang="en")
                     .section-form-elements__btns-block.section-form-elements__range-slider-block
                         //- h3.section-form-elements__name-field.title.title_small range slider
                         +range-slider('Range Slider', 0, 15000, 5000, 10000)(class='section-form-elements__range-slider')
-                    .section-form-elements__btns-block.section-form-elements__btns-block
+                    .section-form-elements__btns-block.section-form-elements__btns-block_long
                         h3.section-form-elements__name-field.title.title_small Buttons
                         .section-form-elements__btns-block-conten-tblock
                             +btn-filled('click me')(class="section-form-elements__click-me ")
@@ -123,17 +123,17 @@ html(lang="en")
                             +btn-text('click me')(class="section-form-elements__click-me title title_small")
                             +btn-text('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover title title_small")
                         .section-form-elements__btns-block-conten-tblock
-                            +btn-with-arrow('перейти к оплате')(class="section-form-elements__btn-with-arrow")
+                            +btn-with-arrow('перейти к оплате')(class=".section-form-elements__btn-with-arrow")
                     .section-form-elements__btns-block.section-form-elements__pagination-block
                         h3.section-form-elements__name-field.title.title_small pagination
                         +pagination()(class="section-form-elements__pagination")
              
                 .section-form-elements__item.section-form-elements__dropdowns-location-list
-                    .section-form-elements__field-block.section-form-elements__dropdown-block.section-form-elements__short-block
+                    .section-form-elements__field-block.section-form-elements__dropdown-location-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state Default
                         +dropdown()(class="section-form-elements__dropdown dropdown_location", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
-                    .section-form-elements__field-block.section-form-elements__dropdown-block.section-form-elements__short-block
+                    .section-form-elements__field-block.section-form-elements__dropdown-location-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state expanded
                         +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])

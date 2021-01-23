@@ -54,8 +54,14 @@ export default class RangeSlider {
             //console.log(values);
 
             let valuesWithPostfix = values.map(value => {
-                let valueWithPostfix = value + postfix;
+                let valueString = value.toLocaleString();
+
+                //let valueWithPostfix = value + postfix;
+
+                let valueWithPostfix = valueString + postfix;
+
                 //console.log(this);
+                //console.log(valueWithPostfix);
                 return valueWithPostfix;
             });
 

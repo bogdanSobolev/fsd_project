@@ -74,13 +74,15 @@ body{
     &__text-field-block-focus{
         margin-bottom: 20px;
     }
-    &__text-date-field-block{
-        margin-bottom: 20px;
-    }
 
     &__dropdown-block{
-        margin-bottom: 20px;
+        margin-bottom: 23px;
     }
+    &__text-date-field-block{
+        margin-bottom: 40px;
+    }
+
+    
 
     &__email-field-block{
         margin-bottom: 20px;
@@ -115,7 +117,7 @@ body{
         }
     }
     &__date-dropdown-filter-field-block{
-        margin: 0 0 40px;
+        margin: 0 0 42px;
     }
     &__dropdown{
         width: 100%;
@@ -128,7 +130,7 @@ body{
     }
 
     &__btns-block{
-        margin-bottom: 40px;
+        margin-bottom: 41px;
     }
     
 
@@ -143,12 +145,26 @@ body{
         margin-right: 20px;
     }
 
+    &__toggle-btn{
+        margin: 0 0 14px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+
     &__like-btn{
         margin-right: 10px;
     }
 
+    &__rate-btns-block{
+
+    }
+
     &__rate-btn{
-        margin-right: 20px;
+        margin-right: 19px;
+        &:last-child{
+            margin: 0;
+        }
     }
 
 
@@ -156,6 +172,10 @@ body{
 
     &__range-slider{
         //max-width: 320px;
+    }
+
+    &__btns-block_long{
+        width: 100%;
     }
 
     &__btns-block-conten-tblock{
@@ -179,6 +199,10 @@ body{
         height: 290px;
     }
 
+    &__dropdown-location-block{
+        margin: 0 0 20px;
+    }
+
     &__dropdowns-guests-list{
         height: 260px;
     }
@@ -188,10 +212,11 @@ body{
 
 
     &__expandable-checkbox-list{
-        margin-bottom: 20px;
+        margin-bottom: 14px;
     }
 
     &__rich-checkbox-btns-list{
+        padding: 18px 0 0;
         margin-bottom: 40px;
         .section-form-elements__name-field{
             margin-bottom: 16px;
@@ -256,6 +281,12 @@ body{
         &__click-me{
             margin-bottom: 10px;
         }
+
+
+        &__rich-checkbox-btn{
+            margin-bottom: 10px;
+        }
+        
 
 
         &__item.section-form-elements__review-list{
@@ -328,7 +359,7 @@ body{
         justify-content: flex-start;
         &__item{
             width: (100%/3)-((10.9%+6.2%)/3);
-            margin: 0 0 100px;
+            margin: 0 0 80px;
             &:nth-child(2n+1){
                 margin-right: 0;
             }
@@ -347,6 +378,38 @@ body{
             width: (100%/3*2)-(10.9/2); //для больших разрешений
             margin-right: 0;
         }
+
+        &__short-block{
+            max-width: 265px;
+        }
+
+        &__btns-block{
+            max-width: 260px;
+        }
+
+        &__checkbox-btns-block{
+            max-width: 245px;
+        }
+
+        &__btns-block_long{
+            max-width: 100%;
+        }
+
+        &__dropdowns-location-list{
+            height: 223px;
+        }
+    
+        &__dropdowns-guests-list{
+            height: 223px;
+        }
+        &__dropdowns-guests-list-expanded{
+            height: 223px;
+        }
+
+        &__rich-checkbox-btn{
+            max-width: 260px;
+        }
+        
     }
 }
 

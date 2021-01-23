@@ -23,7 +23,7 @@
         &:checked+.btn-toggle__toggle{
             border: 1px solid $btn-border-color-checked;
             .btn-toggle__check-mark{
-                transform: translateX(calc(100% + 4px));
+                transform: translateX(calc(100% + 7px));
                 background: $btn-gradient;
                 transition: transform .2s;
             }

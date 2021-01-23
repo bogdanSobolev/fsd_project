@@ -2,6 +2,7 @@
     $btn-border-color: $color-dark-shade-25;
     $btn-border-color-checked: $color-purple;
     $btn-text-color: $color-dark-shade-50;
+    $btn-title-color: $color-dark-shade-75;
 
 
     display: flex;
@@ -13,7 +14,18 @@
     &__text{
         margin: 1px 0 0;
         color: $btn-text-color;
+        
+    }
+    &__title{
+        color: $btn-title-color;
+        font-size: 14px;
+        font-weight: 700;
         line-height: 18px;
+        margin-bottom: 5px;
+    }
+    &__description{
+        font-size: 12px;
+        line-height: 14px;
     }
     &__input{
         position: absolute;
