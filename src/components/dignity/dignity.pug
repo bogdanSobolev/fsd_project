@@ -2,7 +2,7 @@ mixin dignity(title, description, icon, iconClass=false)
     .dignity&attributes(attributes)
         span.dignity__icon(class=iconClass)= icon
         .dignity__text-block
-            span.dignity__title.title.title_small= title
+            span.dignity__title= title
             p.dignity__description= description
 
         

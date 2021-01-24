@@ -1,14 +1,15 @@
 .dignity{
+    $color-title: $color-dark-shade-75;
     $iconGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     $borderColor: $color-dark-shade-10;
 
     display: flex;
-    padding: 0 0 17px;
+    padding: 0 0 20px;
     border-bottom: 1px solid $borderColor;
     &__icon{
         width: 48px;
         height: 48px;
-        font-size: 45px;
+        font-size: 48px;
         margin-right: 10px;
 
         color: transparent;
@@ -20,6 +21,8 @@
     }
     &__title{
         font-size: 14px;
+        font-weight: 700;
+        color: $color-title;
     }
     &__description{
         margin: 0;

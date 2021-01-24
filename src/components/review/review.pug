@@ -14,7 +14,7 @@ mixin review(authorName, authorWasOnline, authorIcon, reviewText, likeName, like
             //- img.review__author-icon(src=authorIcon)
             img.review__author-icon(src=authorIcon)
             .review__author-text-block
-                .review__author-name.title.title_small= authorName
+                .review__author-name= authorName
                 .review__author-was-online= authorWasOnline
         .review__content-block
             .review__btn-like-wrp
