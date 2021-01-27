@@ -9,10 +9,10 @@ mixin card-search()
 
         .card-search__date-dropdown-fields-block
             .card-search__date-dropdown-wrp
-                h3.card-search__name-field.title.title_small прибытие
+                h3.card-search__name-field.card-search__date-dropdown-title.title.title_small прибытие
                 +calendar-field('прибытие', false, false, 'card-search__date-dropdown-fields-block')(class="card-search__date-dropdown body-text calendar text-field_date-mask")
             .card-search__date-dropdown-wrp 
-                h3.card-search__name-field.title.title_small выезд
+                h3.card-search__name-field.card-search__date-dropdown-title.title.title_small выезд
                 +calendar-field('выезд', false, false, 'card-search__date-dropdown-fields-block')(class="card-search__date-dropdown body-text calendar text-field_date-mask")
         .card-search__dropdown-block
             h3.card-search__name-field.title.title_small гости

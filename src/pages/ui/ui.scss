@@ -432,16 +432,21 @@ body{
 
     //display: none; //подготовка адаптива
 
-
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    //justify-content: space-between;
     &__column{
         //margin: 0 40px 0 0;
-        width: 32.75%;
+        // width: 32.75%;
+        width: 100%;
+        max-width: 380px;
+        margin-bottom: 40px;
         &:last-child{
             //margin: 0;
         }
         &_short{
-            width: 27.58%;
+            // width: 27.58%;
+            width: 100%;
         }
     }
 
@@ -466,5 +471,99 @@ body{
     }
     &__room-card{
         max-width: 270px;
+    }
+
+}
+
+@media (min-width: 576px) {
+    // .section-cards{
+    
+    //     flex-wrap: wrap;
+    //     justify-content: space-around;
+    //     &__column{
+    //         //margin: 0 40px 0 0;
+    //         width: 47.12%;
+    //         &:last-child{
+    //             //margin: 0;
+    //         }
+    //         &_short{
+    //             width: 39.66%;
+    //         }
+    //     }
+    
+    //     // &__item{
+    //     //     //max-width: 380px;
+    //     //     //width: 30%;
+    //     //     width: 100%;
+    //     //     margin-bottom: 40px;
+    //     //     &:last-child{
+    //     //         margin: 0;
+    //     //     }
+    //     // }
+    // }
+}
+
+@media (min-width: 768px) {
+    .section-cards{
+    
+        //flex-wrap: wrap;
+        //justify-content: space-around;
+        &__column{
+            //margin: 0 40px 0 0;
+            width: 47.12%;
+            &:last-child{
+                //margin: 0;
+            }
+            &_short{
+                //width: 39.66%;
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start; 
+            }
+        }
+    
+        // &__item{
+        //     //max-width: 380px;
+        //     //width: 30%;
+        //     width: 100%;
+        //     margin-bottom: 40px;
+        //     &:last-child{
+        //         margin: 0;
+        //     }
+        // }
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-cards{
+        flex-wrap: nowrap;
+    
+        justify-content: space-between;
+        &__column{
+            //margin: 0 40px 0 0;
+            width: 32.75%;
+            margin-bottom: 0;
+            &:last-child{
+                //margin: 0;
+            }
+            &_short{
+                width: 27.58%;
+                display: block;
+                max-width: 380px;
+            }
+        }
+    
+        // &__item{
+        //     //max-width: 380px;
+        //     //width: 30%;
+        //     width: 100%;
+        //     margin-bottom: 40px;
+        //     &:last-child{
+        //         margin: 0;
+        //     }
+        // }
     }
 }

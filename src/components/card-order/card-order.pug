@@ -3,7 +3,7 @@ include ../dropdown/dropdown
 include ../btn-with-arrow/btn-with-arrow
 
 
-mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub')
+mixin card-order(number, type=false, valPrice, valServiceChargeDiscount, currency='rub')
 
     -
         let currencyIcon = null;
@@ -17,6 +17,10 @@ mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub
             default: 
                 break;
         }
+
+        //- +valPrice;
+        let price = Number(valPrice).toLocaleString();
+        let serviceChargeDiscount = Number(valServiceChargeDiscount).toLocaleString();
 
 
 
@@ -35,10 +39,10 @@ mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub
 
         .card-order__date-dropdown-fields-block
             .card-order__date-dropdown-wrp
-                h3.card-order__name-field.title.title_small прибытие
+                h3.card-order__name-field.card-order__date-dropdown-title.title.title_small прибытие
                 +calendar-field('прибытие', false, '23.01.2021', 'card-order__date-dropdown-fields-block')(class="card-order__date-dropdown card-order__date-dropdown-arrival body-text calendar text-field_date-mask")
             .card-order__date-dropdown-wrp 
-                h3.card-order__name-field.title.title_small выезд
+                h3.card-order__name-field.card-order__date-dropdown-title.title.title_small выезд
                 +calendar-field('выезд', false, '27.01.2021', 'card-order__date-dropdown-fields-block')(class="card-order__date-dropdown card-order__date-dropdown-departure body-text calendar text-field_date-mask")
         .card-order__dropdown-block
             h3.card-order__name-field.title.title_small гости
@@ -62,7 +66,7 @@ mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub
 
             .card-order__list-item.card-order__list-item-row-name
                 .card-order__list-item-row-name-wrp
-                    span.card-order__list-item-service-charge Сбор за услуги: скидка  
+                    span.card-order__list-item-service-charge  Сбор за услуги: скидка
                     span.card-order__list-item-service-charge-discount= serviceChargeDiscount
                     span!= currencyIcon
             .card-order__list-item.card-order__list-item-info
@@ -71,7 +75,8 @@ mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub
             .card-order__list-item.card-order__list-item-row-total-prise 0
                 span!= currencyIcon
 
-            .card-order__list-item.card-order__list-item-row-name Сбор за дополнительные услуги
+            .card-order__list-item.card-order__list-item-row-name
+                .card-order__list-item-row-name-wrp Сбор за дополнительные услуги
             .card-order__list-item.card-order__list-item-info
                 .card-order__list-item-info-icon i
             .card-order__list-item.card-order__list-item-row-total-prise
@@ -90,4 +95,4 @@ mixin card-order(number, type=false, price, serviceChargeDiscount, currency='rub
                 span!= currencyIcon
 
 
-        +btn-with-arrow('подобрать номер')(class='card-order__btn-with-arrow')
+        +btn-with-arrow('забронировать')(class='card-order__btn-with-arrow')

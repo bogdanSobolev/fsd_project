@@ -9,7 +9,7 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     &__title{
-
+        margin: 10px 0 19px;
     }
 
     &__input{
@@ -18,11 +18,11 @@
     }
 
     &__service-login-data{
-        margin: 0 0 20px;
+        margin: 0 0 10px;
     }
     
     &__btn-with-arrow{
-        margin: 0 0 30px;
+        margin: 0 0 29px;
     }
 
     &__login-block{
@@ -32,5 +32,8 @@
     }
     &__login-text{
         color: $color-text;
+    }
+    &__login-btn{
+        width: 99px;
     }
 }

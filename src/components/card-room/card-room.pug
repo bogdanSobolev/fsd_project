@@ -2,10 +2,27 @@ include ../btn-rate/btn-rate
 
 
 
-mixin card-room(number, type=false, price, rate, quantityReviews, roomImages)
+mixin card-room(number, type=false, valPrice, currency='rub', rate, quantityReviews, roomImages)
+    -
+        let currencyIcon = null;
+        switch(currency.toLowerCase()){
+            case 'rub':
+                currencyIcon = '&#8381';
+                break;
+            case 'usd':
+                currencyIcon = '&#36';
+                break;
+            default: 
+                break;
+        }
+
+        let price = Number(valPrice).toLocaleString();
+
+
     .card-room&attributes(attributes)
         .card-room__slider
             each img in roomImages
+            
                 img.card-room__slider-slide(src=img, alt="фото комнаты")
 
 
@@ -13,7 +30,7 @@ mixin card-room(number, type=false, price, rate, quantityReviews, roomImages)
             .card-room__title-n-price
                 .card-room__title
                     span.card-room__title-number-symbol.title.title_small &#8470 
-                    span.card-room__title-number.title.title_small= number
+                    span.card-room__title-number.title.title_middle= number
                     span.card-room__title-type.title.title_small= type
                 .card-room__room-price
                     span.card-room__room-price-wrp

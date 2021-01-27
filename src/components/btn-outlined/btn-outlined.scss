@@ -1,13 +1,15 @@
 .btn-outlined{
     border: double 2px transparent;
-    //border: 2px transparent;
+    box-sizing: border-box;
     border-radius: 22px;
     padding: 12px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(white, white), 
         linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    //@include small-title;
     text-decoration: none;
     color: $color-purple;
     &:hover{

@@ -1,6 +1,7 @@
 .card-order{
     $card-bg: #fff; 
     $type-color: $color-purple;
+    $price-color: $color-dark-shade-50;
     $price-line-color: $color-dark-shade-25;
     $info-icon-color: $color-dark-shade-25;
     $info-border-color: $color-purple;
@@ -16,7 +17,8 @@
         align-items: center;
     }
     &__title{
-        margin: 0;
+        //margin: 0;
+        margin: 10px 0 14px;
         &-number-symbol{
             font-size: 14px;
         }
@@ -29,6 +31,7 @@
     }
     &__room-price{
         font-size: 12px;
+        color: $price-color;
         &-wrp{
             font-size: 14px;
             font-weight: 700;
@@ -49,13 +52,18 @@
         }
     }
     &__name-field{
-
+        margin: 11px 0 5px;
     }
+
+    &__date-dropdown-title{
+        margin: 3px 0 6px;
+    }
+
     &__date-dropdown{
 
     }
     &__dropdown-block{
-        margin: 0 0 30px;
+        margin: 0 0 21px;
     }
     &__dropdown{
 
@@ -66,16 +74,23 @@
         width: 100%;
         display: grid;
         grid-template-columns: minmax(min-content, max-content) auto minmax(20px, max-content);
-        gap: 16px 5px;
+        // grid-template-columns: minmax(min-content, 66.87%) auto minmax(20px, max-content);
+        //grid-template-columns: minmax(min-content, max-content) auto;
+        gap: 14px 5px;
         margin: 0 0 30px 0;
         &-item{
             display: inline-flex;
-            //justify-content: center;
             align-items: flex-start;
             flex-shrink: 0;
-            //border: 1px solid red;
+            
             &-row-name{
                 line-height: 18px;
+                display: inline-flex;
+                //justify-content: space-between;
+            }
+            &__list-item-row-name-wrp{
+                display: flex;
+                align-items: center;
             }
             &-price-per-day{
 
@@ -85,6 +100,7 @@
             }
             &-info{
                 position: relative;
+                // margin: 0 0 0 5px;
                 &-icon{
                     color: $info-icon-color;
                     border: 1px solid $info-icon-color;

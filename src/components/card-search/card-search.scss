@@ -1,27 +1,33 @@
 .card-search{
     $card-bg: #fff; 
 
-    padding: 30px;
+    padding: 30px 30px 29px;
     background: $card-bg;
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     &__title{
-
+        margin: 10px 0;
     }
     &__date-dropdown-fields-block{
         display: flex;
         justify-content: space-between;
+        //flex-wrap: wrap;
         margin: 0 0 20px;
     }
     &__date-dropdown-wrp{
-        
+        //min-width: 128px;
+        //margin-bottom: 10px;
         &:first-child{
             margin-right: 20px;
         }
     }
     &__name-field{
+        margin: 11px 0 5px;
+    }
 
+    &__date-dropdown-title{
+        margin: 11px 0 6px;
     }
     &__date-dropdown{
 

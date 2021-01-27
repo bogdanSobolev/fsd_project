@@ -4,6 +4,7 @@
     //box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     &__calendar-arrow{
         color: $calendar-arrow-color;
+        font-size: 24px;
         &_prev{
             transform: rotate(180deg);
         }
@@ -23,7 +24,7 @@
     font-weight: 400;
     color: $day-of-month;
     font-size: 12px;
-    padding: 20px;
+    padding: 16px 20px 18px;
 
 
     min-width: 200px;
@@ -32,25 +33,34 @@
     &--pointer{
         display: none;
     }
-    &--day-name{
-        color: $day-of-week-color
-    }
+   
     &--nav{
         border-bottom: none;
         padding: 0;
+        min-height: 24px;
+        margin: 0 0 41px;
     }
     &__title{
-        line-height: normal;
+        margin: 0;
+    }
+    &--days-names{
+        margin: 8px 0 12px;
+    }
+    &--day-name{
+        color: $day-of-week-color;
+        font-size: 12px;
+        font-weight: 700;
     }
     &--content{
         padding: 0;
-        margin: 0 0 20px;
+        margin: 0 0 21px;
     }
     &--buttons, .datepicker--time {
         border-top: none;
 
     }
     &--nav-action{
+        width: 24px;
         &:hover{
             transform: scale(1.2);
             transition: transform .15s;

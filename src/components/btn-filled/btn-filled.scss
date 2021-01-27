@@ -2,6 +2,10 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     padding: 14px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     //@include small-title;
     color: #FFFFFF;
     text-decoration: none;

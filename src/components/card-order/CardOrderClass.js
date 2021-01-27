@@ -71,7 +71,7 @@ export default class CardOrderClass{
         
         this.sumDay = daysBetween(startDate, endtDate);
 
-        console.log(this.sumDay + '  kolichestvo dney');
+        //console.log(this.sumDay + '  kolichestvo dney');
     }
 
 
@@ -96,19 +96,20 @@ export default class CardOrderClass{
     }
 
     printPriceForAllDays(){
-        this.priceForAllDaysOutput.text(this.sumDay * this.price);
+        let priceForAllDays = this.sumDay * parseInt(this.price.replace(/\s+/g, ''),10);
+        this.priceForAllDaysOutput.text(priceForAllDays.toLocaleString());
     }
 
     printTotalPrice(){
-        let totalPrice = this.sumDay * this.price;
+        let totalPrice = this.sumDay * parseInt(this.price.replace(/\s+/g, ''),10);
         if(this.discount.text()){
-            totalPrice -= +this.discount.text();
+            totalPrice -= parseInt(this.discount.text().replace(/\s+/g, ''),10);
         }
         if(this.additionalServiceFee.text()){
-            totalPrice += +this.additionalServiceFee.text();
+            totalPrice += parseInt(this.additionalServiceFee.text().replace(/\s+/g, ''),10);
         }
 
-        this.totalPriceOutput.text(totalPrice);
+        this.totalPriceOutput.text(totalPrice.toLocaleString());
     }
 
 
