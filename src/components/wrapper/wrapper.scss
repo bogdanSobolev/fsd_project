@@ -11,8 +11,11 @@ body{
     margin: 0 auto;
     max-width: 1920px;
     min-width: 320px;
-    @include body-text();
-    // font-family: Montserrat, sans-serif;
+    // @include body-text();
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-dark-shade-75;
 }
 
 .wrp-pd{
