@@ -7,8 +7,12 @@
         //Пока лого не миксин
         margin: 20px 0 0;
     }
+    .logo{
+        margin: 0 0 16px;
+    }
     &__copyright{
         text-align: center;
+        margin: 0 0 23px;
     }
     &__social-link-list{
         display: flex;
@@ -16,9 +20,9 @@
     &__social-link{
         display: block;
         text-decoration: none;
-        margin: 0 20px 0 0;
+        margin: 0 23px 0 0;
         transition: transform .15s;
-        &:nth-last-child{
+        &:last-child{
             margin: 0;
         }
         i{
@@ -53,6 +57,7 @@
         }
         &__copyright{
             text-align: left;
+            margin: 0;
         }
     }
 }

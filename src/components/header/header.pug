@@ -1,3 +1,140 @@
-header.header.wrp-pd
-    include ../logo/logo
-    include ../header-nav/header-nav
+include ../header-nav/header-nav
+
+mixin header(login, activePage)
+
+
+    -
+        //- let pageList = [
+        //-         {
+        //-             "page": "О нас",
+        //-             "url": "#",
+        //-             "active": false,
+        //-             "list": false
+        //-         },
+        //-         {
+        //-             "page": "Услуги",
+        //-             "active": false,
+        //-             "list": [
+        //-                 {
+        //-                     "page": "Услуга 1",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 },
+        //-                 {
+        //-                     "page": "Услуга 2",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 },
+        //-                 {
+        //-                     "page": "Услуга 3",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 }
+        //-             ]
+        //-         },
+        //-         {
+        //-             "page": "Вакансии",
+        //-             "url": "#",
+        //-             "active": false,
+        //-             "list": false
+        //-         },
+        //-         {
+        //-             "page": "Новости",
+        //-             "url": "#",
+        //-             "active": false,
+        //-             "list": false
+        //-         },
+        //-         {
+        //-             "page": "Соглашения",
+        //-             "active": false,
+        //-             "list": [
+        //-                 {
+        //-                     "page": "Соглашения 1",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 },
+        //-                 {
+        //-                     "page": "Соглашения 2",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 },
+        //-                 {
+        //-                     "page": "Соглашения 3",
+        //-                     "url": "#",
+        //-                     "active": false,
+        //-                     "list": false
+        //-                 }
+        //-             ]
+        //-         }
+        //-     ];
+
+        let pageList = [
+                {
+                    "page": "О нас",
+                    "url": "#",
+                    "list": false
+                },
+                {
+                    "page": "Услуги",
+                    "list": [
+                        {
+                            "page": "Услуга 1",
+                            "url": "#",
+                            "list": false
+                        },
+                        {
+                            "page": "Услуга 2",
+                            "url": "#",
+                            "list": false
+                        },
+                        {
+                            "page": "Услуга 3",
+                            "url": "#",
+                            "list": false
+                        }
+                    ]
+                },
+                {
+                    "page": "Вакансии",
+                    "url": "#",
+                    "list": false
+                },
+                {
+                    "page": "Новости",
+                    "url": "#",
+                    "list": false
+                },
+                {
+                    "page": "Соглашения",
+                    "list": [
+                        {
+                            "page": "Соглашения 1",
+                            "url": "#",
+                            "list": false
+                        },
+                        {
+                            "page": "Соглашения 2",
+                            "url": "#",
+                            "list": false
+                        },
+                        {
+                            "page": "Соглашения 3",
+                            "url": "#",
+                            "list": false
+                        }
+                    ]
+                }
+            ];
+        
+
+
+
+    header.header.wrp-pd&attributes(attributes)
+        include ../logo/logo
+        +header-nav(login, pageList, activePage)
+        //- include ../header-nav/header-nav

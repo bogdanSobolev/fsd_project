@@ -1,0 +1,33 @@
+
+
+mixin __item(item)
+    //- .header-nav__item= item.page
+
+    if item.list
+        .header-nav__item.header-nav__drop-down
+            span.header-nav__drop-down-title.header-nav__link= item.page
+                span.material-icons.header-nav__link-arrow expand_more
+            .header-nav__drop-down-list
+
+                each listItem in item.list 
+                    - let active = listItem.active ? "header-nav__link_active-page" : false
+                    a.header-nav__drop-down-link.header-nav__link(href=listItem.url, class=active)= listItem.page
+
+
+    else
+        - let active = item.active ? "header-nav__link_active-page" : false
+        a.header-nav__item.header-nav__link(href=item.url, class=active)= item.page
+    
+
+
+
+
+    //- a.header-nav__item.header-nav__link.header-nav__link_active-page(href="#") О нас
+    
+    //- .header-nav__item.header-nav__drop-down
+    //-     span.header-nav__drop-down-title.header-nav__link Услуги
+    //-         span.material-icons.header-nav__link expand_more
+    //-     .header-nav__drop-down-list
+    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 1
+    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 2
+    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 3

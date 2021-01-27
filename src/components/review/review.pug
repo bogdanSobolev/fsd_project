@@ -8,7 +8,7 @@ mixin review(authorName, authorWasOnline, authorIcon, reviewText, likeName, like
         let btnLikeActive = likeActive ? 'btn-like_active' :'';
     //- btn-like_active
 
-    .review
+    .review&attributes(attributes)
         .review__author-block
             //- .review__author-icon
             //- img.review__author-icon(src=authorIcon)

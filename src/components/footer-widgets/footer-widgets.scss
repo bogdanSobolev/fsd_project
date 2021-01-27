@@ -13,12 +13,12 @@
 }
 
 @include breakpoint(lg){
-    $widget-margin: 0 10px 0 0;
+    $widget-margin: 0 40px 0 0;
     .footer-widgets{
         flex-direction: row;
         justify-content: space-between;
         &__item{
-            width: auto;
+            //width: auto;
             margin: $widget-margin;
             &:last-child{
                 margin: 0;
@@ -26,6 +26,15 @@
         }
         &__logo-n-info{
             margin: $widget-margin;
+        }
+        &__info{
+            margin: 17px 0 0;
+            line-height: 24px;
+        }
+
+        &__item-short{
+            max-width: 160px;
+            //width: 100%;
         }
     }
 }

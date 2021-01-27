@@ -1,8 +1,8 @@
 .header-nav{
+    // $header-link-color: $color-dark-shade-50;
+    // $header-link-color-hover: $color-dark-shade-75;
+    // $header-link-color-active: $color-dark-shade;
     $header-link-color: $color-dark-shade-50;
-    $header-link-color-hover: $color-dark-shade-75;
-    $header-link-color-active: $color-dark-shade;
-
     
     display: flex;
     align-items: center;
@@ -91,63 +91,63 @@
         align-items: flex-start;
         flex-direction: column;
     }
-    &__link{
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding: 10px 10px;
-        color: $header-link-color;
-        &:hover{
-            color: $header-link-color-hover;
-        }
-        &:active{
-            color: $header-link-color-active;
-        }
-        &_active-page{
-            font-weight: 700;
-            color: $header-link-color-hover;
-            cursor: default;
-            &:hover{
-                color: inherit;
-            }
-            &:active{
-                color: inherit;
-            }
-        }
-    };
-    &__drop-down{
-        position: relative;
-    };
-    &__drop-down-title{
-        cursor: pointer;
-        &  > .material-icons{
-            transition: transform .3s;
-        }
-        &_active{
-            color: $header-link-color-hover;
-            &  > .material-icons{
-                transform: rotate(-180deg);
-                transition: transform .3s;
-            }
-        }
-    };
-    &__drop-down-list{
-        overflow: hidden;
-        max-height: 0;
-        width: 100%;
-        padding: 0 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: max-height .3s;
-        &_active{
-            max-height: 100vh;
-            transition: max-height .3s;
-        }
-    };
-    &__drop-down-link{
-        padding: 10px 10px;
-    };
+    // &__link{
+    //     display: flex;
+    //     align-items: center;
+    //     text-decoration: none;
+    //     padding: 10px 10px;
+    //     color: $header-link-color;
+    //     &:hover{
+    //         color: $header-link-color-hover;
+    //     }
+    //     &:active{
+    //         color: $header-link-color-active;
+    //     }
+    //     &_active-page{
+    //         font-weight: 700;
+    //         color: $header-link-color-hover;
+    //         cursor: default;
+    //         &:hover{
+    //             color: inherit;
+    //         }
+    //         &:active{
+    //             color: inherit;
+    //         }
+    //     }
+    // };
+    // &__drop-down{
+    //     position: relative;
+    // };
+    // &__drop-down-title{
+    //     cursor: pointer;
+    //     &  > .material-icons{
+    //         transition: transform .3s;
+    //     }
+    //     &_active{
+    //         color: $header-link-color-hover;
+    //         &  > .material-icons{
+    //             transform: rotate(-180deg);
+    //             transition: transform .3s;
+    //         }
+    //     }
+    // };
+    // &__drop-down-list{
+    //     overflow: hidden;
+    //     max-height: 0;
+    //     width: 100%;
+    //     padding: 0 40px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: flex-start;
+    //     transition: max-height .3s;
+    //     &_active{
+    //         max-height: 100vh;
+    //         transition: max-height .3s;
+    //     }
+    // };
+    // &__drop-down-link{
+    //     padding: 10px 10px;
+    // };
     &__btn-login{
         margin-bottom: 20px;
         padding: 9px 20px;
@@ -156,6 +156,12 @@
         padding: 9px 20px;
     }
     &__profile{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 0;
+        margin: 0 0 0 10px;
+        color: $header-link-color;
         &::before{
             content: "";
             display: block;
@@ -189,11 +195,12 @@
             align-items: center;
             flex-direction: row;
         }
-        &__drop-down-list{
-            position: absolute;
-            padding: 0 10px;
-            background-color: $header-bg;
-        };
+        // &__drop-down-list{
+        //     position: absolute;
+        //     padding: 0 10px;
+        //     background-color: $header-bg;
+        // };
+
 
         &__btn-login{
             margin: 0 20px 0 10px;
