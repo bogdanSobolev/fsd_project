@@ -44,15 +44,15 @@ html(lang="en")
     body
         .wrapper
             section.section-header.ui-section
-                +header(false, 'О нас')
+                +header({auth: false, activePage: 'О нас'})
             section.section-header.ui-section
-                +header(true, 'Соглашения 2')
+                +header({auth: true, activePage: 'О нас'})
             
             
             section.section-footer.ui-section
                 +footer()
             section.section-footer-creative.ui-section
-                +footer-creative()(class="section-footer-creative__elem footer-creative_mobile-for-desc")
+                +footer-creative({type: 'mobile-for-desc'})
             
             
             section.section-form-elements.ui-section.wrp-pd
@@ -60,75 +60,100 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__text-field-block
                         h3.section-form-elements__name-field.title.title_small Text Field
                         span.section-form-elements__state Default
-                        +text-field("text-field-default", "Email", "email")(class="section-form-elements__field-input body-text")
+                        .section-form-elements__field-input
+                            +text-field({name: "text-field-default", placeholder: "Email", typeField: "email"})
                     .section-form-elements__field-block.section-form-elements__text-field-block-focus
                         h3.section-form-elements__name-field.title.title_small Text Field
                         span.section-form-elements__state Hover / Focus
-                        +text-field("text-field-focus", "text", "text", "This is pretty awesome")(class="section-form-elements__field-input text-field_focus body-text")
+                        .section-form-elements__field-input
+                            +text-field({type: "focused",name: "text-field-focus", placeholder: "text", typeField: "text", value: "This is pretty awesome"})
                     .section-form-elements__field-block.section-form-elements__dropdown-block
                         h3.section-form-elements__name-field.title.title_small dropdown
-                        +dropdown()(class="section-form-elements__dropdown dropdown_guests")
+                        .section-form-elements__dropdown
+                            +dropdown({dropdownType: "guests"})
                     .section-form-elements__field-block.section-form-elements__text-date-field-block
                         h3.section-form-elements__name-field.title.title_small masked text field
-                        +text-field("text-date-field", "")(class="section-form-elements__field-input body-text text-field_date-mask")
+                        .section-form-elements__field-input
+                            //- +text-field("text-date-field", "")(class="section-form-elements__field-input body-text text-field_date-mask")
+                            +text-field({name: "text-date-field", mask: "date-mask"})
                     .section-form-elements__field-block.section-form-elements__date-dropdown-fields-block
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            +calendar-field('date-dropdown-field-default', false, false, 'section-form-elements__date-dropdown-fields-block')(class="section-form-elements__field-input body-text calendar text-field_date-mask")
+                            .section-form-elements__date-dropdown-fields-block.section-form-elements__field-input
+                                +calendar-field({name: 'date-dropdown-field-default', widthElem: 'section-form-elements__date-dropdown-fields-block'})
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            +calendar-field('date-dropdown-field-default', false, "19.08.2019", 'section-form-elements__date-dropdown-fields-block')(class="section-form-elements__field-input body-text calendar text-field_date-mask")
+                            .section-form-elements__date-dropdown-fields-block.section-form-elements__field-input
+                                +calendar-field({name: 'date-dropdown-field-default', placeholder: "19.08.2019", widthElem: 'section-form-elements__date-dropdown-fields-block'})
                     .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
                         h3.section-form-elements__name-field.title.title_small filter date dropdown
                         .section-form-elements__date-dropdown-filter-wrp.section-form-elements__short-block
-                            +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")(class="section-form-elements__field-input section-form-elements__dropdown body-text calendar_range")
+                            .section-form-elements__field-input.section-form-elements__dropdown 
+                                //- +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")
+                                +calendar-field({name: 'date-dropdown-filter-field-default', placeholder: "19 авг - 23 авг", calendarMod:'range'})
                     .section-form-elements__field-block.section-form-elements__email-field-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small subscription text field
-                        +subscription-form("body-text")(class="section-form-elements__field-input")
+                        .section-form-elements__field-input
+                            +subscription-form()
 
                 .section-form-elements__item.section-form-elements__btns-list
                     .section-form-elements__btns-block.section-form-elements__checkbox-btns-block
                         h3.section-form-elements__name-field.title.title_small Checkbox Buttons
-                        +btn-checkbox("Можно курить", "Можно курить")(class="section-form-elements__checkbox-btn")
-                        +btn-checkbox("Можно с питомцами", "Можно с питомцами", true)(class="section-form-elements__checkbox-btn")
-                        +btn-checkbox("Можно с гостями", "Можно пригласить гостей (до 10 человек)", true)(class="section-form-elements__checkbox-btn")
+                        .section-form-elements__checkbox-btn
+                            +btn-checkbox({name: "Можно курить", text: "Можно курить"})
+                        .section-form-elements__checkbox-btn
+                            +btn-checkbox({name: "Можно с питомцами", text: "Можно с питомцами", checkedBtn: true})
+                        .section-form-elements__checkbox-btn
+                            +btn-checkbox({name: "Можно с гостями", text: "Можно пригласить гостей (до 10 человек)", checkedBtn: true})
                     .section-form-elements__btns-block.section-form-elements__radio-btns-block
-                        h3.section-form-elements__name-field.title.title_small Radio Buttons
-                        //- form(action="section-form-elements__radio-btns-block-field" name)
-                        +btn-radio("sex", "Мужчина", 'мужчина', true)(class="section-form-elements__radio-btn")
-                        +btn-radio("sex", "Женщина", 'женщина')(class="section-form-elements__radio-btn")
+                        h3.section-form-elements__name-field.section-form-elements__radio-btns-block-title.title.title_small Radio Buttons
+                        .section-form-elements__radio-btn
+                            +btn-radio({name: "sex", text: "Мужчина", value: 'мужчина', checkedBtn: true})
+                        .section-form-elements__radio-btn
+                            +btn-radio({name: "sex", text: "Женщина", value: 'женщина'})
                     .section-form-elements__btns-block.section-form-elements__toggle-btns-block
                         h3.section-form-elements__name-field.title.title_small Toggle
-                        +btn-toggle("offer", "Получать спецпредложения", true)(class="section-form-elements__toggle-btn")
-                        +btn-toggle("offer", "Получать спецпредложения")(class="section-form-elements__toggle-btn")
+                        .section-form-elements__toggle-btn
+                            +btn-toggle({name: "offer", text: "Получать спецпредложения", checkedBtn: true})
+                        .section-form-elements__toggle-btn
+                            +btn-toggle({name: "offer", text: "Получать спецпредложения"})
                     .section-form-elements__btns-block.section-form-elements__like-btns-block
-                        h3.section-form-elements__name-field.title.title_small Like button
-                        +btn-like("like", "2")(class="section-form-elements__like-btn")
-                        +btn-like("like", "12")(class="section-form-elements__like-btn btn-like_active")
+                        h3.section-form-elements__name-field.section-form-elements__like-btns-block-title.title.title_small Like button
+                        .section-form-elements__like-btn
+                            +btn-like({name: "like", value: "2"})
+                        .section-form-elements__like-btn
+                            +btn-like({name: "like", value: "12", checkedBtn: true})
                     .section-form-elements__btns-block.section-form-elements__rate-btns-block
-                        h3.section-form-elements__name-field.title.title_small rate button
-                        +btn-rate("like", "4")(class="section-form-elements__rate-btn")
-                        +btn-rate("like", "5")(class="section-form-elements__rate-btn")
+                        h3.section-form-elements__name-field.section-form-elements__rate-btns-block-title.title.title_small rate button
+                        .section-form-elements__rate-btn
+                            +btn-rate({name: "rate", value: "4"})
+                        .section-form-elements__rate-btn
+                            +btn-rate({name: "rate", value: "5"})
 
                 .section-form-elements__item.section-form-elements__btns-list
                     .section-form-elements__btns-block.section-form-elements__range-slider-block
-                        //- h3.section-form-elements__name-field.title.title_small range slider
-                        +range-slider('Range Slider', 0, 15000, 5000, 10000)(class='section-form-elements__range-slider')
+                        +range-slider({title: 'Range Slider', minValue: 0, maxValue: 15000, startValue: 5000, endValue: 10000})
                     .section-form-elements__btns-block.section-form-elements__btns-block_long
                         h3.section-form-elements__name-field.title.title_small Buttons
-                        .section-form-elements__btns-block-conten-tblock
-                            +btn-filled('click me')(class="section-form-elements__click-me ")
-                            +btn-filled('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover")
+                        .section-form-elements__btns-block-content-block.section-form-elements__btns-block-content-block_flex
+                            .section-form-elements__click-me
+                                +btn-filled({text: 'click me'})
+                            .section-form-elements__click-me
+                                +btn-filled({text: 'click me', hovered: true})
 
-                        .section-form-elements__btns-block-conten-tblock
-                            +btn-outlined('click me')(class=" section-form-elements__click-me ")
-                            +btn-outlined('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover")
+                        .section-form-elements__btns-block-content-block.section-form-elements__btns-block-content-block_flex
+                            .section-form-elements__click-me   
+                                +btn-outlined({text: 'click me'})
+                            .section-form-elements__click-me
+                                +btn-outlined({text: 'click me', hovered: true})
                         
-                        .section-form-elements__btns-block-conten-tblock
-                            +btn-text('click me')(class="section-form-elements__click-me title title_small")
-                            +btn-text('click me')(class="section-form-elements__click-me section-form-elements__click-me_hover title title_small")
-                        .section-form-elements__btns-block-conten-tblock
-                            +btn-with-arrow('перейти к оплате')(class=".section-form-elements__btn-with-arrow")
+                        .section-form-elements__btns-block-content-block.section-form-elements__btns-block-content-block_flex
+                            .section-form-elements__click-me
+                                +btn-text({text: 'click me'})
+                            .section-form-elements__click-me
+                                +btn-text({text: 'click me', hovered: true})
+                        .section-form-elements__btns-block-content-block
+                            +btn-with-arrow({text: 'перейти к оплате'})
                     .section-form-elements__btns-block.section-form-elements__pagination-block
                         h3.section-form-elements__name-field.title.title_small pagination
                         +pagination()(class="section-form-elements__pagination")
@@ -137,22 +162,25 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__dropdown-location-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state Default
-                        +dropdown()(class="section-form-elements__dropdown dropdown_location", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
+                        .section-form-elements__dropdown
+                            +dropdown({dropdownType: 'location', dataValues: [{name: "спальни", value: 2},{name:"кровати", value: 2}]})
                     .section-form-elements__field-block.section-form-elements__dropdown-location-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small dropdown
                         span.section-form-elements__state expanded
-                        +dropdown()(class="section-form-elements__dropdown dropdown_location dropdown_active", data-values=[{name: "спальни", value: 2},{name:"кровати", value: 2}])
+                        .section-form-elements__dropdown
+                            +dropdown({dropdownType: 'location', dataValues: [{name: "спальни", value: 2},{name:"кровати", value: 2}], active: true})
                 
                 .section-form-elements__item.section-form-elements__dropdowns-guests-list
                     h3.section-form-elements__name-field.title.title_small dropdown
-                    +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active")
+                    .section-form-elements__dropdown
+                            +dropdown({dropdownType: 'guests', active: true})
                 
                 .section-form-elements__item.section-form-elements__dropdowns-guests-list-expanded
                     h3.section-form-elements__name-field.title.title_small dropdown
-                    +dropdown()(class="section-form-elements__dropdown dropdown_guests dropdown_active", data-values=[{name: "взрослые", value: 2},{name:"дети", value: 1}])
+                    .section-form-elements__dropdown
+                            +dropdown({dropdownType: 'guests', dataValues: [{name: "взрослые", value: 2},{name:"дети", value: 1}], active: true})
 
                 .section-form-elements__item.section-form-elements__expandable-checkbox-list-list
-                    //- h3.section-form-elements__name-field.title.title_small dropdown
                     -
                         let checkboxData = [
                             {
@@ -186,13 +214,18 @@ html(lang="en")
                                 checked: false
                             },
                         ];
-                    +expandable-checkbox-list('expandable checkbox list', checkboxData)(class="section-form-elements__expandable-checkbox-list section-form-elements__short-block")
-                    +expandable-checkbox-list('expandable checkbox list', checkboxData)(class="section-form-elements__expandable-checkbox-list expandable-checkbox-list_active section-form-elements__short-block")
+                    .section-form-elements__expandable-checkbox-list.section-form-elements__short-block
+                        +expandable-checkbox-list({name: 'expandable checkbox list', checkboxData: checkboxData})
+                    .section-form-elements__expandable-checkbox-list.section-form-elements__short-block
+                        +expandable-checkbox-list({name: 'expandable checkbox list', checkboxData: checkboxData, active: true})
+                        //- +expandable-checkbox-list('expandable checkbox list', checkboxData)(class="section-form-elements__expandable-checkbox-list expandable-checkbox-list_active section-form-elements__short-block")
                 
                 .section-form-elements__item.section-form-elements__rich-checkbox-btns-list
                     h3.section-form-elements__name-field.title.title_small rich Checkbox Buttons
-                    +btn-checkbox-rich('Широкий коридор', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', false)(class="section-form-elements__rich-checkbox-btn")
-                    +btn-checkbox-rich('Помощник для инвалидов', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.', false)(class="section-form-elements__rich-checkbox-btn")
+                    .section-form-elements__rich-checkbox-btn
+                        +btn-checkbox-rich({name: 'Широкий коридор', title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+                    .section-form-elements__rich-checkbox-btn
+                        +btn-checkbox-rich({name: 'Помощник для инвалидов', title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
 
                 .section-form-elements__item.section-form-elements__bullet-list-list
                     h3.section-form-elements__name-field.title.title_small bullet list
@@ -202,28 +235,39 @@ html(lang="en")
                             'Без вечеринок и мероприятий',
                             'Время прибытия — после 13:00, а выезд до 12:00'
                         ]
-                    +bullet-list(bulletListData)(class="section-form-elements__bullet-list")
+                    .section-form-elements__bullet-list
+                        +bullet-list(bulletListData)(class="section-form-elements__bullet-list")
 
 
                 .section-form-elements__item.section-form-elements__dignity-list
-                    +dignity('Комфорт', 'Шумопоглощающие стены', 'tag_faces', 'material-icons')(class='section-form-elements__dignity')
-                    +dignity('Удобство', 'Окно в каждой из спален', 'location_city', 'material-icons')(class='section-form-elements__dignity')
+                    .section-form-elements__dignity
+                        +dignity({title: 'Комфорт', description: 'Шумопоглощающие стены', icon: 'tag_faces', iconClass: 'material-icons'})
+                    .section-form-elements__dignity
+                        +dignity({title: 'Удобство', description: 'Окно в каждой из спален', icon: 'location_city', iconClass: 'material-icons'})
 
                 .section-form-elements__item.section-form-elements__review-list
-                    +review('Мурад Сарафанов', '5 дней назад', './assets/img/author-avatar.png', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'like-name', 12, true)(class='section-form-elements__review')
+                    .section-form-elements__review
+                        - let reviewText = 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                        +review({authorName: 'Мурад Сарафанов', authorWasOnline: '5 дней назад', authorIcon: './assets/img/author-avatar.png', reviewText: reviewText, likeName: 'like-name', likeValue: 12, likeActive: true})
 
             section.section-cards.ui-section.wrp-pd
                 .section-cards__column.section-cards__column
-                    +card-search(class='section-cards__search-card section-cards__item ')
-                    +card-registration(class='section-cards__registration-card section-cards__item')
+                    .section-cards__search-card.section-cards__item
+                        +card-search()
+                    .section-cards__registration-card.section-cards__item
+                        +card-registration()
 
                 .section-cards__column
-                    +card-order(888, 'люкс', 9990, '2179', 'rub')(class='section-cards__order-card section-cards__item')
-                    +card-login(class='section-cards__login-card section-cards__item')
+                    .section-cards__order-card.section-cards__item
+                        +card-order({number: 888, typeRoom: 'люкс', price: 9990, serviceChargeDiscount: '2179', currency: 'rub', startDate: '23.01.2021', endDate: '27.01.2021'})
+                    .section-cards__login-card.section-cards__item
+                        +card-login()
                 
                 .section-cards__column.section-cards__column_short
                     .section-cards__calendar.calendar.calendar_range.section-cards__item
-                    +card-room(888, 'люкс', '9990', 'rub', 5, 145, ["./assets/img/room_1.jpg", "./assets/img/room_1.jpg", "./assets/img/room_1.jpg", "./assets/img/room_1.jpg"])(class='section-cards__room-card section-cards__item')
-                    +card-room(840, 'люкс', '9900', 'rub', 4, 65, ["./assets/img/room_2.jpg", "./assets/img/room_2.jpg", "./assets/img/room_2.jpg", "./assets/img/room_2.jpg"])(class='section-cards__room-card section-cards__item')
+                    .section-cards__room-card.section-cards__item
+                        +card-room({number: 888, typeRoom: 'люкс', price: '9990', currency: 'rub', rate: 5, quantityReviews: 145, roomImages: ["./assets/img/room_1.jpg", "./assets/img/room_1.jpg", "./assets/img/room_1.jpg", "./assets/img/room_1.jpg"]})
+                    .section-cards__room-card.section-cards__item
+                        +card-room({number: 840, typeRoom: 'люкс', price: '9900', currency: 'rub', rate: 4, quantityReviews: 65, roomImages: ["./assets/img/room_2.jpg", "./assets/img/room_2.jpg", "./assets/img/room_2.jpg", "./assets/img/room_2.jpg"]})
 
 

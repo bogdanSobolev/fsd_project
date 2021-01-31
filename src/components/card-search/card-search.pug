@@ -1,20 +1,30 @@
+include ../title/title
+
 include ../calendar-field/calendar-field
 include ../dropdown/dropdown
 include ../btn-with-arrow/btn-with-arrow
 
 
 mixin card-search()
-    form(action="", method="get", name="card-search").card-search&attributes(attributes)
-        h1.card-search__title.title.title_big Найдём номера под ваши пожелания
-
+    form(action="", method="get", name="card-search").card-search
+        //- h1.card-search__title.title.title_big Найдём номера под ваши пожелания
+        +title({type: 'big', text: 'Найдём номера под ваши пожелания'})
         .card-search__date-dropdown-fields-block
             .card-search__date-dropdown-wrp
-                h3.card-search__name-field.card-search__date-dropdown-title.title.title_small прибытие
-                +calendar-field('прибытие', false, false, 'card-search__date-dropdown-fields-block')(class="card-search__date-dropdown body-text calendar text-field_date-mask")
-            .card-search__date-dropdown-wrp 
-                h3.card-search__name-field.card-search__date-dropdown-title.title.title_small выезд
-                +calendar-field('выезд', false, false, 'card-search__date-dropdown-fields-block')(class="card-search__date-dropdown body-text calendar text-field_date-mask")
+                .card-search__name-field.card-search__date-dropdown-title
+                    +title({type: small, text: 'прибытие'})
+                .card-search__date-dropdown
+                    +calendar-field({name: 'прибытие', widthElem: 'card-search__date-dropdown-fields-block'})
+            .card-search__date-dropdown-wrp
+                .card-search__name-field.card-search__date-dropdown-title 
+                    +title({type: 'small', text: 'выезд'})
+                .card-search__date-dropdown
+                    +calendar-field({name: 'выезд', widthElem: 'card-search__date-dropdown-fields-block'})
         .card-search__dropdown-block
-            h3.card-search__name-field.title.title_small гости
-            +dropdown()(class="card-search__dropdown dropdown_guests")
-        +btn-with-arrow('подобрать номер')(class='card-search__btn-with-arrow')
+            //- h3.card-search__name-field.title.title_small гости
+            .card-search__name-field
+                +title({type: 'small', text: 'гости'})
+            .card-search__dropdown
+                +dropdown({dropdownType: 'guests'})
+        .card-search__btn-with-arrow
+            +btn-with-arrow({text: 'подобрать номер'})

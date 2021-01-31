@@ -1,56 +1,61 @@
-.btn-radio{
-    $btn-border-color: $color-dark-shade-25;
-    $btn-border-color-checked: $color-purple;
-    $btn-text-color: $color-dark-shade-50;
-    $btn-text-color-checked: $color-dark-shade-75;
-    $btn-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+.btn-radio {
+  $btn-border-color: $color-dark-shade-25;
+  $btn-border-color-checked: $color-purple;
+  $btn-text-color: $color-dark-shade-50;
+  $btn-text-color-checked: $color-dark-shade-75;
+  $btn-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 
-
-    display: inline-flex;
-    align-items: flex-start;
-    // user-select: none;
-    margin: 0;
-    padding: 0;
-    &__text{
-        margin: 1px 0 0;
-        color: $btn-text-color;
-        line-height: 17px;
+  display: inline-flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  &:hover{
+    .btn-radio__text{
+      color: $btn-text-color-checked;
     }
-    &__input{
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        &:checked+.btn-radio__radio{
-            border: 1px solid $btn-border-color-checked;
-            .btn-radio__check-mark{
-                //display: block;
-                opacity: 1;
-            }
-        }
-        &:checked~.btn-radio__text{
-            color: $btn-text-color-checked;
-        }
+    .btn-radio__radio {
+      border: 1px solid $btn-border-color-checked;
     }
-    &__radio {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        flex-grow: 0;
-        box-sizing: border-box;
-        border: 1px solid $btn-border-color;
-        border-radius: 50%;
-        margin: 0 10px 0 0;
+  }
+  &__text {
+    margin: 1px 0 0;
+    color: $btn-text-color;
+    line-height: 17px;
+    cursor: pointer;
+  }
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:checked + .btn-radio__radio {
+      border: 1px solid $btn-border-color-checked;
+      .btn-radio__check-mark {
+        opacity: 1;
+      }
     }
-    &__check-mark{
-        opacity: 0;
-        //display: none;
-        height: 12px;
-        width: 12px;
-        border-radius: 50%;
-        background: $btn-gradient;
+    &:checked ~ .btn-radio__text {
+      color: $btn-text-color-checked;
     }
-    
+  }
+  &__radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    box-sizing: border-box;
+    border: 1px solid $btn-border-color;
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+  }
+  &__check-mark {
+    opacity: 0;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: $btn-gradient;
+  }
 }

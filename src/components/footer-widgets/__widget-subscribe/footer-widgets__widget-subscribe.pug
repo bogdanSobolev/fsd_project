@@ -1,7 +1,10 @@
+include ../../title/title
 include ../../subscription-form/subscription-form
+
 mixin __widget-subscribe(title)
-    .footer-widgets__widget-subscribe(class!=attributes.class)
-        h3.footer-widgets__widget-title.title.title_small= title
+    .footer-widgets__widget-subscribe
+        .footer-widgets__widget-subscribe-title
+            +title({type: 'small', text: title})
             span.material-icons expand_more
         p.footer-widgets__subscribe-text Получайте специальные предложения и новости сервиса
-        +subscription-form("body-text")(class="footer-widgets__widget-subscribe-form")
+        +subscription-form()

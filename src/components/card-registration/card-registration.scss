@@ -1,60 +1,60 @@
-.card-registration{
-    $card-bg: #fff; 
-    $color-text: $color-dark-shade;
+.card-registration {
+  $card-bg: #fff;
+  $color-text: $color-dark-shade;
 
-    padding: 30px;
-    background: $card-bg;
-    box-sizing: border-box;
+  padding: 30px;
+  background: $card-bg;
+  box-sizing: border-box;
 
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    &__title{
-        margin: 12px 0 20px;
-    }
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  &__title {
+    margin: 12px 0 20px;
+  }
 
-    &__input{
-        margin: 0 0 10px;
-        width: 100%;
-    }
+  &__input {
+    margin: 0 0 10px;
+    width: 100%;
+  }
 
-    &__sex-block{
-        margin: 0 0 16px;
-    }
+  &__sex-block {
+    margin: 0 0 16px;
+  }
 
-    &__btn-sex{
-        margin: 0 20px 7px 0;
-        &:last-child{
-            margin-right: 0;
-        }
+  &__btn-sex {
+    margin: 0 20px 7px 0;
+    &:last-child {
+      margin-right: 0;
     }
+  }
 
-    &__name-field{
-        margin: 10px 0 5px;
-    }
+  &__name-field {
+    margin: 10px 0 5px;
+  }
 
-    &__date-of-birth{
-        margin: 0 0 9px;
-    }
+  &__date-of-birth {
+    margin: 0 0 9px;
+  }
 
-    &__service-login-data{
-        margin: 0 0 20px;
-    }
-    
-    &__btn-with-arrow{
-        margin: 0 0 30px;
-    }
+  &__service-login-data {
+    margin: 0 0 20px;
+  }
 
-    &__login-block{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__login-text{
-        color: $color-text;
-    }
+  &__btn-with-arrow {
+    margin: 0 0 30px;
+  }
 
-    &__login-btn{
-        width: 99px;
-        margin: 0 0 0 10px;
-    }
+  &__login-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__login-text {
+    color: $color-text;
+  }
+
+  &__login-btn {
+    width: 99px;
+    margin: 0 0 0 10px;
+  }
 }

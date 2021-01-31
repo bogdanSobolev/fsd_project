@@ -38,90 +38,70 @@ body{
         width: 100%;
         max-width: 320px;
     }
-    // &__item{
-    //     width: (100%/3)-((10.9%+6.2%)/3);
-    //     margin: 0 0 100px;
-    //     &:first-child{
-    //         margin-right: 10.9%;
-    //     }
-    //     &:nth-child(3n+4){
-    //         margin-right: 10.9%;
-    //     }
-    //     &:nth-child(3n+2){
-    //         margin-right: 6.2%;
-    //     }
-    // }
-
-
-    &__short-block{
-        width: 100%;
-        max-width: 280px;
-    }
-
-
-
-
-    &__fields-list{
-    }
     &__field-block{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
     &__text-field-block{
-        margin-bottom: 20px;
-    }
-    &__text-field-block-focus{
-        margin-bottom: 20px;
-    }
-
-    &__dropdown-block{
-        margin-bottom: 23px;
-    }
-    &__text-date-field-block{
-        margin-bottom: 40px;
-    }
-
-    
-
-    &__email-field-block{
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
     &__name-field{
-        margin: 0 0 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      margin: 0 0 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     &__state{
-        color: $state-color;
-        text-transform: uppercase;
-        font-size: 12px;
+      color: $state-color;
+      text-transform: uppercase;
+      font-size: 12px;
     }
     &__field-input{
-        width: 100%;
-        box-sizing: border-box;
+      width: 100%;
     }
-    &__date-dropdown-filter-wrp{
+    &__text-field-block-focus{
+      margin-bottom: 20px;
+    }
+    &__dropdown-block{
+      margin-bottom: 23px;
+    }
+    &__dropdown{
+      width: 100%;
+    }
+    &__text-date-field-block{
+      margin-bottom: 40px;
     }
     &__date-dropdown-fields-block{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        margin: 0 0 40px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      margin: 0 0 40px;
     }
     &__date-dropdown{
 
-        &:nth-child(1){
-            margin-right: 20px;
-        }
+      &:nth-child(1){
+          margin-right: 20px;
+      }
     }
     &__date-dropdown-filter-field-block{
-        margin: 0 0 42px;
+      margin: 0 0 42px;
+    }
+
+    &__short-block{
+      width: 100%;
+      max-width: 280px;
     }
     &__dropdown{
-        width: 100%;
+      width: 100%;
     }
+     &__email-field-block{
+        margin-bottom: 20px;
+    }
+   
+    
+    
+    
 
     &__btns-list{
         .section-form-elements__name-field{
@@ -141,6 +121,14 @@ body{
         }
     }
 
+    &__radio-btns-block{
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
+    }
+
     &__radio-btn{
         margin-right: 20px;
     }
@@ -152,12 +140,24 @@ body{
         }
     }
 
+    &__like-btns-block{
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
+    }
+
     &__like-btn{
         margin-right: 10px;
     }
 
     &__rate-btns-block{
-
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
     }
 
     &__rate-btn{
@@ -170,25 +170,23 @@ body{
 
     
 
-    &__range-slider{
-        //max-width: 320px;
-    }
+    // &__range-slider{
+    //     //max-width: 320px;
+    // }
 
     &__btns-block_long{
         width: 100%;
     }
 
-    &__btns-block-conten-tblock{
+    &__btns-block-content-block{
         margin: 0 0 30px;
+        &_flex{
+          display: flex;
+        }
     }
 
     &__click-me{
-        display: inline-block;
         margin: 0 20px 0 0;
-    }
-
-    &__btn-with-arrow{
-        //max-width: 320px;
     }
 
 
@@ -429,15 +427,9 @@ body{
     padding-top: 150px;
     padding-bottom: 140px;
     display: flex;
-
-    //display: none; //подготовка адаптива
-
     flex-wrap: wrap;
     justify-content: space-around;
-    //justify-content: space-between;
     &__column{
-        //margin: 0 40px 0 0;
-        // width: 32.75%;
         width: 100%;
         max-width: 380px;
         margin-bottom: 40px;
@@ -445,14 +437,11 @@ body{
             //margin: 0;
         }
         &_short{
-            // width: 27.58%;
             width: 100%;
         }
     }
 
     &__item{
-        //max-width: 380px;
-        //width: 30%;
         width: 100%;
         margin-bottom: 40px;
         &:last-child{
@@ -460,12 +449,6 @@ body{
         }
     }
     
-    &__search-card{
-
-    }
-    &__order-card{
-
-    }
     &__calendar{
         max-width: 320px;
     }
@@ -476,46 +459,16 @@ body{
 }
 
 @media (min-width: 576px) {
-    // .section-cards{
-    
-    //     flex-wrap: wrap;
-    //     justify-content: space-around;
-    //     &__column{
-    //         //margin: 0 40px 0 0;
-    //         width: 47.12%;
-    //         &:last-child{
-    //             //margin: 0;
-    //         }
-    //         &_short{
-    //             width: 39.66%;
-    //         }
-    //     }
-    
-    //     // &__item{
-    //     //     //max-width: 380px;
-    //     //     //width: 30%;
-    //     //     width: 100%;
-    //     //     margin-bottom: 40px;
-    //     //     &:last-child{
-    //     //         margin: 0;
-    //     //     }
-    //     // }
-    // }
 }
 
 @media (min-width: 768px) {
     .section-cards{
-    
-        //flex-wrap: wrap;
-        //justify-content: space-around;
         &__column{
-            //margin: 0 40px 0 0;
             width: 47.12%;
             &:last-child{
                 //margin: 0;
             }
             &_short{
-                //width: 39.66%;
                 width: 100%;
                 max-width: 100%;
                 display: flex;
@@ -524,16 +477,6 @@ body{
                 align-items: flex-start; 
             }
         }
-    
-        // &__item{
-        //     //max-width: 380px;
-        //     //width: 30%;
-        //     width: 100%;
-        //     margin-bottom: 40px;
-        //     &:last-child{
-        //         margin: 0;
-        //     }
-        // }
     }
 }
 
@@ -543,7 +486,6 @@ body{
     
         justify-content: space-between;
         &__column{
-            //margin: 0 40px 0 0;
             width: 32.75%;
             margin-bottom: 0;
             &:last-child{
@@ -555,15 +497,5 @@ body{
                 max-width: 380px;
             }
         }
-    
-        // &__item{
-        //     //max-width: 380px;
-        //     //width: 30%;
-        //     width: 100%;
-        //     margin-bottom: 40px;
-        //     &:last-child{
-        //         margin: 0;
-        //     }
-        // }
     }
 }

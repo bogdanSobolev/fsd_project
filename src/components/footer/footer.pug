@@ -2,6 +2,70 @@ include ../footer-widgets/footer-widgets
 include ../footer-creative/footer-creative
 
 mixin footer()
+
+    -
+        let footerPageList = [
+            {
+                title: 'навигация',
+                list: [
+                    {
+                        name: "О нас",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Новости",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Служба поддержки",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Услуги",
+                        url: "/mock-address/change-me"
+                    }
+                ]
+            },
+            {
+                title: 'о нас',
+                list: [
+                    {
+                        name: "О сервисе",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Наша команда",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Вакансии",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Инвесторы",
+                        url: "/mock-address/change-me"
+                    }
+                ]
+            },
+            {
+                title: 'служба поддержки',
+                list: [
+                    {
+                        name: "Соглашения",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Сообщества",
+                        url: "/mock-address/change-me"
+                    },
+                    {
+                        name: "Связь с нами",
+                        url: "/mock-address/change-me"
+                    }
+                ]
+            }
+        ] 
+
     footer.footer&attributes(attributes)
-        +footer-widgets()(class="footer__widgets wrp-pd")
-        +footer-creative()(class="footer__creative wrp-pd")
+        +footer-widgets({pageList: footerPageList})
+        +footer-creative()

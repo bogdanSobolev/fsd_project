@@ -1,39 +1,35 @@
-.expandable-checkbox-list{
-    &__title{
-        padding: 13px 9px 13px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+.expandable-checkbox-list {
+  &__title {
+    padding: 13px 9px 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__arrow {
+    transition: transform 0.2s;
+  }
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+  }
+  &__list-item {
+    margin: 0 0 10px;
+    &:last-child {
+      margin: 0;
     }
-    &__arrow{
-        transition: transform .2s;
-    }
-    &__list{
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .2s;
-        // &_active{
-        //     max-height: 100vh;
-        //     transition: max-height .2s; 
-        // }
-    }
-    &__list-item{
-        margin: 0 0 10px;
-        &:last-child{
-            margin: 0;
-        }
-    }
-    &_active{
-        .expandable-checkbox-list{
-            &__list{
-                max-height: 100vh;
-                transition: max-height .2s; 
-            }
-            &__arrow{
-                transform: rotate(-180deg);
-                transition: transform .2s;
-            }
-        }
-    }
+  }
+  // &_active {
+  //   .expandable-checkbox-list {
+  //     &__list {
+  //       max-height: 100vh;
+  //       transition: max-height 0.2s;
+  //     }
+  //     &__arrow {
+  //       transform: rotate(-180deg);
+  //       transition: transform 0.2s;
+  //     }
+  //   }
+  // }
 }

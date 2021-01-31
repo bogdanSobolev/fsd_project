@@ -7,14 +7,15 @@ include ../btn-filled/btn-filled
 
 
 
-mixin header-nav(login, pageList, activePage)
+mixin header-nav(options)
+    - let activePage = options.activePage
+
     .header-nav
         a.header-nav__btn-menu(href="#")
             span.header-nav__btn-menu-lines
         .header-nav__navigation-n-profile
             nav.header-nav__navigation 
-                //- .test= activePage
-                each item in pageList
+                each item in options.pageList
                     -
                          function setActive(list, activePage){
                             list.forEach(listItem => {
@@ -26,14 +27,14 @@ mixin header-nav(login, pageList, activePage)
                             })
                         }
 
-                        let active = setActive(pageList, activePage);
+                        let active = setActive(options.pageList, activePage);
 
 
                     +__item(item)
-            
-            
-            if login
+            if options.auth
                 a.header-nav__profile(href="#") Юлий Цезарь
             else
-                +btn-outlined('войти')(class="header-nav__btn-login btn-outlined_small")
-                +btn-filled('зарегистрироваться')(class="header-nav__btn-reg btn-filled_small")
+                .header-nav__btn
+                    +btn-outlined({type: 'small', text: 'войти', url: '/mock-address/change-me'})
+                .header-nav__btn
+                    +btn-filled({type: 'small', text: 'зарегистрироваться', url: '/mock-address/change-me'})

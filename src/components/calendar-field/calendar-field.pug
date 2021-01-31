@@ -1,11 +1,28 @@
-mixin calendar-field(name, placeholder=false, value=false, elem=false)
+//- mixin calendar-field(name, placeholder=false, value=false, elem=false)
+mixin calendar-field(options)
 
     -
         let widthElem = 'calendar-field';
-        if(elem){
-            widthElem = elem;
-        }
+        let placeholder = 'ДД.ММ.ГГГГ'
+        let value = false
+        let inputType = text
+        let mod = ''
+
+
+    if options
+        if options.widthElem
+            - widthElem = options.widthElem
+        if options.placeholder
+            - placeholder = options.placeholder
+        if options.value
+            - value = options.value
+        if options.calendarMod
+            case options.calendarMod
+                when 'range'
+                    - mod += 'calendar_range'
+                default
+                    - break
 
     .calendar-field
-        input.calendar-field__input.calendar(class!=attributes.class name=name type="text" placeholder=placeholder value=value data-width-elem=elem data-test='test data')
+        input.calendar-field__input.calendar(class=mod name=name type=inputType placeholder=placeholder value=value data-width-elem=widthElem)
         span.material-icons.calendar-field__arrow expand_more

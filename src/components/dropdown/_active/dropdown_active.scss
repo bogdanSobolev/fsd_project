@@ -1,0 +1,21 @@
+.dropdown.dropdown_active {
+  .dropdown {
+    $border-color-hover-focus: $color-dark-shade-50;
+
+  &__values-input {
+    border-color: $border-color-hover-focus;
+  }
+  &__wrp {
+    opacity: 1;
+    border-color: $border-color-hover-focus;
+
+    max-height: 70vh;
+    transition: max-height 0.3s;
+  }
+  &__arrow {
+    transform: rotate(-180deg);
+    transition: transform 0.2s;
+  }
+  }
+  
+}

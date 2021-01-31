@@ -1,12 +1,11 @@
-.dropdown{
-    &__button-mod{
-        display: flex;
-        //justify-content: space-between;
-        margin: 16px 0 6px;
-    }
-    &__btn_apply{
-        width: 100%;
-        display: inline-flex;
-        justify-content: flex-end;
-    }
+.dropdown {
+  &__button-mod {
+    display: flex;
+    margin: 16px 0 6px;
+  }
+  &__btn_apply {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+  }
 }

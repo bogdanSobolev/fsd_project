@@ -1,39 +1,39 @@
-.card-login{
-    $card-bg: #fff; 
-    $color-text: $color-dark-shade;
+.card-login {
+  $card-bg: #fff;
+  $color-text: $color-dark-shade;
 
-    padding: 30px;
-    background: $card-bg;
-    box-sizing: border-box;
+  padding: 30px;
+  background: $card-bg;
+  box-sizing: border-box;
 
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    &__title{
-        margin: 10px 0 19px;
-    }
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  &__title {
+    margin: 10px 0 19px;
+  }
 
-    &__input{
-        margin: 0 0 10px;
-        width: 100%;
-    }
+  &__input {
+    margin: 0 0 10px;
+    width: 100%;
+  }
 
-    &__service-login-data{
-        margin: 0 0 10px;
-    }
-    
-    &__btn-with-arrow{
-        margin: 0 0 29px;
-    }
+  &__service-login-data {
+    margin: 0 0 10px;
+  }
 
-    &__login-block{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__login-text{
-        color: $color-text;
-    }
-    &__login-btn{
-        width: 99px;
-    }
+  &__btn-with-arrow {
+    margin: 0 0 29px;
+  }
+
+  &__login-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__login-text {
+    color: $color-text;
+  }
+  &__login-btn {
+    width: 99px;
+  }
 }

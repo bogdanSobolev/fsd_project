@@ -17,17 +17,3 @@ mixin __item(item)
     else
         - let active = item.active ? "header-nav__link_active-page" : false
         a.header-nav__item.header-nav__link(href=item.url, class=active)= item.page
-    
-
-
-
-
-    //- a.header-nav__item.header-nav__link.header-nav__link_active-page(href="#") О нас
-    
-    //- .header-nav__item.header-nav__drop-down
-    //-     span.header-nav__drop-down-title.header-nav__link Услуги
-    //-         span.material-icons.header-nav__link expand_more
-    //-     .header-nav__drop-down-list
-    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 1
-    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 2
-    //-         a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 3

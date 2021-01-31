@@ -4,10 +4,8 @@ export default class CardOrderClass{
     constructor($cardOrder){
         this.$cardOrder = $cardOrder;
         this.price = $cardOrder.find('.card-order__room-price-price').text();
-        // this.arrivalInput = null;
-        // this.departureInput = null;
-        this.arrivalInput = $cardOrder.find('.card-order__date-dropdown-arrival');
-        this.departureInput = $cardOrder.find('.card-order__date-dropdown-departure');
+        this.arrivalInput = $cardOrder.find('.card-order__date-dropdown-arrival .calendar-field__input');
+        this.departureInput = $cardOrder.find('.card-order__date-dropdown-departure .calendar-field__input');
         this.sumGuests = null;
         this.discount = $cardOrder.find('.card-order__list-item-service-charge-discount');
         this.additionalServiceFee = $cardOrder.find('.card-order__list-item-additional-service-fee');
@@ -17,44 +15,25 @@ export default class CardOrderClass{
         this.totalPriceOutput = $cardOrder.find('.card-order__total-price');
     }
 
-
-
-
-    // setArrivalInput(){
-    //     this.arrivalInput = this.$cardOrder.find('.card-order__date-dropdown-arrival');
-    // }
-
-    // setDepartureInput(){
-    //     this.departureInput = this.$cardOrder.find('.card-order__date-dropdown-departure');
-    // }
-
     setSumGuests(){
         let dropdownTextValue = this.$cardOrder.find('.dropdown__values-input-text').text();
-        //console.log(dropdownTextValue);
         let regular = /\d+/g;
         this.sumGuests = dropdownTextValue.match(regular)[0];
     }
     
-    // setDiscount(){
-    //     this.discount = this.$cardOrder.find('.card-order__list-item-service-charge-discount').text();
-    // }
 
     setSumDay(){
         let startDate = this.arrivalInput.val();
         let endtDate = this.departureInput.val();
 
-
         function transformDate(date){
             let dateArr = date.split('.');
             for(let i = 0; i < dateArr.length; i++){
-                // if(i == 1){
-                //     --dateArr[i];
-                // }
                 dateArr[i] = +dateArr[i];
             }
             dateArr.reverse();
             let dateString = dateArr.join(', ');
-            console.log(dateString + '  dataString');
+            // console.log(dateString + '  dataString');
             return dateString;
         }
 
@@ -70,8 +49,6 @@ export default class CardOrderClass{
         }
         
         this.sumDay = daysBetween(startDate, endtDate);
-
-        //console.log(this.sumDay + '  kolichestvo dney');
     }
 
 

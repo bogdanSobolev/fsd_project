@@ -1,11 +1,13 @@
-//- include ../btn-checkbox/btn-checkbox
+mixin btn-checkbox-rich(options)
+    - let checkedBtn = false
+
+    if options
+        if options.checkedBtn
+            checkedBtn = options.checkedBtn
 
 
-mixin btn-checkbox-rich(name, title, description, checkedBtn=false)
-    label.btn-checkbox-rich(class!=attributes.class)
-
-        //- +btn-checkbox(type="checkbox", name=name, checked=checkedBtn)(class='btn-checkbox-rich__input')
-        input.btn-checkbox-rich__input(type="checkbox", name=name, checked=checkedBtn)
+    label.btn-checkbox-rich
+        input.btn-checkbox-rich__input(type="checkbox", name=options.name, checked=checkedBtn)
         .btn-checkbox-rich__checkbox
             <svg class="btn-checkbox-rich__check-mark" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.46439 2.40768L5.70703 6.65032L4.29282 8.06453L0.0501771 3.82189L1.46439 2.40768Z" fill="url(#paint0)"/>
@@ -23,5 +25,5 @@ mixin btn-checkbox-rich(name, title, description, checkedBtn=false)
             </svg>
             
         .btn-checkbox-rich__text
-            .btn-checkbox-rich__title= title
-            .btn-checkbox-rich__description= description
+            .btn-checkbox-rich__title= options.title
+            .btn-checkbox-rich__description= options.description

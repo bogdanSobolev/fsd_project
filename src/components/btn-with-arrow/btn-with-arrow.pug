@@ -1,3 +1,10 @@
-mixin btn-with-arrow(text)
-    button.title.title_small.btn-with-arrow(href="#")&attributes(attributes)= text
+mixin btn-with-arrow(options)
+
+    - let url = "/mock-address/change-me"
+
+    if options
+        if options.url
+            -url = options.url
+
+    button.btn-with-arrow(href="#")= options.text
         span.material-icons arrow_forward

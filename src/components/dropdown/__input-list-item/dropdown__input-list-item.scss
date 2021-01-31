@@ -1,69 +1,60 @@
-.dropdown{
-    $btn-color: $color-dark-shade-50;
-    $btn-color-hover: $color-dark-shade-75;
-    $btn-color-active: $color-dark-shade;
-    $btn-color-disabled: $color-dark-shade-25;
-    &__input-list-item{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 0 7px;
-        &:last-child{
-            margin: 0;
-        }
+.dropdown {
+  $btn-color: $color-dark-shade-50;
+  $btn-color-hover: $color-dark-shade-75;
+  $btn-color-active: $color-dark-shade;
+  $btn-color-disabled: $color-dark-shade-25;
+  &__input-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 7px;
+    &:last-child {
+      margin: 0;
     }
-    &__input{
-    
+  }
+  &__set-value-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__set-value-btn {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: $btn-color;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid $btn-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      color: $btn-color-hover;
+      border-color: $btn-color-hover;
     }
-    &__set-value-block{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &:active {
+      color: $btn-color-active;
+      border-color: $btn-color-active;
     }
-    &__set-value-btn{
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: 400;
-        color: $btn-color;
-        width: 30px;
-        height: 30px;
-        box-sizing: border-box;
-        border: 1px solid $btn-color;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover{
-            color: $btn-color-hover;
-            border-color: $btn-color-hover;
-        }
-        &:active{
-            color: $btn-color-active;
-            border-color: $btn-color-active;
-        }
-        &_disabled{
-            cursor: default;
-            color: $btn-color-disabled;
-            border-color: $btn-color-disabled;
-            &:hover{
-                color: $btn-color-disabled;
-                border-color: $btn-color-disabled;
-            }
-            &:active{
-                color: $btn-color-disabled;
-                border-color: $btn-color-disabled;
-            }
-        }
+    &_disabled {
+      cursor: default;
+      color: $btn-color-disabled;
+      border-color: $btn-color-disabled;
+      &:hover {
+        color: $btn-color-disabled;
+        border-color: $btn-color-disabled;
+      }
+      &:active {
+        color: $btn-color-disabled;
+        border-color: $btn-color-disabled;
+      }
     }
-    &__set-value-minus{
-
-    }
-    &__set-value-plus{
-        
-    }
-    &__input-value{
-        text-align: center;
-        margin: 0 6px;
-        width: 20px;
-    }
+  }
+  &__input-value {
+    text-align: center;
+    margin: 0 6px;
+    width: 20px;
+  }
 }

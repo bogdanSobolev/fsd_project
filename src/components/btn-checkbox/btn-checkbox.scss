@@ -1,48 +1,46 @@
-.btn-checkbox{
-    $btn-border-color: $color-dark-shade-25;
-    $btn-border-color-checked: $color-purple;
-    $btn-text-color: $color-dark-shade-50;
+.btn-checkbox {
+  $btn-border-color: $color-dark-shade-25;
+  $btn-border-color-checked: $color-purple;
+  $btn-text-color: $color-dark-shade-50;
 
-
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  &__text {
+    margin: 1px 0 0;
+    color: $btn-text-color;
+    line-height: 18px;
+  }
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:checked + .btn-checkbox__checkbox {
+      border: 1px solid $btn-border-color-checked;
+      .btn-checkbox__check-mark {
+        opacity: 1;
+      }
+    }
+    &:focus + .btn-checkbox__checkbox {
+      border: 1px solid $btn-border-color-checked;
+    }
+  }
+  &__checkbox {
     display: flex;
-    align-items: flex-start;
-    // user-select: none;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    &__text{
-        margin: 1px 0 0;
-        color: $btn-text-color;
-        line-height: 18px;
-    }
-    &__input{
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        &:checked+.btn-checkbox__checkbox{
-            border: 1px solid $btn-border-color-checked;
-            .btn-checkbox__check-mark{
-                //display: block;
-                opacity: 1;
-            }
-        }
-    }
-    &__checkbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        flex-grow: 0;
-        box-sizing: border-box;
-        border: 1px solid $btn-border-color;
-        border-radius: 4px;
-        margin: 0 10px 0 0;
-    }
-    &__check-mark{
-        opacity: 0;
-        //display: none;
-    }
-    
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    box-sizing: border-box;
+    border: 1px solid $btn-border-color;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+  }
+  &__check-mark {
+    opacity: 0;
+  }
 }

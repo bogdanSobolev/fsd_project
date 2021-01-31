@@ -18,8 +18,6 @@ function setWrap($card){
     } else{
         if(fieldsBlock.css('flex-wrap') == 'wrap'){
             fieldsBlock.css('flex-wrap', 'nowrap')
-            //console.log(fieldsBlock.find('.card-order__date-dropdown-wrp'));
-            // fieldsBlock.find('.card-search__date-dropdown-wrp')[0].css('margin-right', '20px');
             fieldsBlock.find('.card-order__date-dropdown-wrp:first').css('margin-right', '20px');
         }
     }

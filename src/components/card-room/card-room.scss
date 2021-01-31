@@ -1,154 +1,141 @@
-.card-room{
-    $card-bg: #fff;
-    $type-color: $color-purple;
-    $price-color: $color-dark-shade-50;
-    $borderColor: $color-dark-shade-10;
-    $arrow-color: #fff;
-    $dots-border-color: #fff;
-    $dots-bg-color: #fff;
+.card-room {
+  $card-bg: #fff;
+  $type-color: $color-purple;
+  $price-color: $color-dark-shade-50;
+  $borderColor: $color-dark-shade-10;
+  $arrow-color: #fff;
+  $dots-border-color: #fff;
+  $dots-bg-color: #fff;
 
+  width: 100%;
+  background: $card-bg;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  &__slider {
+    margin: 0;
 
-    width: 100%;
-    background: $card-bg;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    &__slider{
-        margin: 0;
-
-        &-slide{
-            width: 100%;
-            object-fit: cover;
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
-
-        &:hover > .slick-arrow{
-            opacity: 1;
-            transition: opacity .2s;
-        }
+    &-slide {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
     }
 
-    .slick{
-        &-arrow{
-            width: 44px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            border: none;
-            color: $arrow-color;
-            cursor: pointer;
-            outline: none;
-            opacity: 0;
-            transition: opacity .2s;
-            // &:hover{
-            //     opacity: 1;
-            //     transition: opacity .2s;
-            // }
-        }
-        &-prev{
-            left: 0;
-            z-index: 2;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        }
-        &-next{
-            right: 0;
-            background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        }
-        &-dots{
-            position: absolute;
-            bottom: 10px;
-            right: 16px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            li{
-                margin: 0 4px 0 0;
-                &:last-child{
-                    margin: 0;
-                }
-            }
-            button{
-                width: 7px;
-                height: 7px;
-                padding: 0;
-                background: none;
-                border: 1px solid $dots-border-color;
-                border-radius: 50%;
-                outline: none;
-            }
-            li.slick-active{
-                button{
-                    background: $dots-bg-color;
-                }
-            }
-        }
-        &-slide{
-            height: 50px;
-        }
+    &:hover > .slick-arrow {
+      opacity: 1;
+      transition: opacity 0.2s;
     }
+  }
 
-
-
-    &__text-wrp{
-        padding: 20px 20px 15px;
+  .slick {
+    &-arrow {
+      width: 44px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border: none;
+      color: $arrow-color;
+      cursor: pointer;
+      outline: none;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
-
-    &__title-n-price{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0 7px;
-        margin: 0 0 8px;
-        border-bottom: 1px solid $borderColor;
+    &-prev {
+      left: 0;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     }
-    &__title{
-        margin: 0;
-        //padding: 2px 0 0;
-        &-number-symbol{
-            font-size: 14px;
+    &-next {
+      right: 0;
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    }
+    &-dots {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      li {
+        margin: 0 4px 0 0;
+        &:last-child {
+          margin: 0;
         }
-        &-number{
-            line-height: 28px;
+      }
+      button {
+        width: 7px;
+        height: 7px;
+        padding: 0;
+        background: none;
+        border: 1px solid $dots-border-color;
+        border-radius: 50%;
+        outline: none;
+      }
+      li.slick-active {
+        button {
+          background: $dots-bg-color;
         }
-        &-type{
-            color: $type-color;
-            // font-size: 12px;
-            // font-weight: 700;
-            // text-transform: uppercase;
-        }
+      }
     }
-    &__room-price{
-        font-size: 12px;
-        color: $price-color;
-        &-wrp{
-            font-size: 14px;
-            font-weight: 700;
-        }
+    &-slide {
+      height: 50px;
     }
+  }
 
+  &__text-wrp {
+    padding: 20px 20px 15px;
+  }
 
-
-
-    &__rait-n-review{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &__title-n-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 7px;
+    margin: 0 0 8px;
+    border-bottom: 1px solid $borderColor;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    color: $color-dark-shade;
+    &-number-symbol {
+      font-size: 14px;
     }
-    &__quantity-reviews{
+    &-number {
+      // line-height: 28px;
+    }
+    &-type {
+      color: $type-color;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+  }
+  &__room-price {
+    font-size: 12px;
+    color: $price-color;
+    &-wrp {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
 
-    }
-    &__room-quantity-wrp{
-        font-weight: 700;
-    }
-    &__room-quantity-quantity{
-
-    }
+  &__rait-n-review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__room-quantity-wrp {
+    font-weight: 700;
+  }
 }

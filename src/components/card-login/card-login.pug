@@ -1,18 +1,23 @@
+include ../title/title
 include ../text-field/text-field
 include ../btn-with-arrow/btn-with-arrow
 include ../btn-outlined/btn-outlined
 
 
 mixin card-login()
-    form(action="", method="get", name="card-login").card-login&attributes(attributes)
-        h1.card-login__title.title.title_big Войти
+    form(action="", method="get", name="card-login").card-login
+        .card-login__title
+            +title({type: 'big', text: 'Войти'})
         
         .card-login__service-login-data
-            //- h3.card-login__name-field.title.title_small данные для входа в сервис
-            +text-field('email', placeholder='Email', typeInput="email", value=false)(class='card-login__input-email card-login__input')
-            +text-field('password', placeholder='Пароль', typeInput="password", value=false)(class='card-login__input-password card-login__input')
-        +btn-with-arrow('Войти')(class='card-login__btn-with-arrow')
+            .card-login__input-email.card-login__input
+                +text-field({name: 'email', placeholder: 'Email', typeField: "email", value: false})
+            .card-login__input-email.card-login__input
+                +text-field({name: 'password', placeholder: 'Пароль', typeField: "password", value: false})
+        .card-login__btn-with-arrow
+            +btn-with-arrow({text: 'Войти'})
 
         .card-login__login-block
             span.card-login__login-text Нет аккаунта на Toxin?
-            +btn-outlined('создать')(class='card-login__login-btn')
+            .card-login__login-btn
+                +btn-outlined({text: 'создать'})

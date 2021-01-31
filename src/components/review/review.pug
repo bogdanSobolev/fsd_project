@@ -1,22 +1,24 @@
 include ../btn-like/btn-like
 
 
-mixin review(authorName, authorWasOnline, authorIcon, reviewText, likeName, likeValue=0, likeActive=false)
+//- mixin review(authorName, authorWasOnline, authorIcon, reviewText, likeName, likeValue=0, likeActive=false)
+
+mixin review(options)
+
+    - let mod = ''
+
+    if options 
+        if options.likeActive
+            - mod += 'btn-like_active'
 
 
-    -
-        let btnLikeActive = likeActive ? 'btn-like_active' :'';
-    //- btn-like_active
-
-    .review&attributes(attributes)
+    .review
         .review__author-block
-            //- .review__author-icon
-            //- img.review__author-icon(src=authorIcon)
-            img.review__author-icon(src=authorIcon)
+            img.review__author-icon(src=options.authorIcon)
             .review__author-text-block
-                .review__author-name= authorName
-                .review__author-was-online= authorWasOnline
+                .review__author-name= options.authorName
+                .review__author-was-online= options.authorWasOnline
         .review__content-block
             .review__btn-like-wrp
-                +btn-like(likeName, likeValue)(class='review__btn-like '+btnLikeActive)
+                +btn-like({name: options.likeName, value: options.likeValue, checkedBtn: true})
             .review__content-text= reviewText

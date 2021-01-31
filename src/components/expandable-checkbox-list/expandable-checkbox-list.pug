@@ -1,10 +1,23 @@
-mixin expandable-checkbox-list(name, checkboxData)
+//- mixin expandable-checkbox-list(name, checkboxData)
+include ../title/title
+include ../btn-checkbox/btn-checkbox
+
+mixin expandable-checkbox-list(options)
+
+    - let mod = false
+
+    if options
+        if options.active
+            - mod += ' expandable-checkbox-list_active'
 
 
-    .expandable-checkbox-list&attributes(attributes)
-        .expandable-checkbox-list__title.title.title_small= name
+    .expandable-checkbox-list(class=mod)
+        //- .expandable-checkbox-list__title.title.title_small= name
+        .expandable-checkbox-list__title
+            +title({type: 'small', text: options.name})
             span.material-icons.expandable-checkbox-list__arrow expand_more
         .expandable-checkbox-list__list
 
-            each elem in checkboxData
-                +btn-checkbox(elem.name, elem.text, elem.checked)(class="expandable-checkbox-list__list-item")
+            each elem in options.checkboxData
+                .expandable-checkbox-list__list-item
+                    +btn-checkbox({name: elem.name, text: elem.text, checkedBtn: elem.checked})

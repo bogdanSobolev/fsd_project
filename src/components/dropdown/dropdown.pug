@@ -1,6 +1,25 @@
-mixin dropdown
-    //- .dropdown.body-text(class!=attributes.class)
-    .dropdown.body-text&attributes(attributes)
+mixin dropdown(options)
+
+    - let mod = false
+    - let dataValues = false
+
+    if options
+        if options.dropdownType
+            case options.dropdownType
+                when "guests"
+                    - mod = "dropdown_guests"
+                when "location"
+                    - mod = "dropdown_location"
+                default
+                    - break
+        if options.dataValues
+            - dataValues = options.dataValues
+        if options.active
+            - mod += ' dropdown_active'
+
+
+
+    .dropdown(class=mod data-values=dataValues)
         .dropdown__values-input
             span.dropdown__values-input-text
             span.material-icons.dropdown__arrow expand_more

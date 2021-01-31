@@ -1,15 +1,15 @@
-mixin dignity(title, description, icon, iconClass=false)
-    .dignity&attributes(attributes)
-        span.dignity__icon(class=iconClass)= icon
+//- mixin dignity(title, description, icon, iconClass=false)
+
+mixin dignity(options)
+
+    - let iconClass = false
+
+    if options
+        if options.iconClass
+            - iconClass = options.iconClass
+
+    .dignity
+        span.dignity__icon(class=iconClass)= options.icon
         .dignity__text-block
-            span.dignity__title= title
-            p.dignity__description= description
-
-        
-        //- img(src="../123.png")
-
-        //- img(src=require("./123.png").default)
-
-        //- include ./account_balance-black-18dp.svg
-        
-        //- object(data="./account_balance-black-18dp.svg", type="image/svg+xml")
+            span.dignity__title= options.title
+            p.dignity__description= options.description

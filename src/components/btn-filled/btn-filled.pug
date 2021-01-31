@@ -1,2 +1,18 @@
-mixin btn-filled(text)
-    a.title.title_small.btn-filled(href="#")&attributes(attributes)= text
+mixin btn-filled(options)
+
+    - let mod = ''
+    - let url = "/mock-address/change-me"
+
+    if options
+        if options.type
+            case options.type
+                when 'small'
+                    - mod += ' btn-filled_small'
+                default
+                    - break
+        if options.hovered
+            - mod += ' btn-filled_hovered'
+        if options.url
+            -url = options.url
+        
+    a.btn-filled(href=url class=mod)= options.text
