@@ -30,7 +30,6 @@ export default class CalendarClass {
             let $positionElem = null;
 
             if(inst.$el.data('width-elem')){
-                //console.log(inst.$el.data('width-elem'));
                 $positionElem = inst.$el.closest('.'+inst.$el.data('width-elem'));
             } else {
                 $positionElem = inst.$el;
@@ -39,9 +38,9 @@ export default class CalendarClass {
         },
         onHide: function(inst) {
             inst.$el.siblings(".calendar-field__arrow").removeClass("calendar-field__arrow_active");
+            inst.$datepicker.css({'left': `-10000px`});
         },
         onSelect: function(formattedDate, date, inst){
-            //console.log(inst.$el);
             inst.$el.change();
         },
         onChangeMonth: function(inst){
@@ -61,11 +60,10 @@ export default class CalendarClass {
     updateWidthAndPosition(){
 
         this.$calendar.$datepicker.css({'width': `${this.widthElem.css('width')}`});
-        this.$calendar.$datepicker.css({'left': `${this.widthElem.offset().left}px`});
-
-
-        //console.log(this);
-        // console.log(this.$calendar.$datepicker.offset().left);
+        // console.log(this.$calendar.$datepicker.hasClass('active'));
+        if(this.$calendar.$datepicker.hasClass('active')){
+            this.$calendar.$datepicker.css({'left': `${this.widthElem.offset().left}px`});
+        }
     }
 
     getOptions(){
@@ -79,6 +77,7 @@ export default class CalendarClass {
 
 
         this.$calendar.$datepicker.append(buttons);
+        // console.log(buttons);
         $('.calendar__btn').on('click', (e) => {
             e.preventDefault();
         });
@@ -98,25 +97,22 @@ export default class CalendarClass {
 
 
         if(this.input.data('width-elem')){
-
             this.setWidthElem(this.input.data('width-elem'));
-
-            
         } else{
             this.setWidthElem();
         }
+
+        // console.log(this.input.data('width-elem'));
 
         this.updateWidthAndPosition();
 
 
 
         const updateWidthAndPositionFunc = () => {
-            //console.log(this);
             this.updateWidthAndPosition();
         }
 
         this.$calendar.$datepicker.bind("DOMSubtreeModified",function(){
-            //console.log(updateWidthAndPosition());
             updateWidthAndPositionFunc();
         });
 
@@ -125,11 +121,7 @@ export default class CalendarClass {
 
         $(window).resize(()=>{
             this.updateWidthAndPosition();
-            //console.log(this.input.val());
         });
-
-
-        //console.log(this.input.val());
 
 
 
