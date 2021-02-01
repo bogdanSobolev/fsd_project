@@ -74,24 +74,20 @@ html(lang="en")
                     .section-form-elements__field-block.section-form-elements__text-date-field-block
                         h3.section-form-elements__name-field.title.title_small masked text field
                         .section-form-elements__field-input
-                            //- +text-field("text-date-field", "")(class="section-form-elements__field-input body-text text-field_date-mask")
                             +text-field({name: "text-date-field", mask: "date-mask"})
                     .section-form-elements__field-block.section-form-elements__date-dropdown-fields-block
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            //- .section-form-elements__date-dropdown-fields-block.section-form-elements__field-input
                             .section-form-elements__field-input
                                 +calendar-field({name: 'date-dropdown-field-default', widthElem: 'section-form-elements__date-dropdown-fields-block'})
                         .section-form-elements__date-dropdown 
                             h3.section-form-elements__name-field.title.title_small date dropdown
-                            //- .section-form-elements__date-dropdown-fields-block.section-form-elements__field-input
                             .section-form-elements__field-input
                                 +calendar-field({name: 'date-dropdown-field-default', placeholder: "19.08.2019", widthElem: 'section-form-elements__date-dropdown-fields-block'})
                     .section-form-elements__field-block.section-form-elements__date-dropdown-filter-field-block
                         h3.section-form-elements__name-field.title.title_small filter date dropdown
                         .section-form-elements__date-dropdown-filter-wrp.section-form-elements__short-block
                             .section-form-elements__field-input.section-form-elements__dropdown 
-                                //- +calendar-field('date-dropdown-filter-field-default', false, "19 авг - 23 авг")
                                 +calendar-field({name: 'date-dropdown-filter-field-default', placeholder: "19 авг - 23 авг", calendarMod:'range'})
                     .section-form-elements__field-block.section-form-elements__email-field-block.section-form-elements__short-block
                         h3.section-form-elements__name-field.title.title_small subscription text field
