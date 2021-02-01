@@ -1,9 +1,5 @@
 include ../btn-rate/btn-rate
 
-
-
-//- mixin card-room(number, type=false, valPrice, currency='rub', rate, quantityReviews, roomImages)
-
 mixin card-room(options)
 
     - let currency = '&#8381';
@@ -39,9 +35,9 @@ mixin card-room(options)
         .card-room__text-wrp
             .card-room__title-n-price
                 .card-room__title
-                    span.card-room__title-number-symbol.title.title_small &#8470 
-                    span.card-room__title-number.title.title_middle= options.number
-                    span.card-room__title-type.title.title_small= typeRoom
+                    span.card-room__title-number-symbol &#8470 
+                    span.card-room__title-number.title= options.number
+                    span.card-room__title-type= typeRoom
                 .card-room__room-price
                     span.card-room__room-price-wrp
                         span.card-room__room-price-price= price

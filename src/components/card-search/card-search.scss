@@ -7,7 +7,7 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   &__title {
-    margin: 10px 0;
+    margin: 8px 0 22px;
   }
   &__date-dropdown-fields-block {
     display: flex;
@@ -20,11 +20,11 @@
     }
   }
   &__name-field {
-    margin: 11px 0 5px;
+    margin: 0 0 5px;
   }
 
   &__date-dropdown-title {
-    margin: 11px 0 6px;
+    margin: 0 0 6px;
   }
   &__dropdown-block {
     margin: 0 0 30px;

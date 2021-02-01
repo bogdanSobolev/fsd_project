@@ -18,7 +18,9 @@
   }
 
   &__sex-block {
-    margin: 0 0 16px;
+    margin: 0 0 17px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__btn-sex {
@@ -33,7 +35,7 @@
   }
 
   &__date-of-birth {
-    margin: 0 0 9px;
+    margin: 0 0 20px;
   }
 
   &__service-login-data {

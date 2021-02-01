@@ -6,6 +6,7 @@
   $arrow-color: #fff;
   $dots-border-color: #fff;
   $dots-bg-color: #fff;
+  $quantity-reviews: $color-dark-shade-50;
 
   width: 100%;
   background: $card-bg;
@@ -91,33 +92,29 @@
   }
 
   &__text-wrp {
-    padding: 20px 20px 15px;
+    padding: 24px 20px 15px;
   }
 
   &__title-n-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 7px;
-    margin: 0 0 8px;
+    padding: 0 0 11px;
+    margin: 0 0 7px;
     border-bottom: 1px solid $borderColor;
   }
   &__title {
     margin: 0;
     font-weight: 700;
     font-size: 19px;
-    line-height: 23px;
+    line-height: 18px;
     color: $color-dark-shade;
     &-number-symbol {
       font-size: 14px;
     }
-    &-number {
-      // line-height: 28px;
-    }
     &-type {
       color: $type-color;
       font-size: 12px;
-      line-height: 15px;
       text-transform: uppercase;
     }
   }
@@ -137,5 +134,7 @@
   }
   &__room-quantity-wrp {
     font-weight: 700;
+    color: $quantity-reviews;
+    line-height: 18px;
   }
 }

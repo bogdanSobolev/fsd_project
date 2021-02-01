@@ -7,8 +7,8 @@ include ../btn-with-arrow/btn-with-arrow
 
 mixin card-search()
     form(action="", method="get", name="card-search").card-search
-        //- h1.card-search__title.title.title_big Найдём номера под ваши пожелания
-        +title({type: 'big', text: 'Найдём номера под ваши пожелания'})
+        .card-search__title
+            +title({type: 'big', text: 'Найдём номера под ваши пожелания'})
         .card-search__date-dropdown-fields-block
             .card-search__date-dropdown-wrp
                 .card-search__name-field.card-search__date-dropdown-title
@@ -21,7 +21,6 @@ mixin card-search()
                 .card-search__date-dropdown
                     +calendar-field({name: 'выезд', widthElem: 'card-search__date-dropdown-fields-block'})
         .card-search__dropdown-block
-            //- h3.card-search__name-field.title.title_small гости
             .card-search__name-field
                 +title({type: 'small', text: 'гости'})
             .card-search__dropdown
