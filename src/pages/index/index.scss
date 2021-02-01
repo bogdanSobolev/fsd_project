@@ -1,4 +1,30 @@
-.index{
-    color: grey;
-    font-size: 60px;
+.content-with-grand-slider{
+    height: 100vh;
+    position: relative;
+    &__slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    &__content{
+        padding-top: 142px;
+        padding-bottom: 18px;
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-card-search{
+            max-width: 380px;
+        }
+        &-text{
+            max-width: 300px;
+            text-align: right;
+            line-height: 24px;
+            align-self: flex-end;
+        }
+    }
 }
+

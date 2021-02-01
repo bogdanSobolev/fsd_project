@@ -1,11 +1,18 @@
 extends ../../layout/layout
 
+include ../../components/grand-slider/grand-slider
+include ../../components/card-search/card-search
+
 block variables
     - let title = "Главная"
 
 block content
-    img(src="./123.png")
-    .index index
-    include ../../components/block/block
-    include ../../components/block-three/block-three
-    include ../../components/block-four/block-four
+    .content-with-grand-slider
+        .content-with-grand-slider__slider
+            - const slidesUrl = "./assets/img/slides/"
+            - let dataSlider = [{url: slidesUrl + "slide-1.png"}, {url: slidesUrl + "slide-2.png"}, {url: slidesUrl + "slide-3.png"}]
+            +grand-slider({dataSlider: dataSlider})
+        .content-with-grand-slider__content.wrp-pd
+            .content-with-grand-slider__content-card-search
+                +card-search()
+            .content-with-grand-slider__content-text Лучшие номера для вашей работы, отдыха и просто вдохновения
