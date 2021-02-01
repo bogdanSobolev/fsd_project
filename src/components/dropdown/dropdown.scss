@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
+    width: 42px;
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -59,22 +59,4 @@
     padding: 0;
     margin: 4px 0 6px;
   }
-  // &_active {
-  //   .dropdown {
-  //     &__values-input {
-  //       border-color: $border-color-hover-focus;
-  //     }
-  //     &__wrp {
-  //       opacity: 1;
-  //       border-color: $border-color-hover-focus;
-
-  //       max-height: 70vh;
-  //       transition: max-height 0.3s;
-  //     }
-  //     &__arrow {
-  //       transform: rotate(-180deg);
-  //       transition: transform 0.2s;
-  //     }
-  //   }
-  // }
 }

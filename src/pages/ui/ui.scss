@@ -27,7 +27,7 @@ body{
     $state-color: $color-dark-shade-50;
 
 
-    padding-top: 140px;
+    padding-top: 145px;
     padding-bottom: 130px;
 
     display: flex;
@@ -134,7 +134,7 @@ body{
     }
 
     &__toggle-btn{
-        margin: 0 0 14px;
+        margin: 0 0 9px;
         &:last-child{
             margin: 0;
         }
@@ -218,7 +218,7 @@ body{
         margin-bottom: 40px;
         
         .section-form-elements__name-field{
-            padding: 17px 0;
+            padding: 16px 0;
             margin: 0;
             //margin-bottom: 16px;
         }
@@ -242,6 +242,7 @@ body{
 
     &__dignity{
         margin-bottom: 20px;
+        max-width: 280px;
     }
     
 
@@ -259,7 +260,7 @@ body{
     }
 }
 
-@media (min-width: 576px) { //@media (min-width: 992px) {
+@media (min-width: 576px) {
     .section-form-elements{
         flex-direction: row;
         align-items: flex-start;
@@ -306,7 +307,7 @@ body{
     }
 }
 
-@media (min-width: 768px) { //@media (min-width: 992px) {
+@media (min-width: 768px) {
     .section-form-elements{
         justify-content: space-around;
         &__item{
@@ -343,7 +344,7 @@ body{
     }
 }
 
-@media (min-width: 992px) { //@media (min-width: 992px) {
+@media (min-width: 992px) {
     .section-form-elements{
         justify-content: space-around;
         &__item{
@@ -380,12 +381,12 @@ body{
         }
 
         &__item.section-form-elements__review-list{
-            width: (100%/3*2)-(10.9/2); //для больших разрешений
+            width: (100%/3*2)-(10.6%/2); //для больших разрешений
             margin-right: 0;
         }
 
         &__short-block{
-            max-width: 265px;
+            max-width: 266px;
         }
 
         &__btns-block{
