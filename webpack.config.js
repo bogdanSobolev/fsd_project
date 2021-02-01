@@ -1,7 +1,8 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 //const сopy = require('copy-webpack-plugin');
 
 module.exports = {
@@ -10,8 +11,13 @@ module.exports = {
         alias: {
             'test-loader': require.resolve('./loaders/testLoader.js'),
             'test-loader-two': require.resolve('./loaders/testLoaderTwo.js'),
-            '@components': path.join(__dirname, 'src', 'components'),
         }
+    },
+    resolve: {
+        extensions: ['.js',],
+        alias: {
+            '@components': path.join(__dirname, 'src', 'components'),
+        },
     },
   entry: {
     index: path.resolve(__dirname, './src/pages/index/index.js'),
@@ -31,52 +37,17 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },
-            // {
-            //     test: /\\components\.pug$/,
-            //     use: [{
-            //         loader: 'bemdecl-to-fs-loader',
-            //         // Указываем уровни переопределения и расширения технологий
-            //         options: { levels: ['components'], extensions: ['css', 'js', 'pug'] }
-            //     },'html2bemdecl-loader', 'pug-html-loader']
-            // },
-            // {
-            //     test: /\\components\.html$/,
-            //     use: ['test-loader']
-            // },
-            // {
-            //     test: /\.pug$/,
-            //     use: ['html-loader', {
-            //         loader: 'bemdecl-to-fs-loader',
-            //         // Указываем уровни переопределения и расширения технологий
-            //         options: { levels: ['components'], extensions: ['css', 'js', 'pug'] }
-            //     },'html2bemdecl-loader', 'pug-html-loader']
-            // },
-            // {
-            //     test: /\.pug$/,
-            //     use: ['pug-loader']
-            // },
+            {
+                test: /\.html$/,
+                use: ['html-loader']
+            },
             {
                 test: /\.pug$/,
                 use: ['html-loader', 'pug-html-loader']
             },
             // {
-            //     test: /\.(scss|css)$/,
-            //     use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader',
-            //         {
-            //             loader: "resolve-url-loader",
-            //             options: {
-            //                 //keepQuery: true,
-            //                 absolute: true
-            //             //removeCR: true // to prevent 'no orphan CR found'
-            //             }
-            //         }, 
-            //         { 
-            //             loader : 'sass-loader' , 
-            //             options : { 
-            //                 sourceMap : true 
-            //             }
-            //         }
-            //     ],
+            //     test: /\.pug$/,
+            //     use: ['pug-loader']
             // },
             {
                 test: /\.(scss|css)$/,
@@ -141,8 +112,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html', // название выходного файла
             chunks: ['index'],
-            template: path.resolve(__dirname, './src/pages/index/index.pug'), // шаблон
-            //template: require('!html-loader!pug-html-loader!./src/pages/index/index.pug')
+            template: path.resolve(__dirname, './src/pages/index/index.pug'),
         }),
         new HtmlWebpackPlugin({
             filename: 'test.html', // шаблон
@@ -154,15 +124,14 @@ module.exports = {
             chunks: ['ui'],
             template: path.resolve(__dirname, './src/pages/ui/ui.pug'), // название выходного файла
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'index.html', // название выходного файла
-        //     chunks: ['index'],
-        //     template: path.resolve(__dirname, './src/pages/index/index.html'), // шаблон
-        // }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: path.join('style', '[name].css'),
             chunkFilename: '[id].css'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         }),
   ],
   devServer: {

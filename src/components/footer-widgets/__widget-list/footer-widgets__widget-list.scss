@@ -1,67 +1,71 @@
-.footer-widgets{
-    $widget-link-color: $color-dark-shade-50;
-    &__widget-list{
-        &-items{
-            list-style: none;
-            margin: 0;
-            padding: 0 40px 0;
-            overflow: hidden;
-            max-height: 0;
-            //height: 0;
-            transition: max-height .3s;
-            &_active{
-                max-height: 100vh;
-                transition: max-height .3s;
-            }
+.footer-widgets {
+  $widget-link-color: $color-dark-shade-50;
+  $widget-link-color-hover: $color-dark-shade-75;
+  $widget-link-color-active: $color-dark-shade;
+
+  &__widget-list {
+    &-title{
+      // margin: 4px 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      & > .material-icons {
+        transition: transform 0.2s;
+      }
+      &_active {
+        & > .material-icons {
+          transform: rotate(-180deg);
+          transition: transform 0.2s;
         }
-        &-link{
-            display: block;
-            color: $widget-link-color;
-            text-decoration: none;
-            margin: 20px 0;
-            //box-sizing: border-box;
-        }
+      }
     }
-    &__widget-title{
-        margin: 0 0 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        &  > .material-icons{
-            transition: transform .2s;
-        }
-        &_active{
-            &  > .material-icons{
-                transform: rotate(-180deg);
-                transition: transform .2s;
-            }
-        }
+    &-items {
+      list-style: none;
+      margin: 0;
+      padding: 0 40px 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s;
+      &_active {
+        max-height: 100vh;
+        transition: max-height 0.3s;
+      }
     }
+    &-link {
+      display: block;
+      color: $widget-link-color;
+      text-decoration: none;
+      margin: 20px 0;
+      &:hover{
+        color: $widget-link-color-hover;
+      }
+      &:active{
+        color: $widget-link-color-active;
+      }
+    }
+  }
 }
 
-@include breakpoint(lg){
-    .footer-widgets{
-        &__widget-list{
-            &-items{
-                padding: 0;
-                overflow: visible;
-                max-height: 100%;
-                &_active{
-                    max-height: 100%;
-                }
-            }
-            &-link{
-                //margin: 20px 0;
-            }
+@media (min-width: 992px) {
+  .footer-widgets {
+    &__widget-list {
+      &-title {
+        margin: 4px 0 22px;
+        display: block;
+        cursor: default;
+        & > .material-icons {
+          display: none;
         }
-        &__widget-title{
-            //margin: 0 0 10px;
-            display: block;
-            cursor: default;
-            &  > .material-icons{
-                display: none;
-            }
+      }
+      &-items {
+        padding: 0;
+        overflow: visible;
+        max-height: 100%;
+        &_active {
+          max-height: 100%;
         }
+      }
     }
+  }
 }

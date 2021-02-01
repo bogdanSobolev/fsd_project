@@ -1,0 +1,13 @@
+mixin dignity(options)
+
+    - let iconClass = false
+
+    if options
+        if options.iconClass
+            - iconClass = options.iconClass
+
+    .dignity
+        span.dignity__icon(class=iconClass)= options.icon
+        .dignity__text-block
+            span.dignity__title= options.title
+            p.dignity__description= options.description

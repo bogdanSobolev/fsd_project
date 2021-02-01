@@ -1,44 +1,17 @@
-@include breakpoint(lg){
-    .footer-creative{
-        $social-link-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .logo{
-            display: block;
-        }
-        &__item{
-            //Пока лого не миксин
-            margin: 20px 0 0;
-        }
-        &__copyright{
-            text-align: center;
-        }
-        &__social-link-list{
-            display: flex;
-        }
-        &__social-link{
-            display: block;
-            text-decoration: none;
-            margin: 0 20px 0 0;
-            transition: transform .15s;
-            &:nth-last-child{
-                margin: 0;
-            }
-            i{
-                font-size: 24px;
-                color: transparent;
-                background-clip: text;
-                background-image: $social-link-gradient;
-            }
-            &:hover{
-                transform: scale(1.2);
-                transition: transform .15s;
-            }
-            &:active{
-                transform: scale(0.9);
-                transition: transform .15s;
-            }
-        }
+@include breakpoint(lg) {
+  .footer-creative_mobile-for-desc.footer-creative {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
+    .logo {
+      display: block;
     }
+    .footer-creative {
+      &__copyright {
+        text-align: center;
+        margin: 0 0 23px;
+      }
+    }
+  }
 }

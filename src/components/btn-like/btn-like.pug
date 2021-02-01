@@ -1,0 +1,23 @@
+mixin btn-like(options)
+    - let likeValue = 0
+    - let checkedBtn = false
+    - let mod = ''
+
+    if options
+        if options.checkedBtn
+            - mod += ' btn-like_active'
+        -
+            if(options.value && options.value >= 0){
+                likeValue = options.value
+            }
+
+
+    
+
+    label.btn-like(class=mod)
+        input.btn-like__input(type="checkbox", name=options.name)
+        .btn-like__like
+            .btn-like__like-icon-wrp
+                span.btn-like__like-icon-default.btn-like__like-icon.material-icons favorite_border
+                span.btn-like__like-icon-active.btn-like__like-icon.material-icons favorite
+            .btn-like__text= likeValue

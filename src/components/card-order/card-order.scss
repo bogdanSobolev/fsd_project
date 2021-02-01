@@ -1,0 +1,145 @@
+.card-order {
+  $card-bg: #fff;
+  $type-color: $color-purple;
+  $price-color: $color-dark-shade-50;
+  $price-line-color: $color-dark-shade-25;
+  $info-icon-color: $color-dark-shade-25;
+  $info-border-color: $color-purple;
+
+  padding: 30px 30px 29px;
+  background: $card-bg;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 2px;
+  }
+  &__title {
+    margin: 10px 0 14px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: $color-dark-shade;
+    &-number-symbol {
+      font-size: 14px;
+    }
+    &-type {
+      font-size: 12px;
+      line-height: 15px;
+      color: $type-color;
+    }
+  }
+  &__room-price {
+    font-size: 12px;
+    color: $price-color;
+    &-wrp {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__date-dropdown-fields-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+  }
+  &__date-dropdown-wrp {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+  &__name-field {
+    margin: 0 0 5px;
+  }
+
+  &__date-dropdown-title {
+    margin: 0 0 6px;
+  }
+
+  &__dropdown-block {
+    margin: 0 0 21px;
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(min-content, max-content) auto minmax(20px, max-content);
+    gap: 15px 5px;
+    margin: 0 0 30px 0;
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      flex-shrink: 0;
+
+      &-row-name {
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+      }
+      &__list-item-row-name-wrp {
+        display: flex;
+        align-items: center;
+      }
+      &-info {
+        position: relative;
+        cursor: pointer;
+        &-icon {
+          color: $info-icon-color;
+          border: 1px solid $info-icon-color;
+          border-radius: 50%;
+          box-sizing: border-box;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &_no-info {
+            display: none;
+          }
+          &:hover + .card-order__list-item-info-block{
+            display: block;
+          }
+        }
+        &-block {
+          display: none;
+          position: absolute;
+          padding: 7px;
+          border-radius: 4px;
+          border: 1px solid $info-border-color;
+          bottom: 100%;
+          background: #fff;
+        }
+      }
+      &-row-total-prise {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__total-price-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+  }
+  &__total-price-line {
+    width: 100%;
+    padding: 0 0 5px;
+    margin: 0px 4px;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px dashed $price-line-color;
+    }
+  }
+  &__total-price {
+    flex-shrink: 0;
+  }
+}

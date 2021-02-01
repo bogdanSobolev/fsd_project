@@ -1,0 +1,23 @@
+include ../title/title
+include ../text-field/text-field
+include ../btn-with-arrow/btn-with-arrow
+include ../btn-outlined/btn-outlined
+
+
+mixin card-login()
+    form(action="", method="get", name="card-login").card-login
+        .card-login__title
+            +title({type: 'big', text: 'Войти'})
+        
+        .card-login__service-login-data
+            .card-login__input-email.card-login__input
+                +text-field({name: 'email', placeholder: 'Email', typeField: "email", value: false})
+            .card-login__input-email.card-login__input
+                +text-field({name: 'password', placeholder: 'Пароль', typeField: "password", value: false})
+        .card-login__btn-with-arrow
+            +btn-with-arrow({text: 'Войти'})
+
+        .card-login__login-block
+            span.card-login__login-text Нет аккаунта на Toxin?
+            .card-login__login-btn
+                +btn-outlined({text: 'создать'})

@@ -1,0 +1,53 @@
+include ../btn-rate/btn-rate
+
+mixin card-room(options)
+
+    - let currency = '&#8381';
+    - let price = '';
+    - let typeRoom = '';
+    
+    if options
+        if options.currency
+            -
+                switch(currency.toLowerCase()){
+                    case 'rub':
+                        currency = '&#8381';
+                        break;
+                    case 'usd':
+                        currency = '&#36';
+                        break;
+                    default: 
+                        break;
+                }
+        if options.price
+            - price = Number(options.price).toLocaleString();
+        if options.typeRoom
+            - typeRoom = options.typeRoom
+
+
+    .card-room
+        .card-room__slider
+            each img in options.roomImages
+            
+                img.card-room__slider-slide(src=img, alt="фото комнаты")
+
+
+        .card-room__text-wrp
+            .card-room__title-n-price
+                .card-room__title
+                    span.card-room__title-number-symbol &#8470 
+                    span.card-room__title-number.title= options.number
+                    span.card-room__title-type= typeRoom
+                .card-room__room-price
+                    span.card-room__room-price-wrp
+                        span.card-room__room-price-price= price
+                        span!= currency
+                    |  в сутки
+
+            .card-room__rait-n-review
+                .card-room__rate
+                    +btn-rate({name: 'room rate', value: options.rate})
+                .card-room__quantity-reviews
+                    span.card-room__room-quantity-wrp
+                        span.card-room__room-quantity-quantity= options.quantityReviews
+                    |  Отзывов

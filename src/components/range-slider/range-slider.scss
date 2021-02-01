@@ -1,0 +1,60 @@
+.range-slider {
+  $range-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  $range-btn-border: #fff;
+  $valur-color: $color-dark-shade-50;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  &__value {
+    color: $valur-color;
+    font-size: 12px;
+  }
+
+  &__slider {
+    margin: 23px 0 3px;
+    width: 100%;
+  }
+
+  .noUi {
+    &-target {
+      border-radius: 3px;
+      box-shadow: unset;
+    }
+    &-horizontal {
+      height: 6px;
+      .noUi {
+        &-handle {
+          height: 16px;
+          width: 16px;
+          right: -6px;
+          top: -6px;
+          outline: none;
+        }
+      }
+    }
+    &-handle {
+      border-radius: 50%;
+      background: $range-gradient;
+      border: 2px solid $range-btn-border;
+      box-shadow: unset;
+      cursor: pointer;
+      &::after {
+        display: none;
+      }
+      &:before {
+        display: none;
+      }
+    }
+    &-connects {
+      overflow: visible;
+    }
+    &-connect {
+      background: $range-gradient;
+      height: 6px;
+      position: relative;
+      top: -1px;
+    }
+  }
+}

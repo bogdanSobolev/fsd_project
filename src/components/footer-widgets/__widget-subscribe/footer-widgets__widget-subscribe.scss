@@ -1,5 +1,38 @@
-.footer-widgets{
-    &__subscribe-text{
-        margin: 20px 0;
+.footer-widgets {
+  &__widget-subscribe {
+    &-title {
+      margin: 4px 0 19px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      & > .material-icons {
+        transition: transform 0.2s;
+      }
+      &_active {
+        & > .material-icons {
+          transform: rotate(-180deg);
+          transition: transform 0.2s;
+        }
+      }
     }
+    &-text {
+      margin: 0 0 23px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-widgets {
+    &__widget-subscribe {
+      &-title {
+        display: block;
+        cursor: default;
+        & > .material-icons {
+          display: none;
+        }
+      }
+    }
+  }
 }

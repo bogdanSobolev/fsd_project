@@ -1,10 +1,11 @@
-$font-fanily: 'Montserrat', sans-serif;
+$font-family: 'Montserrat', sans-serif;
 
 $color-dark-shade: #1f2041;
 $color-dark-shade-75: rgba($color-dark-shade, 0.75);
 $color-dark-shade-50: rgba($color-dark-shade, 0.5);
 $color-dark-shade-25: rgba($color-dark-shade, 0.25);
 $color-dark-shade-5: rgba($color-dark-shade, 0.5);
+$color-dark-shade-10: rgba($color-dark-shade, 0.1);
 $color-purple: #bc9cff;
 $color-green: #6fcf97;
 
@@ -36,7 +37,7 @@ $breakpoints: (
 }
 
 @mixin big-title {
-    font-family: $font-fanily;
+    font-family: $font-family;
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -45,7 +46,7 @@ $breakpoints: (
 }
 
 @mixin middle-title {
-    font-family: $font-fanily;
+    font-family: $font-family;
     font-weight: 700;
     font-size: 19px;
     line-height: 23px;
@@ -54,7 +55,7 @@ $breakpoints: (
 }
 
 @mixin small-title {
-    font-family: $font-fanily;
+    font-family: $font-family;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -63,10 +64,9 @@ $breakpoints: (
 }
 
 @mixin body-text {
-    font-family: $font-fanily;
+    font-family: $font-family;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
     color: $color-dark-shade-75;
 }
 

@@ -1,0 +1,11 @@
+mixin btn-toggle(options)
+    - let checkedBtn = false
+    if options
+        if options.checkedBtn
+            - checkedBtn = options.checkedBtn
+
+    label.btn-toggle
+        input.btn-toggle__input(type="checkbox", name=options.name, checked=checkedBtn)
+        .btn-toggle__toggle
+            .btn-toggle__check-mark
+        span.btn-toggle__text= options.text

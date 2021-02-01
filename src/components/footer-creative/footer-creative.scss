@@ -1,58 +1,67 @@
-.footer-creative{
-    $social-link-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+.footer-creative {
+  $social-link-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  $border-color: $color-dark-shade-25;
+
+  border-top: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 23px;
+  padding-bottom: 22px;
+  &__item {
+    margin: 20px 0 0;
+  }
+  .logo {
+    margin: 0 0 16px;
+  }
+  &__copyright {
+    text-align: center;
+    margin: 0 0 23px;
+  }
+  &__social-link-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__item{
-        //Пока лого не миксин
-        margin: 20px 0 0;
+  }
+  &__social-link {
+    display: block;
+    text-decoration: none;
+    margin: 0 23px 0 0;
+    transition: transform 0.15s;
+    &:last-child {
+      margin: 0;
     }
-    &__copyright{
-        text-align: center;
+    i {
+      font-size: 24px;
+      color: transparent;
+      background-clip: text;
+      background-image: $social-link-gradient;
     }
-    &__social-link-list{
-        display: flex;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform 0.15s;
     }
-    &__social-link{
-        display: block;
-        text-decoration: none;
-        margin: 0 20px 0 0;
-        transition: transform .15s;
-        &:nth-last-child{
-            margin: 0;
-        }
-        i{
-            font-size: 24px;
-            color: transparent;
-            background-clip: text;
-            background-image: $social-link-gradient;
-        }
-        &:hover{
-            transform: scale(1.2);
-            transition: transform .15s;
-        }
-        &:active{
-            transform: scale(0.9);
-            transition: transform .15s;
-        }
+    &:active {
+      transform: scale(0.9);
+      transition: transform 0.15s;
     }
+  }
 }
 
-@include breakpoint(lg){
-    .footer-creative{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        .logo{
-            display: none;
-        }
-        &__item{
-            //Пока лого не миксин
-            margin: 0;
-        }
-        &__copyright{
-            text-align: left;
-        }
+@include breakpoint(lg) {
+  .footer-creative {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      display: none;
     }
+    &__item {
+      //Пока лого не миксин
+      margin: 0;
+    }
+    &__copyright {
+      text-align: left;
+      margin: 0;
+    }
+  }
 }

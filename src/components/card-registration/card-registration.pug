@@ -1,0 +1,46 @@
+include ../title/title
+include ../text-field/text-field
+include ../btn-with-arrow/btn-with-arrow
+include ../btn-radio/btn-radio
+include ../btn-toggle/btn-toggle
+include ../btn-outlined/btn-outlined
+
+
+mixin card-registration()
+    form.card-registration(action="", method="get", name="card-registration")
+        .card-registration__title
+            +title({type: 'big', text: 'Регистрация аккаунта'})
+
+        .card-registration__input-name.card-registration__input
+            +text-field({name: 'имя', placeholder: 'Имя', typeField: "text",})
+        .card-registration__input-name.card-registration__input
+            +text-field({name: 'фамилия', placeholder: 'Фамилия', typeField: "text",})
+
+        .card-registration__sex-block
+            .card-registration__btn-sex
+                +btn-radio({name: 'sex', text: 'Мужчина', value: 'мужчина', checkedBtn: true})
+            .card-registration__btn-sex
+                +btn-radio({name: 'sex', text: 'Женщина', value: 'женщина'})
+        
+        .card-registration__date-of-birth
+            .card-registration__name-field
+                +title({type: small, text: 'дата рождения'})
+            .card-registration__input
+                +text-field({naem: 'date-of-birth', mask: 'date-of-birth'})
+        
+        .card-registration__service-login-data
+            .card-registration__name-field
+                +title({type: 'small', text: 'данные для входа в сервис'})
+            .card-registration__input-email.card-registration__input
+                +text-field({name: 'email', placeholder: 'Email', typeField: "email"})
+            .card-registration__input-password.card-registration__input
+                +text-field({name: 'password', placeholder: 'Пароль', typeField: "password"})
+            .card-registration__toggle
+                +btn-toggle({name: 'subscribe', text: 'Получать спецпредложения'})
+        .card-registration__btn-with-arrow
+            +btn-with-arrow({text: 'перейти к оплате'})
+
+        .card-registration__login-block
+            span.card-registration__login-text Уже есть аккаунт на Toxin
+            .card-registration__login-btn
+                +btn-outlined({text: 'войти'})

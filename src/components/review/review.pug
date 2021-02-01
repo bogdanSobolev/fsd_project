@@ -1,0 +1,22 @@
+include ../btn-like/btn-like
+
+
+mixin review(options)
+
+    - let mod = ''
+
+    if options 
+        if options.likeActive
+            - mod += 'btn-like_active'
+
+
+    .review
+        .review__author-block
+            img.review__author-icon(src=options.authorIcon)
+            .review__author-text-block
+                .review__author-name= options.authorName
+                .review__author-was-online= options.authorWasOnline
+        .review__content-block
+            .review__btn-like-wrp
+                +btn-like({name: options.likeName, value: options.likeValue, checkedBtn: true})
+            .review__content-text= reviewText

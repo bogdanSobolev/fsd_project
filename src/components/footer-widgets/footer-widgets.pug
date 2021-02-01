@@ -1,28 +1,17 @@
 include __widget-list/footer-widgets__widget-list
 include __widget-subscribe/footer-widgets__widget-subscribe
 
-mixin footer-widgets()
-    .footer-widgets(class!=attributes.class)
+mixin footer-widgets(options)
+    .footer-widgets.wrp-pd
         .footer-widgets__logo-n-info.footer-widgets__item
             include ../logo/logo
             p.footer-widgets__info 
                 |Бронирование номеров в лучшем отеле 2019 
                 |года по версии ассоциации «Отельные взгляды»
-        +__widgets-list("навигация", {
-            "О нас": "#",
-            "Новости": "#",
-            "Службба поддержки": "#",
-            "Услуги": "#"
-        })(class="footer-widgets__item")
-        +__widgets-list("о нас", {
-            "О сервисе": "#",
-            "Наша команда": "#",
-            "Вакансии": "#",
-            "Инвесторы": "#"
-        })(class="footer-widgets__item")
-        +__widgets-list("служба поддержки", {
-            "Соглашения": "#",
-            "Сообщества": "#",
-            "Связь с нами": "#"
-        })(class="footer-widgets__item")
-        +__widget-subscribe("Подписка")(class="footer-widgets__item")
+
+        each item in options.pageList
+            .footer-widgets__item.footer-widgets__nav.footer-widgets__item-short
+                +__widgets-list(item)
+
+        .footer-widgets__logo-n-info.footer-widgets__item
+            +__widget-subscribe("Подписка")(class="footer-widgets__item")

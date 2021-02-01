@@ -1,0 +1,19 @@
+.btn-text {
+  $color-link: $color-purple;
+  $color-link-hover: $color-dark-shade-50;
+  $color-link-active: $color-dark-shade;
+
+  color: $color-link;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  &:hover {
+    color: $color-link-hover;
+  }
+  &:active {
+    color: $color-link-active;
+  }
+}

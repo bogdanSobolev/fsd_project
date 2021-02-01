@@ -1,14 +1,20 @@
 .btn-filled{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 22px;
-    padding: 14px 20px;
-    @include small-title;
-    color: #FFFFFF;
-    text-decoration: none;
-    &:hover{
-        opacity: 0.5;
-    }
-    &:active{
-        opacity: 0.75;
-    }
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  padding: 14px 19px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  &:hover{
+    opacity: 0.5;
+  }
+  &:active{
+    opacity: 0.75;
+  }
 }

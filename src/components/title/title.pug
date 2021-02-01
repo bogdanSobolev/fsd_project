@@ -1,0 +1,13 @@
+mixin title(options)
+
+    case options.type
+        when 'small'
+            h3.title.title_small= options.text
+        when 'middle'
+            h2.title.title_middle= options.text
+        when 'big'
+            h1.title.title_big= options.text
+        default
+            h3.title.title_small= options.text
+
+    

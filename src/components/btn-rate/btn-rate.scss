@@ -1,0 +1,32 @@
+.btn-rate {
+  $btn-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+  display: inline-flex;
+  &__btn-block {
+    position: relative;
+    cursor: pointer;
+  }
+  &__icon {
+    font-size: 24px;
+    color: transparent;
+    background-clip: text;
+    background-image: $btn-gradient;
+    &-active {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      color: $btn-gradient;
+      &_active {
+        opacity: 1;
+      }
+      &_hover {
+        opacity: 1;
+        transition: transform 0.25s;
+        &:active {
+          transform: scale(1.4);
+          transition: transform 0.25s;
+        }
+      }
+    }
+  }
+}

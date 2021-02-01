@@ -1,5 +1,6 @@
 body{
-    background-color: #E5E5E5;
+    // background-color: #E5E5E5;
+    background: #F4F4F6;
 }
 
 .wrapper{
@@ -20,5 +21,483 @@ body{
     margin: 40px auto;
     &__elem{
         padding: 120px 0;
+    }
+}
+
+.section-form-elements{
+    $state-color: $color-dark-shade-50;
+
+
+    padding-top: 145px;
+    padding-bottom: 130px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    &__item{
+        width: 100%;
+        max-width: 320px;
+    }
+    &__field-block{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__text-field-block{
+      margin-bottom: 20px;
+    }
+    &__name-field{
+      margin: 0 0 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__state{
+      color: $state-color;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    &__field-input{
+      width: 100%;
+    }
+    &__text-field-block-focus{
+      margin-bottom: 20px;
+    }
+    &__dropdown-block{
+      margin-bottom: 23px;
+    }
+    &__dropdown{
+      width: 100%;
+    }
+    &__text-date-field-block{
+      margin-bottom: 40px;
+    }
+    &__date-dropdown-fields-block{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      margin: 0 0 40px;
+    }
+    &__date-dropdown{
+
+      &:nth-child(1){
+          margin-right: 20px;
+      }
+    }
+    &__date-dropdown-filter-field-block{
+      margin: 0 0 42px;
+    }
+
+    &__short-block{
+      width: 100%;
+      max-width: 280px;
+    }
+    &__dropdown{
+      width: 100%;
+    }
+     &__email-field-block{
+        margin-bottom: 20px;
+    }
+   
+    
+    
+    
+
+    &__btns-list{
+        .section-form-elements__name-field{
+            margin-bottom: 16px;
+        }
+    }
+
+    &__btns-block{
+        margin-bottom: 41px;
+    }
+    
+
+    &__checkbox-btn{
+        margin: 0 0 10px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+
+    &__radio-btns-block{
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
+    }
+
+    &__radio-btn{
+        margin-right: 20px;
+    }
+
+    &__toggle-btn{
+        margin: 0 0 9px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+
+    &__like-btns-block{
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
+    }
+
+    &__like-btn{
+        margin-right: 10px;
+    }
+
+    &__rate-btns-block{
+      display: flex;
+      flex-wrap: wrap;
+      &-title{
+        width: 100%;
+      }
+    }
+
+    &__rate-btn{
+        margin-right: 19px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+
+
+    
+
+    // &__range-slider{
+    //     //max-width: 320px;
+    // }
+
+    &__btns-block_long{
+        width: 100%;
+    }
+
+    &__btns-block-content-block{
+        margin: 0 0 30px;
+        &_flex{
+          display: flex;
+        }
+    }
+
+    &__click-me{
+        margin: 0 20px 0 0;
+    }
+
+
+
+
+
+    &__dropdowns-location-list{
+        height: 290px;
+    }
+
+    &__dropdown-location-block{
+        margin: 0 0 20px;
+    }
+
+    &__dropdowns-guests-list{
+        height: 260px;
+    }
+    &__dropdowns-guests-list-expanded{
+        height: 260px;
+    }
+
+
+    &__expandable-checkbox-list{
+        margin-bottom: 14px;
+    }
+
+    &__rich-checkbox-btns-list{
+        //padding: 18px 0 0;
+        margin-bottom: 40px;
+        
+        .section-form-elements__name-field{
+            padding: 16px 0;
+            margin: 0;
+            //margin-bottom: 16px;
+        }
+    }
+
+    &__bullet-list-list{
+        margin-bottom: 40px;
+        .section-form-elements__name-field{
+            //margin-bottom: 16px;
+            padding: 17px 0 13px;
+            margin: 0;
+        }
+    }
+    &__bullet-list{
+        max-width: 263px;
+    }
+
+    // &__dignity-list{
+    //     margin-bottom: 20px;
+    // }
+
+    &__dignity{
+        margin-bottom: 20px;
+        max-width: 280px;
+    }
+    
+
+    &__item.section-form-elements__dignity-list{
+        margin-bottom: 20px;
+        padding: 7px 0 0;
+    }
+
+    &__item.section-form-elements__review-list{
+        //width: (100%/3*2)-(10.9/2); //для больших разрешений
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 17px 0 0;
+    }
+}
+
+@media (min-width: 576px) {
+    .section-form-elements{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        &__item{
+            width: 47.12%;
+            &:nth-child(2n+1){
+                margin-right: 20px;
+            }
+        }
+
+        &__date-dropdown-fields-block{
+            flex-wrap: wrap;
+        }
+        &__date-dropdown{
+            max-width: 150px;
+            &:nth-child(1){
+                //margin-right: 0;
+                margin: 0 0 20px;
+            }
+        }
+
+        &__radio-btn{
+            margin-bottom: 10px;
+        }
+
+        &__click-me{
+            margin-bottom: 10px;
+        }
+
+
+        &__rich-checkbox-btn{
+            margin-bottom: 10px;
+        }
+        
+
+
+        &__item.section-form-elements__review-list{
+            //width: (100%/3*2)-(10.9/2); //для больших разрешений
+            //width: 100%;
+            max-width: 100%;
+            margin-right: 12%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .section-form-elements{
+        justify-content: space-around;
+        &__item{
+            width: 44.12%;
+            &:nth-child(2n+1){
+                margin-right: 20px;
+            }
+        }
+
+        &__date-dropdown-fields-block{
+            flex-wrap: nowrap;
+        }
+        &__date-dropdown{
+            max-width: 150px;
+            &:nth-child(1){
+                //margin-right: 0;
+                margin: 0 20px 0 0;
+            }
+        }
+
+        &__radio-btn{
+            margin-bottom: 0;
+        }
+
+        &__click-me{
+            margin-bottom: 0;
+        }
+
+        &__item.section-form-elements__review-list{
+            //width: (100%/3*2)-(10.9/2); //для больших разрешений
+            //width: 100%;
+            margin-right: 17%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .section-form-elements{
+        justify-content: space-around;
+        &__item{
+            width: 36.12%;
+            &:nth-child(2n+1){
+                margin-right: 20px;
+            }
+        }
+
+        &__item.section-form-elements__review-list{
+            //width: (100%/3*2)-(10.9/2); //для больших разрешений
+            //width: 100%;
+            max-width: 711px;
+            margin-right: 17%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-form-elements{
+        justify-content: space-between;
+        &__item{
+            width: (100%/3)-((10.86%+6.2%)/3);
+            margin: 0 0 80px;
+            &:nth-child(2n+1){
+                margin-right: 0;
+            }
+            &:nth-child(3n+1){
+                margin-right: 10.86%;
+            }
+            &:nth-child(3n+2){
+                margin-right: 6.2%;
+            }
+        }
+
+        &__item.section-form-elements__review-list{
+            width: (100%/3*2)-(10.6%/2); //для больших разрешений
+            margin-right: 0;
+        }
+
+        &__short-block{
+            max-width: 266px;
+        }
+
+        &__btns-block{
+            max-width: 265px;
+        }
+
+        &__checkbox-btns-block{
+            max-width: 245px;
+        }
+
+        &__btns-block_long{
+            max-width: 100%;
+        }
+
+        &__dropdowns-location-list{
+            height: 223px;
+        }
+    
+        &__dropdowns-guests-list{
+            height: 223px;
+        }
+        &__dropdowns-guests-list-expanded{
+            height: 223px;
+        }
+
+        &__rich-checkbox-btn{
+            max-width: 260px;
+        }
+        
+    }
+}
+
+
+
+
+.section-cards{
+    background: none;
+    box-shadow: none;
+    padding-top: 150px;
+    padding-bottom: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__column{
+        width: 100%;
+        max-width: 380px;
+        margin-bottom: 40px;
+        &:last-child{
+            //margin: 0;
+        }
+        &_short{
+            width: 100%;
+        }
+    }
+
+    &__item{
+        width: 100%;
+        margin-bottom: 40px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+    
+    &__calendar{
+        max-width: 320px;
+    }
+    &__room-card{
+        max-width: 270px;
+    }
+
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+    .section-cards{
+        &__column{
+            width: 47.12%;
+            &:last-child{
+                //margin: 0;
+            }
+            &_short{
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start; 
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-cards{
+        flex-wrap: nowrap;
+    
+        justify-content: space-between;
+        &__column{
+            width: 32.75%;
+            margin-bottom: 0;
+            &:last-child{
+                //margin: 0;
+            }
+            &_short{
+                width: 27.58%;
+                display: block;
+                max-width: 380px;
+            }
+        }
     }
 }

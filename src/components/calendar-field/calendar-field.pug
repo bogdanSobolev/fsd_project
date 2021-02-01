@@ -1,0 +1,27 @@
+mixin calendar-field(options)
+
+    -
+        let widthElem = 'calendar-field';
+        let placeholder = 'ДД.ММ.ГГГГ'
+        let value = false
+        let inputType = text
+        let mod = ''
+
+
+    if options
+        if options.widthElem
+            - widthElem = options.widthElem
+        if options.placeholder
+            - placeholder = options.placeholder
+        if options.value
+            - value = options.value
+        if options.calendarMod
+            case options.calendarMod
+                when 'range'
+                    - mod += 'calendar_range'
+                default
+                    - break
+
+    .calendar-field
+        input.calendar-field__input.calendar(class=mod name=name type=inputType placeholder=placeholder value=value data-width-elem=widthElem)
+        span.material-icons.calendar-field__arrow expand_more

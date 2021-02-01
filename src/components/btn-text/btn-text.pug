@@ -1,0 +1,12 @@
+mixin btn-text(options)
+
+    - let mod = ''
+    - let url = "/mock-address/change-me"
+
+    if options
+        if options.hovered
+            - mod += ' btn-text_hovered'
+        if options.url
+            -url = options.url
+
+    a.btn-text(href=url class=mod)= options.text

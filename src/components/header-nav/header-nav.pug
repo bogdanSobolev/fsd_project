@@ -1,37 +1,41 @@
+include __item/header-nav__item
+
 include ../btn-outlined/btn-outlined
 include ../btn-filled/btn-filled
 
-//- if login
-//-     div login
-//- else
-//-     div no login
 
-.header-nav
-    a.header-nav__btn-menu(href="#")
-        span.header-nav__btn-menu-lines
-    .header-nav__navigation-n-profile
-        nav.header-nav__navigation
-            a.header-nav__link.header-nav__link_active-page(href="#") О нас
-            .header-nav__drop-down
-                span.header-nav__drop-down-title.header-nav__link Услуги
-                    span.material-icons.header-nav__link expand_more
-                .header-nav__drop-down-list
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 1
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 2
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Услуга 3
-            a.header-nav__link(href="#") Вакансии
-            a.header-nav__link(href="#") Новости
-            .header-nav__drop-down
-                span.header-nav__drop-down-title.header-nav__link Соглашения
-                    span.material-icons.header-nav__link expand_more
-                .header-nav__drop-down-list
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Соглашение 1
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Соглашение 2
-                    a.header-nav__drop-down-link.header-nav__link(href="#") Соглашение 3
-        
-        
-        if login
-            a.header-nav__profile.header-nav__link(href="#") Юлий Цезарь
-        else
-            +btn-outlined('войти')(class="header-nav__btn-login btn-outlined_small")
-            +btn-filled('зарегистрироваться')(class="header-nav__btn-reg btn-filled_small")
+
+
+
+mixin header-nav(options)
+    - let activePage = options.activePage
+
+    .header-nav
+        a.header-nav__btn-menu(href="#")
+            span.header-nav__btn-menu-lines
+        .header-nav__navigation-n-profile
+            nav.header-nav__navigation 
+                each item in options.pageList
+                    -
+                         function setActive(list, activePage){
+                            list.forEach(listItem => {
+                                if(listItem.page == activePage){
+                                    listItem.active = true;
+                                }else if(listItem.list){
+                                    setActive(listItem.list, activePage);
+                                }
+                            })
+                        }
+
+                        let active = setActive(options.pageList, activePage);
+
+
+                    +__item(item)
+            if options.auth
+                a.header-nav__profile(href="#") Юлий Цезарь
+            else
+                .header-nav__login-block
+                    .header-nav__btn
+                        +btn-outlined({type: 'small', text: 'войти', url: '/mock-address/change-me'})
+                    .header-nav__btn
+                        +btn-filled({type: 'small', text: 'зарегистрироваться', url: '/mock-address/change-me'})

@@ -1,0 +1,19 @@
+$dopdown_quests: ".dropdown_guests";
+
+.dropdown_guests {
+  .dropdown {
+    &__values-input {
+      border-radius: 4px;
+      transition: border-radius 0.1s 0.2s;
+    }
+  }
+}
+
+.dropdown_guests.dropdown_active {
+  .dropdown {
+    &__values-input {
+      border-radius: 4px 4px 0 0;
+      transition: border-radius 0.2s;
+    }
+  }
+}

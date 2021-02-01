@@ -1,0 +1,25 @@
+include ../title/title
+
+mixin range-slider(options)
+
+    - minValue = false
+    - maxValue = false
+    - startValue = false
+    - endValue = false
+    if options
+        if options.minValue
+            - minValue = options.minValue
+        if options.maxValue
+            - maxValue = options.maxValue
+        if options.startValue
+            - startValue = options.startValue
+        if options.endValue
+            - endValue = options.endValue
+    
+
+    .range-slider(data-min-value=minValue, data-max-value=maxValue, data-start-value=startValue, data-end-value=endValue)
+        .range-slider__title
+            +title({type: 'small', text: options.title})
+        .range-slider__value
+        .range-slider__slider
+        input.range-slider__input(type="hidden")

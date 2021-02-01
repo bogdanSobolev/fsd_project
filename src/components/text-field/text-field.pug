@@ -1,0 +1,34 @@
+mixin text-field(options)
+
+    -
+        let mod = '';
+        let typeField = 'text';
+        let placeholder = false;
+        let value = false;
+
+    if options
+        if options.typeField
+            - typeField = options.typeField
+        if options.placeholder
+            - placeholder = options.placeholder
+        if options.value
+            - value = options.value
+        if options.type
+            case options.type
+                when 'focused'
+                    - mod += ' text-field_focused'
+                default
+                    - break
+        if options.mask
+            case options.mask
+                when 'date-mask'
+                    - mod += ' text-field_date-mask'
+                when 'date-of-birth'
+                    - mod += ' text-field_date-of-birth'
+                default 
+                    - break
+        
+        
+
+
+    input.text-field(name=options.name type=typeField placeholder=placeholder value=value class=mod)

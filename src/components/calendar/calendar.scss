@@ -1,0 +1,164 @@
+.calendar {
+  $calendar-arrow-color: $color-purple;
+
+  &__calendar-arrow {
+    color: $calendar-arrow-color;
+    font-size: 24px;
+    &_prev {
+      transform: rotate(180deg);
+    }
+  }
+}
+.datepicker {
+  $day-of-week-color: $color-purple;
+  $day-of-month: $color-dark-shade-50;
+  $disabled-day-of-month: $color-dark-shade-25;
+  $hover-day-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  $check-day-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  $range-days-gradient: linear-gradient(180deg, rgba(#bc9cff, 0.25) 0%, rgba(#8ba4f9, 0.25) 100%);
+
+  $check-color: #ffff;
+  font-family: $font-family;
+  font-weight: 400;
+  color: $day-of-month;
+  font-size: 12px;
+  padding: 16px 20px 18px;
+  min-width: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  &--pointer {
+    display: none;
+  }
+  &--nav {
+    border-bottom: none;
+    padding: 0;
+    min-height: 24px;
+    margin: 0 0 41px;
+  }
+  &__title {
+    margin: 0;
+  }
+  &--days-names {
+    margin: 8px 0 12px;
+  }
+  &--day-name {
+    color: $day-of-week-color;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  &--content {
+    padding: 0;
+    margin: 0 0 21px;
+  }
+  &--buttons,
+  .datepicker--time {
+    border-top: none;
+  }
+  &--nav-action {
+    width: 24px;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform 0.15s;
+      background: none;
+    }
+    &:active {
+      transform: scale(0.9);
+      transition: transform 0.15s;
+    }
+  }
+  &--cell-day {
+    width: 14.28571%; // предположительно можно удалить
+    height: auto;
+    &:after {
+      content: "";
+      padding-top: 100%;
+      display: block;
+    }
+  }
+
+  &--cell.-focus- {
+    background: $hover-day-gradient;
+    color: $check-color;
+    border-radius: 50%;
+  }
+  &--cell.-focus-.-other-month- {
+    color: $check-color;
+  }
+  &--cell.-current- {
+    color: $day-of-month;
+  }
+  &--cell.-focus-.-current- {
+    color: $check-color;
+  }
+  &--cell.-disabled- {
+    color: $disabled-day-of-month;
+  }
+  &--cell.-focus-.-disabled- {
+    background: none;
+  }
+  &--cell.-selected- {
+    background: $check-day-gradient;
+    border-radius: 50%;
+  }
+  &--cell.-range-from- {
+    border: none;
+    background: $check-day-gradient;
+    border-radius: 50%;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $range-days-gradient;
+      border-radius: 50% 0 0 50%;
+      z-index: -1;
+    }
+  }
+  &--cell.-range-to- {
+    border: none;
+    background: $check-day-gradient;
+    border-radius: 50%;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $range-days-gradient;
+      border-radius: 0 50% 50% 0;
+      z-index: -1;
+    }
+  }
+  &--cell.-range-from-.-range-to- {
+    border-radius: 50%;
+    &::before {
+      border-radius: 50%;
+    }
+  }
+  &--cell.-focus-.-selected- {
+    background: $check-day-gradient;
+    border-radius: 50%;
+  }
+  &--cell.-in-range- {
+    background: $range-days-gradient;
+  }
+  &--cell.-focus-.-in-range- {
+    background: $hover-day-gradient;
+    border-radius: 0;
+  }
+  &--cell-day.-other-month-.-in-range-,
+  .-in-range-.datepicker--cell-year.-other-decade- {
+    background: $range-days-gradient;
+  }
+  &--cell-day.-other-month-.-in-range-.-focus-,
+  .-in-range-.datepicker--cell-year.-other-decade-.-focus- {
+    background: $hover-day-gradient;
+  }
+}

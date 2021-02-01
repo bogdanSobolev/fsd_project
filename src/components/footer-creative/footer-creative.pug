@@ -1,11 +1,21 @@
-mixin footer-creative()
-    .footer-creative(class!=attributes.class)
+mixin footer-creative(options)
+    - let blockClass = false
+    if options
+        if options.type
+            case options.type
+                when 'mobile-for-desc'
+                    - blockClass = 'footer-creative_mobile-for-desc'
+                default
+                    - blockClass = false
+            
+
+    .footer-creative.wrp-pd(class=blockClass)
         include ../logo/logo
         p.footer-creative__copyright.footer-creative__item Copyright &copy 2018 Toxin отель. Все права зачищены.
         .footer-creative__social-link-list.footer-creative__item
-            a.footer-creative__social-link(href="#")
+            a.footer-creative__social-link(href="/mock-address/change-me")
                 <i class="fab fa-twitter"></i>
-            a.footer-creative__social-link(href="#")
+            a.footer-creative__social-link(href="/mock-address/change-me")
                 <i class="fab fa-facebook-square"></i>
-            a.footer-creative__social-link(href="#")
+            a.footer-creative__social-link(href="/mock-address/change-me")
                 <i class="fab fa-instagram"></i>

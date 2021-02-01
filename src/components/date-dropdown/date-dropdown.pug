@@ -1,0 +1,6 @@
+include ../text-field/text-field
+
+mixin date-dropdown(name)
+    input.date-dropdown(class!=attributes.class name=name type=text)
+    +text-field(name, false, "text")(class="date-dropdown__input body-text calendar text-field_date-mask")
+    +text-field(name, false, "text")(class="date-dropdown__input body-text calendar calendar_range text-field_date-mask")

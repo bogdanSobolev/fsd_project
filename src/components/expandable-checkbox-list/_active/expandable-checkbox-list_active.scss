@@ -1,0 +1,12 @@
+.expandable-checkbox-list.expandable-checkbox-list_active{
+  .expandable-checkbox-list {
+      &__list {
+        max-height: 100vh;
+        transition: max-height 0.2s;
+      }
+      &__arrow {
+        transform: rotate(-180deg);
+        transition: transform 0.2s;
+      }
+    }
+}

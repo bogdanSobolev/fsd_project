@@ -1,2 +1,18 @@
-mixin btn-outlined(text)
-    a.btn-outlined(href="#")&attributes(attributes)= text
+mixin btn-outlined(options)
+
+    - let mod = ''
+    - let url = "/mock-address/change-me"
+
+    if options
+        if options.type
+            case options.type
+                when 'small'
+                    - mod += ' btn-outlined_small'
+                default
+                    - break
+        if options.hovered
+            - mod += ' btn-outlined_hovered'
+        if options.url
+            -url = options.url
+
+    a.btn-outlined(href=url class=mod)= options.text
