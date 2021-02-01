@@ -87,13 +87,6 @@
     align-items: flex-start;
     flex-direction: column;
   }
-  // &__btn-login {
-  //   margin-bottom: 20px;
-  //   padding: 9px 20px;
-  // }
-  // &__btn-reg {
-  //   padding: 9px 20px;
-  // }
   &__profile {
     display: flex;
     align-items: center;
@@ -109,6 +102,17 @@
       background-color: $color-dark-shade;
       opacity: 0.1;
       margin: 0 20px 0 0;
+    }
+  }
+  &__login-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__btn{
+    margin: 0 0 5px;
+    &:last-child{
+      margin: 0;
     }
   }
 }
@@ -134,17 +138,22 @@
       align-items: center;
       flex-direction: row;
     }
+  }
+}
 
-    &__btn {
-      // margin: 0 20px 0 0;
-      margin: 0 20px 0 10px;
+@media (min-width: 1200px)  {
+  .header-nav {
+    &__login-block{
+      flex-direction: row;
+      align-items: center;
+      margin: 0 0 0 10px;
+    }
+    &__btn{
+      margin: 0 20px 0 0;
       &:last-child{
         margin: 0;
       }
-      // &:first-child{
-      //   margin-left: 10px;
-      //   transform: scale(2);
-      // }
     }
   }
 }
+

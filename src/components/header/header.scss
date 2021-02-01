@@ -1,5 +1,7 @@
 .header{
-  height: 70px;
+  min-height: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   display: flex;
   justify-content: space-between;

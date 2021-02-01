@@ -34,7 +34,8 @@ mixin header-nav(options)
             if options.auth
                 a.header-nav__profile(href="#") Юлий Цезарь
             else
-                .header-nav__btn
-                    +btn-outlined({type: 'small', text: 'войти', url: '/mock-address/change-me'})
-                .header-nav__btn
-                    +btn-filled({type: 'small', text: 'зарегистрироваться', url: '/mock-address/change-me'})
+                .header-nav__login-block
+                    .header-nav__btn
+                        +btn-outlined({type: 'small', text: 'войти', url: '/mock-address/change-me'})
+                    .header-nav__btn
+                        +btn-filled({type: 'small', text: 'зарегистрироваться', url: '/mock-address/change-me'})
