@@ -72,5 +72,4 @@ mixin header(options)
 
     header.header.wrp-pd
         include ../logo/logo
-        //- +header-nav(login, pageList, activePage)
         +header-nav({auth: options.auth, pageList: pageList, activePage: options.activePage})
