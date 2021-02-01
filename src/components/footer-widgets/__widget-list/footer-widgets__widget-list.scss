@@ -5,7 +5,7 @@
 
   &__widget-list {
     &-title{
-      margin: 4px 0 22px;
+      // margin: 4px 0 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,6 +51,7 @@
   .footer-widgets {
     &__widget-list {
       &-title {
+        margin: 4px 0 22px;
         display: block;
         cursor: default;
         & > .material-icons {
