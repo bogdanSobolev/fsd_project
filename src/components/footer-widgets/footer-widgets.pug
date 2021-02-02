@@ -9,9 +9,10 @@ mixin footer-widgets(options)
                 |Бронирование номеров в лучшем отеле 2019 
                 |года по версии ассоциации «Отельные взгляды»
 
-        each item in options.pageList
-            .footer-widgets__item.footer-widgets__nav.footer-widgets__item-short
-                +__widgets-list(item)
+        .footer-widgets__dropdown-widgets
+            each item in options.pageList
+                .footer-widgets__item.footer-widgets__nav.footer-widgets__item-short
+                    +__widgets-list(item)
 
         .footer-widgets__logo-n-info.footer-widgets__item
             +__widget-subscribe("Подписка")(class="footer-widgets__item")
