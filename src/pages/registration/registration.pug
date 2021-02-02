@@ -1,0 +1,18 @@
+extends ../../layout/layout
+
+include ../../components/grand-slider/grand-slider
+include ../../components/card-registration/card-registration
+
+block variables
+    - let title = "Регистрация"
+
+block content
+    .content-with-grand-slider
+        .content-with-grand-slider__slider
+            - const slidesUrl = "./assets/img/slides/"
+            - let dataSlider = [{url: slidesUrl + "slide-1.png"}, {url: slidesUrl + "slide-4.png"}]
+            +grand-slider({dataSlider: dataSlider})
+        .content-with-grand-slider__content.wrp-pd
+            .content-with-grand-slider__content-card-registration
+                +card-registration()
+            //- .content-with-grand-slider__content-text Лучшие номера для вашей работы, отдыха и просто вдохновения
