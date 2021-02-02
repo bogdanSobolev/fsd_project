@@ -1,0 +1,17 @@
+extends ../../layout/layout
+
+include ../../components/grand-slider/grand-slider
+include ../../components/card-login/card-login
+
+block variables
+    - let title = "Войти"
+
+block content
+    .content-with-grand-slider
+        .content-with-grand-slider__slider
+            - const slidesUrl = "./assets/img/slides/"
+            - let dataSlider = [{url: slidesUrl + "slide-1.png"}, {url: slidesUrl + "slide-4.png"}]
+            +grand-slider({dataSlider: dataSlider})
+        .content-with-grand-slider__content.wrp-pd
+            .content-with-grand-slider__content-card-login
+                +card-login()
