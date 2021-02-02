@@ -1,0 +1,50 @@
+.search-room{
+    $padding-top: 70px;
+    $range-description-color: $color-dark-shade-50;
+
+    padding-top: $padding-top + 30px;
+    display: flex;
+    &__aside{
+        max-width: 266px;
+    }
+
+    &__aside-form-item{
+        margin: 0 0 30px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+    &__aside-form-dates-of-stay-block{
+        margin: 0 0 20px;
+    }
+    &__aside-form-title{
+        margin: 0 0 16px;
+    }
+    &__aside-form-input_title{
+        margin: 0 0 5px;
+    }
+    &__aside-form-price-range{
+        margin: 0 0 10px;
+    }
+    &__aside-form-price-range-description{
+        color: $range-description-color;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    &__aside-form-house-rules-list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__aside-form-house-rules-item{
+        margin: 10px 0;
+    }
+    &__aside-form-accessibility-list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__aside-form-accessibility-item{
+        margin: 10px 0;
+    }
+}
