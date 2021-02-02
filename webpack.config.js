@@ -127,7 +127,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: path.join('style', '[name].css'),
-            chunkFilename: '[id].css'
+            chunkFilename: '[id].css',
+            ignoreOrder: true,
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
