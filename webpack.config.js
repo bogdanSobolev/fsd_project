@@ -23,6 +23,7 @@ module.exports = {
     index: path.resolve(__dirname, './src/pages/index/index.js'),
     test: path.resolve(__dirname, './src/pages/test/test.js'),
     ui: path.resolve(__dirname, './src/pages/ui/ui.js'),
+    registration: path.resolve(__dirname, './src/pages/registration/registration.js'),
   },
   output: {
 	path: path.resolve(__dirname, 'dist'),
@@ -123,6 +124,11 @@ module.exports = {
             filename: 'ui.html', // шаблон
             chunks: ['ui'],
             template: path.resolve(__dirname, './src/pages/ui/ui.pug'), // название выходного файла
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration.html', // шаблон
+            chunks: ['registration'],
+            template: path.resolve(__dirname, './src/pages/registration/registration.pug'), // название выходного файла
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({

@@ -1,0 +1,42 @@
+.content-with-grand-slider{
+    $padding-top: 70px;
+
+    min-height: 100vh;
+    position: relative;
+    &__slider{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    &__content{
+        padding-top: $padding-top + 30px;
+        padding-bottom: 10px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-card-registration{
+            width: 100%;
+            max-width: 380px;
+        }
+    }
+}
+
+@media (min-width: 576px){
+    $padding-top: 70px;
+    @media (min-height: 735px){
+        .content-with-grand-slider{
+            &__slider{
+                display: block;
+            }
+            &__content{
+                padding-top: $padding-top + 10px;
+            }
+        }
+    }
+}
