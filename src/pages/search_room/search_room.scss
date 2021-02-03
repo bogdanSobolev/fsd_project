@@ -1,11 +1,70 @@
 .search-room{
     $padding-top: 70px;
     $range-description-color: $color-dark-shade-50;
+    $filter-btn-icon-color: $color-dark-shade-75;
+    $filter-btn-icon-color-hover: $color-purple;
+    $filter-btn-border-color: $color-dark-shade-75;
+    $filter-btn-border-color-hover: $color-purple;
 
     padding-top: $padding-top + 30px;
     display: flex;
+    justify-content: space-between;
+    position: relative;
     &__aside{
+        // min-width: 210px;
         max-width: 266px;
+        margin: 0 20px 0 0;
+        left: 0;
+        top: $padding-top;
+        position: absolute;
+        z-index: 2;
+    }
+    &__filter-btn{
+        height: 35px;
+        width: 35px;
+        margin: 0 0 0 24px;
+        background: #fff;
+        color: $filter-btn-icon-color;
+        border: 1px solid $filter-btn-border-color;
+        outline-offset: 4px;
+        transition: transform .2s;
+        padding: 0;
+        border-radius: 50%;
+        &:hover{
+            color: $filter-btn-icon-color-hover;
+            border: 1px solid $filter-btn-border-color-hover;
+        }
+        &_active{
+            color: $filter-btn-icon-color-hover;
+            border: 1px solid $filter-btn-border-color-hover;
+        }
+        &:active{
+            transform: scale(1.2);
+            transition: transform .2s;
+        }
+    }
+    &__filter-btn-icon-wrp{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__filter-btn-icon{
+        font-family: "Material Icons Outlined";
+    }
+
+    &__aside-form{
+        max-height: 0;
+        overflow: hidden;
+        background: #fff;
+        padding: 0 20px;
+        transition: max-height .3s, padding .3s;
+        &_active{
+            max-height: 100%;
+            padding: 20px 20px;
+            transition: max-height .3s, padding .3s;
+        }
     }
 
     &__aside-form-item{
@@ -46,5 +105,63 @@
     }
     &__aside-form-accessibility-item{
         margin: 10px 0;
+    }
+    &__card-room{
+        max-width: 270px;
+    }
+}
+
+@media (min-width: 768px){
+    .search-room{
+        &__aside{
+            min-width: 210px;
+            margin: 0 30px 0 0;
+            max-width: 210px;
+            width: 22.91%;
+            position: static;
+        }
+        &__filter-btn{
+            display: none;
+        }
+        &__aside-form{
+            max-height: 100%;
+            // height: 100%;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .search-room{
+        &__aside{
+            max-width: 266px;
+            margin: 0 60px 0 0;
+        }
+    }
+}
+
+.room-list-block{
+    &__title{
+        margin: 0 0 20px;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        row-gap: 20px;
+        column-gap: 12px;
+    }
+    &__card-room{
+        // max-width: 270px;
+    }
+}
+
+@media (min-width: 992px){
+    .room-list-block{
+        // min-width: 700px;
+        &__list{
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+        }
     }
 }
