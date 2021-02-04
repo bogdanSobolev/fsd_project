@@ -25,6 +25,7 @@ module.exports = {
     ui: path.resolve(__dirname, './src/pages/ui/ui.js'),
     registration: path.resolve(__dirname, './src/pages/registration/registration.js'),
     sign_in: path.resolve(__dirname, './src/pages/sign_in/sign_in.js'),
+    search_room: path.resolve(__dirname, './src/pages/search_room/search_room.js'),
     room_details: path.resolve(__dirname, './src/pages/room_details/room_details.js'),
   },
   output: {
@@ -136,6 +137,11 @@ module.exports = {
             filename: 'sign_in.html', // шаблон
             chunks: ['sign_in'],
             template: path.resolve(__dirname, './src/pages/sign_in/sign_in.pug'), // название выходного файла
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'search_room.html', // шаблон
+            chunks: ['search_room'],
+            template: path.resolve(__dirname, './src/pages/search_room/search_room.pug'), // название выходного файла
         }),
         new HtmlWebpackPlugin({
             filename: 'room_details.html', // шаблон
