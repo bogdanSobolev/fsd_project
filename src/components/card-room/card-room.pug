@@ -28,8 +28,8 @@ mixin card-room(options)
     .card-room
         .card-room__slider
             each img in options.roomImages
-            
-                img.card-room__slider-slide(src=img, alt="фото комнаты")
+                .card-room__slider-slide-wrp
+                    img.card-room__slider-slide(src=img, alt="фото комнаты")
 
 
         .card-room__text-wrp

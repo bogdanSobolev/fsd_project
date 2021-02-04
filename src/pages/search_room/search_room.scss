@@ -1,0 +1,204 @@
+$aside-static-width: 22.931%;
+
+.search-room{
+    $padding-top: 70px;
+    $range-description-color: $color-dark-shade-50;
+    $filter-btn-icon-color: $color-dark-shade-50;
+    $filter-btn-icon-color-hover: $color-purple;
+    $filter-btn-border-color: $color-dark-shade-50;
+    $filter-btn-border-color-hover: $color-purple;
+    // $aside-static-width: 22.91%;
+
+    padding-top: $padding-top + 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &__aside{
+        max-width: 266px;
+        left: 0;
+        top: $padding-top;
+        position: absolute;
+        z-index: 2;
+    }
+    &__filter-btn{
+        height: 35px;
+        margin: 0 0 0 24px;
+        background: #fff;
+        color: $filter-btn-icon-color;
+        border: none;
+        outline-offset: 4px;
+        transition: transform .2s;
+        padding: 0;
+        &:hover{
+            color: $filter-btn-icon-color-hover;
+        }
+        &:hover .search-room__filter-btn-icon{
+            border: 1px solid $filter-btn-border-color-hover;
+        }
+        &_active{
+            color: $filter-btn-icon-color-hover;
+        }
+        &_active .search-room__filter-btn-icon{
+            border: 1px solid $filter-btn-border-color-hover;
+        }
+        &:active{
+            transform: scale(1.2);
+            transition: transform .2s;
+        }
+    }
+    
+    &__filter-btn-wrp{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__filter-btn-icon{
+        font-family: "Material Icons Outlined";
+        border: 1px solid $filter-btn-border-color;
+        border-radius: 50%;
+        margin: 0 5px 0 0;
+    }
+    &__filter-btn-text{
+        font-weight: 700;
+    }
+
+    &__aside-form{
+        max-height: 0;
+        overflow: hidden;
+        background: #fff;
+        padding: 0 20px;
+        transition: max-height .3s, padding .3s;
+        &_active{
+            max-height: 100%;
+            padding: 20px 20px;
+            transition: max-height .3s, padding .3s;
+        }
+    }
+
+    &__aside-form-item{
+        margin: 0 0 30px;
+        &:last-child{
+            margin: 0;
+        }
+    }
+    &__aside-form-dates-of-stay-block{
+        margin: 0 0 20px;
+    }
+    &__aside-form-title{
+        margin: 0 0 16px;
+    }
+    &__aside-form-input_title{
+        margin: 0 0 5px;
+    }
+    &__aside-form-price-range{
+        margin: 0 0 9px;
+    }
+    &__aside-form-price-range-description{
+        color: $range-description-color;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    &__aside-form-house-rules-list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__aside-form-house-rules-item{
+        margin: 10px 0;
+    }
+    &__aside-form-accessibility-list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__aside-form-accessibility-item{
+        margin: 10px 0;
+    }
+    &__card-room{
+        max-width: 270px;
+    }
+}
+
+@media (min-width: 768px){
+    .search-room{
+        &__aside{
+            min-width: 210px;
+            // margin: 0 30px 0 0;
+            max-width: 210px;
+            // width: 22.91%;
+            width: $aside-static-width;
+            position: static;
+        }
+        &__filter-btn{
+            display: none;
+        }
+        &__aside-form{
+            max-height: 100%;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .search-room{
+        &__aside{
+            max-width: 266px;
+            // margin: 0 60px 0 0;
+        }
+    }
+}
+
+.room-list-block{
+    margin: 0 0 0 45px;
+    &__title{
+        margin: 0 0 20px;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr);
+        row-gap: 20px;
+        column-gap: 12px;
+    }
+    &__card-room{
+        // max-width: 270px;
+    }
+}
+
+@media (min-width: 576px){
+    .room-list-block{
+        &__list{
+            grid-template-columns: repeat(2, minmax(200px, 1fr));
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    $margin-right: 2.586%;
+    .room-list-block{
+        margin: 0 0 0 30px;
+        // margin: 0 0 0 $margin-right;
+        // width: (100% - $aside-static-width) - 30px;
+        width: 71.896%;
+    }
+}
+
+@media (min-width: 992px){
+    .room-list-block{
+        margin: 0 0 0 60px;
+        &__list{
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+        }
+    }
+}
+
+@media (min-width: 1600px){
+    .room-list-block{
+        width: 80%;
+        &__list{
+            grid-template-columns: repeat(4, minmax(200px, 1fr));
+        }
+    }
+}

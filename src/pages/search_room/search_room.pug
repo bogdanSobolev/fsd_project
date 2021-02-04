@@ -1,0 +1,258 @@
+extends ../../layout/layout
+
+include ../../components/title/title
+include ../../components/calendar-field/calendar-field
+include ../../components/dropdown/dropdown
+include ../../components/range-slider/range-slider
+include ../../components/btn-checkbox/btn-checkbox
+include ../../components/btn-checkbox-rich/btn-checkbox-rich
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
+include ../../components/card-room/card-room
+
+block variables
+    - let title = "Поиск отеля"
+
+block content
+    .search-room.wrp-pd
+        aside.search-room__aside
+            - let valueDatesOfStay = false
+
+            button.search-room__filter-btn
+                .search-room__filter-btn-wrp
+                    span.material-icons.search-room__filter-btn-icon filter_alt
+                    span.search-room__filter-btn-text  Фильтры
+            form(action="", method="get").search-room__aside-form
+                .search-room__aside-form-item.search-room__aside-form-dates-of-stay-block
+                    .search-room__aside-form-title.search-room__aside-form-input_title
+                        +title({type: "small", text: "даты пребывания в отеле"})
+                    .search-room__aside-form-input.search-room__aside-form-dates-of-stay
+                        +calendar-field({calendarMod: "range", name: "dates-of-stay", value: valueDatesOfStay})
+
+                .search-room__aside-form-item.search-room__aside-form-guests-block
+                    .search-room__aside-form-title.search-room__aside-form-input_title
+                        +title({type: "small", text: "гости"})
+                    .search-room__aside-form-input.search-room__aside-form-guests
+                        +dropdown({dropdownType: "guests", dataValues: [{name: "взрослые", value: 2},{name:"дети", value: 1}]})
+
+                .search-room__aside-form-item.search-room__aside-form-price-range-block
+                    .search-room__aside-form-input.search-room__aside-form-price-range
+                        +range-slider({ minValue: 0, maxValue: 15000, startValue: 5000, endValue: 10000, title: "диапазон цены"})
+                    span.search-room__aside-form-price-range-description Стоимость за сутки пребывания в номере
+
+                .search-room__aside-form-item.search-room__aside-form-house-rules-block
+                    .search-room__aside-form-title
+                        +title({type: "small", text: "правила дома"})
+                    ul.search-room__aside-form-house-rules-list
+                        li.search-room__aside-form-house-rules-item
+                            .search-room__aside-form-house-rules-rule
+                                +btn-checkbox({name: "Можно курить", text: "Можно курить"})
+                        li.search-room__aside-form-house-rules-item
+                            .search-room__aside-form-house-rules-rule
+                                +btn-checkbox({name: "Можно с питомцами", text: "Можно с питомцами", checkedBtn: true})
+                        li.search-room__aside-form-house-rules-item
+                            .search-room__aside-form-house-rules-rule
+                                +btn-checkbox({name: "Можно пригласить гостей", text: "Можно пригласить гостей (до 10 человек)", checkedBtn: true})
+
+                .search-room__aside-form-item.search-room__aside-form-accessibility-block
+                    .search-room__aside-form-title
+                        +title({type: "small", text: "доступность"})
+                    ul.search-room__aside-form-accessibility-list
+                        li.search-room__aside-form-accessibility-item
+                            .search-room__aside-form-accessibility
+                                +btn-checkbox-rich({name: "Широкий коридор", title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
+                        li.search-room__aside-form-accessibility-item
+                            .search-room__aside-form-accessibility
+                                +btn-checkbox-rich({name: "Помощник для инвалидов", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера." })
+                
+                .search-room__aside-form-item.search-room__aside-form-room-amenities-block
+                    .search-room__aside-form-title.search-room__aside-form-input_title
+                        +title({type: "small", text: "удобства номера"})
+                    .search-room__aside-form-input.search-room__aside-form-room-amenities
+                        +dropdown({dropdownType: "location", dataValues: [{name: "спальни", value: 2}, {name: "кровати", value: 2}]})
+                
+                .search-room__aside-form-item.search-room__aside-form-additional-amenities-block
+                    .search-room__aside-form-input.search-room__aside-form-additional-amenities
+                        -
+                            const checkboxData = [
+                                {name: "завтрак", text: "Завтрак"},
+                                {name: "письменный стол", text: "Письменный стол", checked: true},
+                                {name: "стул для кормления", text: "Стул для кормления", checked: true},
+                                {name: "кроватка", text: "Кроватка", checked: true},
+                                {name: "телевизор", text: "Телевизор"},
+                                {name: "шампунь", text: "Шампунь"}
+                            ];
+
+                        +expandable-checkbox-list({name: "дополнительные удобства", checkboxData: checkboxData})
+        main.room-list-block
+            .room-list-block__title
+                +title({type: "big", text: "Номера, которые мы для вас подобрали"})
+            .room-list-block__list
+                -
+                    const calendarListData = [
+                        {
+                            number: 888,
+                            typeRoom: 'люкс', 
+                            price: '9990', 
+                            rate: 5, 
+                            quantityReviews: 145, 
+                            roomImages: [
+                                "./assets/img/room-img/room_1.jpg", 
+                                "./assets/img/room-img/room_1.jpg", 
+                                "./assets/img/room-img/room_1.jpg", 
+                                "./assets/img/room-img/room_1.jpg"
+                            ]
+                        },
+                        {
+                            number: 840,
+                            typeRoom: false, 
+                            price: '9900', 
+                            rate: 4, 
+                            quantityReviews: 65, 
+                            roomImages: [
+                                "./assets/img/room-img/room_2.jpg", 
+                                "./assets/img/room-img/room_2.jpg", 
+                                "./assets/img/room-img/room_2.jpg", 
+                                "./assets/img/room-img/room_2.jpg"
+                            ]
+                        },
+                        {
+                            number: 980,
+                            typeRoom: 'люкс', 
+                            price: '8500', 
+                            rate: 3, 
+                            quantityReviews: 35, 
+                            roomImages: [
+                                "./assets/img/room-img/room_3.png", 
+                                "./assets/img/room-img/room_3.png", 
+                                "./assets/img/room-img/room_3.png", 
+                                "./assets/img/room-img/room_3.png"
+                            ]
+                        },
+                        {
+                            number: 856,
+                            typeRoom: false, 
+                            price: '7300', 
+                            rate: 5, 
+                            quantityReviews: 19, 
+                            roomImages: [
+                                "./assets/img/room-img/room_4.png", 
+                                "./assets/img/room-img/room_4.png", 
+                                "./assets/img/room-img/room_4.png", 
+                                "./assets/img/room-img/room_4.png"
+                            ]
+                        },
+                        {
+                            number: 740,
+                            typeRoom: false, 
+                            price: '6000', 
+                            rate: 4, 
+                            quantityReviews: 44, 
+                            roomImages: [
+                                "./assets/img/room-img/room_5.png", 
+                                "./assets/img/room-img/room_5.png", 
+                                "./assets/img/room-img/room_5.png", 
+                                "./assets/img/room-img/room_5.png"
+                            ]
+                        },
+                        {
+                            number: 982,
+                            typeRoom: false, 
+                            price: '5800', 
+                            rate: 3, 
+                            quantityReviews: 56, 
+                            roomImages: [
+                                "./assets/img/room-img/room_6.png", 
+                                "./assets/img/room-img/room_6.png", 
+                                "./assets/img/room-img/room_6.png", 
+                                "./assets/img/room-img/room_6.png"
+                            ]
+                        },
+                        {
+                            number: 678,
+                            typeRoom: false, 
+                            price: '5500', 
+                            rate: 5, 
+                            quantityReviews: 45, 
+                            roomImages: [
+                                "./assets/img/room-img/room_7.png", 
+                                "./assets/img/room-img/room_7.png", 
+                                "./assets/img/room-img/room_7.png", 
+                                "./assets/img/room-img/room_7.png"
+                            ]
+                        },
+                        {
+                            number: 450,
+                            typeRoom: false, 
+                            price: '5300', 
+                            rate: 4, 
+                            quantityReviews: 39, 
+                            roomImages: [
+                                "./assets/img/room-img/room_8.png", 
+                                "./assets/img/room-img/room_8.png", 
+                                "./assets/img/room-img/room_8.png", 
+                                "./assets/img/room-img/room_8.png"
+                            ]
+                        },
+                        {
+                            number: 350,
+                            typeRoom: false, 
+                            price: '5000', 
+                            rate: 3, 
+                            quantityReviews: 77, 
+                            roomImages: [
+                                "./assets/img/room-img/room_9.png", 
+                                "./assets/img/room-img/room_9.png", 
+                                "./assets/img/room-img/room_9.png", 
+                                "./assets/img/room-img/room_9.png"
+                            ]
+                        },
+                        {
+                            number: 666,
+                            typeRoom: false, 
+                            price: '5000', 
+                            rate: 5, 
+                            quantityReviews: 25, 
+                            roomImages: [
+                                "./assets/img/room-img/room_10.png", 
+                                "./assets/img/room-img/room_10.png", 
+                                "./assets/img/room-img/room_10.png", 
+                                "./assets/img/room-img/room_10.png"
+                            ]
+                        },
+                        {
+                            number: 444,
+                            typeRoom: false, 
+                            price: '5000', 
+                            rate: 3, 
+                            quantityReviews: 15, 
+                            roomImages: [
+                                "./assets/img/room-img/room_11.png", 
+                                "./assets/img/room-img/room_11.png", 
+                                "./assets/img/room-img/room_11.png", 
+                                "./assets/img/room-img/room_11.png"
+                            ]
+                        },
+                        {
+                            number: 352,
+                            typeRoom: false, 
+                            price: '5000', 
+                            rate: 3, 
+                            quantityReviews: 55, 
+                            roomImages: [
+                                "./assets/img/room-img/room_12.png", 
+                                "./assets/img/room-img/room_12.png", 
+                                "./assets/img/room-img/room_12.png", 
+                                "./assets/img/room-img/room_12.png"
+                            ]
+                        }
+                    ];
+                
+                each itemRoom in calendarListData
+                    .room-list-block__card-room
+                        +card-room({number: itemRoom.number, typeRoom: itemRoom.typeRoom, price: itemRoom.price, rate: itemRoom.rate, quantityReviews: itemRoom.quantityReviews, roomImages: itemRoom.roomImages})
+
+
+            .room-list-block__pagination
+
+
+
