@@ -24,6 +24,8 @@ module.exports = {
     test: path.resolve(__dirname, './src/pages/test/test.js'),
     ui: path.resolve(__dirname, './src/pages/ui/ui.js'),
     registration: path.resolve(__dirname, './src/pages/registration/registration.js'),
+    sign_in: path.resolve(__dirname, './src/pages/sign_in/sign_in.js'),
+    search_room: path.resolve(__dirname, './src/pages/search_room/search_room.js'),
   },
   output: {
 	path: path.resolve(__dirname, 'dist'),
@@ -129,6 +131,16 @@ module.exports = {
             filename: 'registration.html', // шаблон
             chunks: ['registration'],
             template: path.resolve(__dirname, './src/pages/registration/registration.pug'), // название выходного файла
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'sign_in.html', // шаблон
+            chunks: ['sign_in'],
+            template: path.resolve(__dirname, './src/pages/sign_in/sign_in.pug'), // название выходного файла
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'search_room.html', // шаблон
+            chunks: ['search_room'],
+            template: path.resolve(__dirname, './src/pages/search_room/search_room.pug'), // название выходного файла
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
