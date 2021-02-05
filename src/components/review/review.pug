@@ -3,11 +3,11 @@ include ../btn-like/btn-like
 
 mixin review(options)
 
-    - let mod = ''
+    - let checkedBtn = false
 
     if options 
         if options.likeActive
-            - mod += 'btn-like_active'
+            - checkedBtn = true
 
 
     .review
@@ -18,5 +18,5 @@ mixin review(options)
                 .review__author-was-online= options.authorWasOnline
         .review__content-block
             .review__btn-like-wrp
-                +btn-like({name: options.likeName, value: options.likeValue, checkedBtn: true})
-            .review__content-text= reviewText
+                +btn-like({name: options.likeName, value: options.likeValue, checkedBtn: checkedBtn})
+            .review__content-text= options.reviewText

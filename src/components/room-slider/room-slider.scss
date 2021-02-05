@@ -1,0 +1,21 @@
+.room-slider{
+    height: 485px;
+    &__slide{
+        height: 485px;
+        &-1{
+            background: black;
+        }
+        &-2{
+            background: green;
+        }
+        &-3{
+            background: blue;
+        }
+
+        &-img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

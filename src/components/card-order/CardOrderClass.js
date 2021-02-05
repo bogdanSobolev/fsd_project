@@ -17,14 +17,18 @@ export default class CardOrderClass{
 
     setSumGuests(){
         let dropdownTextValue = this.$cardOrder.find('.dropdown__values-input-text').text();
+        console.log(this.$cardOrder.find('.dropdown__values-input-text'));
         let regular = /\d+/g;
         this.sumGuests = dropdownTextValue.match(regular)[0];
     }
     
 
     setSumDay(){
+        // console.log(this.arrivalInput.val());
         let startDate = this.arrivalInput.val();
         let endtDate = this.departureInput.val();
+
+        console.log();
 
         function transformDate(date){
             let dateArr = date.split('.');
