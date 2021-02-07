@@ -1,48 +1,68 @@
 import $ from 'jquery';
-// import 'chart.js';
 import Chart from 'chart.js';
 
 
 const $diagramList = $('.impression-diagram__diagram');
 
+
+
 $diagramList.each(function(){
-    // console.log($(this));
+    let voteData = $(this).data('vote');
+
+    
     let diagramChart = new Chart($(this), {
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [10, 20, 30],
+                data: [voteData.disappointed, voteData.satisfactori, voteData.good, voteData.amazing ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
+                    '#3D4975',
+                    '#bc9cff',
+                    '#6fcf97',
+                    '#FFBA9C'
                 ],
             }],
             labels: [
-                'Red',
-                'Yellow',
-                'Blue',
-                'test'
+                'Разочарован',
+                'Удовлетворительно',
+                'Хорошо',
+                'Великолепно',
             ]
         },
+        
         options: {
             cutoutPercentage: 90,
             responsive: true,
-            // maintainAspectRatio: false,
-            keepAspectRatio: false,
+            maintainAspectRatio: false,
             legend: {
-                position: 'right',
-                align: 'end',
-                labels: {
-                    usePointStyle: true,
-                    // boxWidth: '20',
-                }
-                
+                display: false,
             },
+            tooltips: {
+                enabled: false
+            },
+            legendCallback: function(chart) {
+                var text = []; 
+                text.push('<ul class="' + chart.id + '-legend impression-diagram__legend-list">'); 
+                for (var i = chart.data.datasets[0].data.length - 1; i >= 0; i--) { 
+                    text.push('<li class="impression-diagram__legend-item"><span class="impression-diagram__legend-marker" style="background-color:' + 
+                               chart.data.datasets[0].backgroundColor[i] + 
+                               '"></span>'); 
+                    if (chart.data.labels[i]) { 
+                        text.push(chart.data.labels[i]); 
+                    } 
+                    text.push('</li>'); 
+                }  
+                text.push('</ul>'); 
+                return text.join(''); 
+            }
         },
         
     });
 
+    const $parentBlock = $(this).closest('.impression-diagram');
+    const $legend = $parentBlock.find(".impression-diagram__legend");
+
+    $legend.html(diagramChart.generateLegend());
 });
 
 function beforePrintHandler () {
@@ -53,52 +73,4 @@ function beforePrintHandler () {
 
 $(window).resize(function() {
     beforePrintHandler();
-    // console.log(Chart.instances);
-    // console.log(Chart.instances[0]);
 });
-
-// window.addEventListener("beforeprint", function(event) {
-//     console.log(Chart.instances[0]);
-//     beforePrintHandler();
-// });
-    
-
-
-
-
-
-// const diagram = $('#myChart');
-
-// let diagramChart = new Chart(diagram, {
-//     type: 'doughnut',
-//     data: {
-//         datasets: [{
-//             data: [10, 20, 30],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//             ],
-//         }],
-//         labels: [
-//             'Red',
-//             'Yellow',
-//             'Blue',
-//             'test'
-//         ]
-//     },
-//     options: {
-//         cutoutPercentage: 90,
-//         responsive: true,
-//         legend: {
-//             position: 'right',
-//             align: 'end',
-//             labels: {
-//                 usePointStyle: true,
-//                 // boxWidth: '20',
-//             }
-            
-//         },
-//     },
-    
-// });
