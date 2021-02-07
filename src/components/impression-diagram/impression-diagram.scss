@@ -1,0 +1,60 @@
+.impression-diagram{
+    $votesColor: $color-purple;
+
+    width: 100%;
+    display: flex;
+    &__diagram-wrp{
+        position: relative;
+        width: 35.5%;
+        max-height: 126px;
+    }
+    &__diagram-vote{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 25px;
+        padding: 0 0 5px;
+        color: $votesColor;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__diagram-quantity-vote{
+        
+        font-size: 24px;
+        line-height: 29px;
+    }
+    &__legend{
+        flex-shrink: 0;
+        padding: 0 0 4px;
+        align-self: flex-end;
+        margin: 0 0 0 26px;
+        &-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        &-item{
+            display: flex;
+            align-items: center;
+            margin: 0 0 6px;
+            &:last-child{
+                margin: 0;
+            }
+        }
+        &-marker{
+            width: 10px;
+            height: 10px;
+            display: block;
+            border-radius: 50%;
+            margin: 0 5px 0 0;
+        }
+    }
+}

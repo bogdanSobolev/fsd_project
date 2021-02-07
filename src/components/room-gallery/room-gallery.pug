@@ -1,0 +1,10 @@
+mixin room-gallery(options)
+    .room-gallery
+        .room-gallery__active-image-block
+            .room-gallery__active-image= activeimage
+                img.room-gallery__active-image-img(src=options.imageList[0].url, alt=options.imageList[0].alt)
+        .room-gallery__image-list
+            each item in options.imageList
+                - if(item != options.imageList[0])
+                    .room-gallery__image
+                        img.room-gallery__image-img(src=item.url, alt=item.alt)

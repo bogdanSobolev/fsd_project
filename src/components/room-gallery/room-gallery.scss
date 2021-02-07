@@ -1,0 +1,62 @@
+.room-gallery{
+    display: flex;
+    flex-direction: column;
+    &__active-image-block{
+        width: 100%;
+        position: relative;
+        padding-top: 60.68%;
+    }
+    &__active-image{
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        &-img{
+            height: 100%;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+    &__image-list{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+    }
+    &__image{
+        width: 100%;
+        position: relative;
+        padding-top: 30%;
+        &-img{
+            position:  absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .room-gallery{
+        flex-direction: row;
+        min-width: 485px;
+        &__active-image-block{
+            width: 68.055%;
+            padding-top: 33.68%;
+        }
+        &__image-list{
+            flex-direction: column;
+            width: 31.945%;
+        }
+        &__image{
+            height: 50%;
+        }
+    }
+}

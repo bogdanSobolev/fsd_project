@@ -1,0 +1,20 @@
+mixin impression-diagram(options)
+    -
+        let quantityVote = sumVal(options.vote);
+
+        function sumVal(obj) {
+            let result = 0;
+            for(key in obj) {
+                result += obj[key];
+            }
+            return result;
+        }
+
+    .impression-diagram
+        .impression-diagram__diagram-wrp
+            .impression-diagram__diagram-chart
+                canvas.impression-diagram__diagram(id="myChart" width="126" height="126" data-vote=options.vote)
+            .impression-diagram__diagram-vote
+                span.impression-diagram__diagram-quantity-vote= quantityVote
+                | голосов
+        .impression-diagram__legend

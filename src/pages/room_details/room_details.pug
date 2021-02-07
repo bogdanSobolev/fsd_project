@@ -1,11 +1,123 @@
 extends ../../layout/layout
 
-//- include ../../components/grand-slider/grand-slider
-//- include ../../components/card-login/card-login
+include ../../components/room-gallery/room-gallery
+include ../../components/title/title
+include ../../components/dignity/dignity
+include ../../components/review/review
+include ../../components/bullet-list/bullet-list
+include ../../components/card-order/card-order
+include ../../components/impression-diagram/impression-diagram
+
+
 
 block variables
     - let title = "Детали номера"
 
 block content
-    .room-details-slider
-        | room slider
+    .room-details-gallery
+        -
+            let roomImageList = [
+                {
+                    url: './assets/img/slides/room-1.png',
+                    alt: 'фото комнаты'
+                },
+                {
+                    url: './assets/img/slides/room-2.png',
+                    alt: 'фото комнаты'
+                },
+                {
+                    url: './assets/img/slides/room-3.png',
+                    alt: 'фото комнаты'
+                }
+            ]
+        +room-gallery({imageList: roomImageList})
+    .details-wrp.wrp-pd
+        .all-details
+            article.all-details__item
+                .details
+                    .details__title
+                        +title({type: "middle", text: "Сведения о номере"})
+                    ul.details__dignity-list
+                        -
+                            const dignityList = [
+                                {
+                                    iconClass: "material-icons",
+                                    icon: "tag_faces",
+                                    title: "Комфорт",
+                                    description: "Шумопоглощающие стены"
+                                },
+                                {
+                                    iconClass: "material-icons",
+                                    icon: "location_city",
+                                    title: "Удобство",
+                                    description: "Окно в каждой из спален"
+                                },
+                                {
+                                    iconClass: "material-icons",
+                                    icon: "whatshot",
+                                    title: "Уют",
+                                    description: "Номер оснащён камином"
+                                }
+                            ]
+                        each item in dignityList
+                            li.details__dignity-list-item
+                                +dignity({iconClass: item.iconClass, icon: item.icon, title: item.title, description: item.description})
+            article.all-details__item
+                .details
+                    .details__title.details__title-impressions
+                        +title({type: "middle", text: "Впечатления от номера"})
+                    .details__impressions
+                        +impression-diagram({vote: {amazing: 130, good: 65, satisfactori: 65, disappointed: 0}})
+
+            article.all-details__item.all-details__item-reviews
+                .details
+                    .details__title
+                        +title({type: "middle", text: "Отзывы посетителей номера"})
+                    .details__reviews-list
+                        ul.reviews-list
+                            -
+                                const reviewList = [
+                                    {
+                                        authorIcon: "./assets/img/authors/author-avatar-1.png",
+                                        authorName: "Мурад Сарафанов",
+                                        authorWasOnline: "5 дней назад",
+                                        reviewText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                        likeName: "name like 1",
+                                        likeValue: 12,
+                                        likeActive: true,
+                                    },
+                                    {
+                                        authorIcon: "./assets/img/authors/author-avatar-2.png",
+                                        authorName: "Патрисия Стёклышкова",
+                                        authorWasOnline: "Неделю назад",
+                                        reviewText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                                        likeName: "name like 2",
+                                        likeValue: 2,
+                                        likeActive: false,
+                                    }
+                                ]
+                            each item in reviewList
+                                li.reviews-list__item
+                                    +review({authorIcon: item.authorIcon, authorName: item.authorName, authorWasOnline: item.authorWasOnline, reviewText: item.reviewText, likeName: item.likeName, likeValue: item.likeValue, likeActive: item.likeActive})
+            article.all-details__item
+                .details
+                    .details__title.details__title-bullet
+                        +title({type: "middle", text: "Правила"})
+                    .details__bullet-list
+                        -
+                            const bulletList = [
+                                "Нельзя с питомцами",
+                                "Без вечеринок и мероприятий",
+                                "Время прибытия — после 13:00, а выезд до 12:00"
+                            ]
+                        +bullet-list(bulletList)
+            article.all-details__item
+                .details
+                    .details__title
+                        +title({type: "middle", text: "Отмена"})
+                    p.details__de-reserve Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+        
+        
+        .details-card-order
+            +card-order({number: 888, typeRoom: 'люкс', price: 9990, serviceChargeDiscount: '2179', currency: 'rub', startDate: '23.01.2021', endDate: '27.01.2021'})
