@@ -1,4 +1,39 @@
-mixin pagination()
-    .pagination&attributes(attributes)
-        .pagination__data-conatainer
-        .pagination__container
+mixin pagination(options)
+    //- .pagination
+    //-     .pagination__data-conatainer
+    //-     .pagination__container
+
+
+    //- 
+        {
+            pagePath: "/pages/"
+            activePage: 2,
+            itemsOnPage: 12,
+            totalFoundItems: 180
+        }
+    
+    //- -
+    //-     let quantityPages = Math.ceil(options.totalFoundItems / options.itemsOnPage);
+    //-     let prevBtn = options.pagePath + (options.activePage - 1);
+
+    //- .pagination= quantityPages
+    //-     .paginatio__pages-block
+    //-         - if(options.activePage != 1)
+    //-             a.pagination__nav-btn.pagination__btn-prev(href=prevBtn)
+    //-         ul.pagination__page-list
+
+    //-             - if(options.activePage <= 2)
+    //-                 - let 
+
+
+                //- - let pageNumber = 1
+
+                //- while pageNumber <= quantityPages
+                //-     - if(options.activePage == pageNumber)
+                //-         li.pagination__page-list-item
+                //-             .pagination__pageLink.pagination__pageLink_active-page= pageNumber
+                //-     - else
+                //-         li.pagination__page-list-item
+                //-             a.pagination__pageLink(href=options.pagePath + pageNumber)= pageNumber
+                //-     - pageNumber++
+
