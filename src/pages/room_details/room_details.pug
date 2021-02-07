@@ -1,6 +1,6 @@
 extends ../../layout/layout
 
-include ../../components/room-slider/room-slider
+include ../../components/room-gallery/room-gallery
 include ../../components/title/title
 include ../../components/dignity/dignity
 include ../../components/review/review
@@ -14,8 +14,23 @@ block variables
     - let title = "Детали номера"
 
 block content
-    .room-details-slider
-        +room-slider()
+    .room-details-gallery
+        -
+            let roomImageList = [
+                {
+                    url: './assets/img/slides/room-1.png',
+                    alt: 'фото комнаты'
+                },
+                {
+                    url: './assets/img/slides/room-2.png',
+                    alt: 'фото комнаты'
+                },
+                {
+                    url: './assets/img/slides/room-3.png',
+                    alt: 'фото комнаты'
+                }
+            ]
+        +room-gallery({imageList: roomImageList})
     .details-wrp.wrp-pd
         .all-details
             article.all-details__item
