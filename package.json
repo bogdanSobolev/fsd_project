@@ -44,6 +44,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "air-datepicker": "^2.2.3",
     "bemdecl-to-fs-loader": "0.0.4",
+    "chart.js": "^2.9.4",
     "cleave.js": "^1.6.0",
     "imask": "^6.0.5",
     "ion-rangeslider": "^2.3.1",
