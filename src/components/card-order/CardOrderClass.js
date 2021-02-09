@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import '../dropdown/dropdown.js';
 
 export default class CardOrderClass{
     constructor($cardOrder){
@@ -24,7 +25,6 @@ export default class CardOrderClass{
     
 
     setSumDay(){
-        // console.log(this.arrivalInput.val());
         let startDate = this.arrivalInput.val();
         let endtDate = this.departureInput.val();
 
@@ -37,7 +37,6 @@ export default class CardOrderClass{
             }
             dateArr.reverse();
             let dateString = dateArr.join(', ');
-            // console.log(dateString + '  dataString');
             return dateString;
         }
 

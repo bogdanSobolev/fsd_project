@@ -4,7 +4,7 @@ import inputItem from './__input-list-item/dropdown__input-list-item.pug'
 export default class DropdownClass {
     constructor(dropdown, inputList){
         this.$dropdown = dropdown;
-        this.inputList = null;
+        // this.inputList = null;
         this.values = null;
         this.inputList = inputList ? inputList : null; // [{name: string, value: int, maxValue: int, minValue: int}]
         this.handlersInstalled = false;
