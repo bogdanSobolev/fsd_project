@@ -8,6 +8,7 @@ import DropdownLocationClass from './_location/DropdownLocationClass';
 const modificatorList = [
     {
         name: 'dropdown_guests',
+        classDropdown: DropdownGuestsClass,
         inputList: [
             {
                 name: 'взрослые',
@@ -31,6 +32,7 @@ const modificatorList = [
     },
     {
         name: 'dropdown_location',
+        classDropdown: DropdownLocationClass,
         inputList: [
             {
                 name: 'спальни',
@@ -68,26 +70,15 @@ function searchModificator(item){
 }
 
 
-
 let $dropdownList = $('.dropdown');
 
 $dropdownList.each(function(){
 
     let modificator = searchModificator($(this));
-    //dconsole.log(modificator.classDropdown);s
+    let inputList = modificator.inputList.map(a => ({...a}));
 
-    // if(modificator){
-    //     const dropdown = new modificator.classDropdown($(this), modificator.inputList.slice());
-    //     // const dropdown = new modificator.classDropdown($(this), modificator.inputList);
-    //     dropdown.renderInputList();
-    // }
-
-    switch(modificator.name){
-        case "dropdown_guests":
-            const dropdown = new DropdownGuestsClass($(this), modificator.inputList.slice());
-            dropdown.renderInputList();
-            break;
+    if(modificator){
+        const dropdown = new modificator.classDropdown($(this), inputList);
+        dropdown.renderInputList();
     }
-
-
 });

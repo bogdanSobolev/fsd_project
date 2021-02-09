@@ -30,16 +30,8 @@ export default class DropdownGuestsClass extends DropdownClass {
     clearValues(){
         for(let i=0; i<this.inputList.length; i++){
             this.setInputValue(this.inputList[i], 0);
-            
-            // this.setValuesFromDataValues();
-            
         }
-        // console.log("this.values");
-        // console.log(this);
         this.printValues();
-        // this.$dropdown.find('.dropdown__btn_clear').off();
-        // this.$dropdown.find('.dropdown__btn_apply').off();
-        // this.renderInputList();
     }
 
     areTheValuesMinimal(){

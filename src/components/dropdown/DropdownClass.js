@@ -4,11 +4,9 @@ import inputItem from './__input-list-item/dropdown__input-list-item.pug'
 export default class DropdownClass {
     constructor(dropdown, inputList){
         this.$dropdown = dropdown;
-        // this.inputList = null;
         this.values = null;
-        this.inputList = inputList ? inputList : null; // [{name: string, value: int, maxValue: int, minValue: int}]
+        this.inputList = inputList ? inputList : null;
         this.handlersInstalled = false;
-        //this.handlersInputListInstalled = false;
     }
 
     getCase(_number, _cases){
@@ -37,10 +35,6 @@ export default class DropdownClass {
     setHandlersInstalled(){
         this.handlersInstalled = !this.handlersInstalled;
     }
-
-    // setHandlersInputListInstalled(){
-    //     this.handlersInputListInstalled = !this.handlersInputListInstalled;
-    // }
 
     setInputValue(input, value){
         if(Number.isInteger(input.minValue) && Number.isInteger(input.maxValue)){
@@ -71,7 +65,6 @@ export default class DropdownClass {
 
     setValuesFromDataValues(values){
         values.forEach(value => {
-            //console.log(value.name)
             let input = this.searchInputByName(value.name);
             this.setInputValue(input, value.value);
         });
@@ -111,10 +104,8 @@ export default class DropdownClass {
             case "+":{
                 if(!Number.isInteger(input.maxValue)){
                     this.setInputValue(input, input.value + 1);
-                    //++input.value;
                 } else if(input.value + 1 <= input.maxValue){
                     this.setInputValue(input, input.value + 1);
-                    //++input.value;
                 }
                 break;}
             case "-":{
@@ -131,7 +122,6 @@ export default class DropdownClass {
 
 
     updateInput($inputItem, $inputField, $inputValue, input, operation){
-        //console.log($inputItem);
         this.changeInputValue(input, operation);
         $inputField.val(input.value);
         $inputValue.text(input.value);
@@ -143,7 +133,6 @@ export default class DropdownClass {
 
     printValues(){
         this.setValues();
-        // this.$dropdown.children('.dropdown__values-input').text(this.values);
         this.$dropdown.find('.dropdown__values-input-text').text(this.values);
     }
 
@@ -192,7 +181,6 @@ export default class DropdownClass {
         for(let i = 0; i< this.inputList.length; i++){
             if(this.inputList[i].name == name){
                 input = this.inputList[i];
-                //return;
             }
         }
         return input;
@@ -201,10 +189,7 @@ export default class DropdownClass {
     
 
     renderInputList(){
-        //console.log(this.$dropdown);
         let $dropdownInputList = this.$dropdown.find('.dropdown__input-list');
-
-        //console.log($dropdownInputList);
 
         if(this.$dropdown.data('values')){
             this.setValuesFromDataValues(this.$dropdown.data('values'));
