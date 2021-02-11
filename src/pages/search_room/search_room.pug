@@ -8,6 +8,8 @@ include ../../components/btn-checkbox/btn-checkbox
 include ../../components/btn-checkbox-rich/btn-checkbox-rich
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/card-room/card-room
+include ../../components/pagination/pagination
+
 
 block variables
     - let title = "Поиск отеля"
@@ -250,9 +252,8 @@ block content
                 each itemRoom in calendarListData
                     .room-list-block__card-room
                         +card-room({number: itemRoom.number, typeRoom: itemRoom.typeRoom, price: itemRoom.price, rate: itemRoom.rate, quantityReviews: itemRoom.quantityReviews, roomImages: itemRoom.roomImages})
-
-
             .room-list-block__pagination
+                +pagination({pagePath: "/pages/", activePage: 1, itemsOnPage: 12, totalFoundItems: 180})
 
 
 
