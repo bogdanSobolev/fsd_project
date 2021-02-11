@@ -1,4 +1,21 @@
-mixin pagination()
-    .pagination&attributes(attributes)
-        .pagination__data-conatainer
-        .pagination__container
+mixin pagination(options)
+
+
+    .pagination
+        .pagination__pages-block(data-page-path=options.pagePath, data-items=options.totalFoundItems, data-items-on-page=options.itemsOnPage, data-active-page=options.activePage)
+        .pagination__info
+            - let itemsEnd = options.itemsOnPage * options.activePage
+            - let itemsStart = itemsEnd - options.itemsOnPage + 1
+            -
+                let allItems = options.totalFoundItems;
+                if(allItems > 100){
+                    allItems = '100+';
+                };
+
+            span.pagination__info-items-start= itemsStart
+            != " &mdash; "
+            span.pagination__info-items-end= itemsEnd
+            = " из "
+            span.pagination__info-all-items= allItems
+            = " "
+            | вариантов аренды

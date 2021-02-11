@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import '../dropdown/dropdown.js';
 
 export default class CardOrderClass{
     constructor($cardOrder){
@@ -17,19 +18,14 @@ export default class CardOrderClass{
 
     setSumGuests(){
         let dropdownTextValue = this.$cardOrder.find('.dropdown__values-input-text').text();
-        console.log(this.$cardOrder.find('.dropdown__values-input-text'));
         let regular = /\d+/g;
         this.sumGuests = dropdownTextValue.match(regular)[0];
     }
     
 
     setSumDay(){
-        // console.log(this.arrivalInput.val());
         let startDate = this.arrivalInput.val();
         let endtDate = this.departureInput.val();
-
-        console.log();
-
         function transformDate(date){
             let dateArr = date.split('.');
             for(let i = 0; i < dateArr.length; i++){
@@ -37,7 +33,6 @@ export default class CardOrderClass{
             }
             dateArr.reverse();
             let dateString = dateArr.join(', ');
-            // console.log(dateString + '  dataString');
             return dateString;
         }
 
@@ -55,21 +50,6 @@ export default class CardOrderClass{
         this.sumDay = daysBetween(startDate, endtDate);
     }
 
-
-    setHandlers(){
-        this.arrivalInput.change(()=>{
-            this.setSumDay();
-            this.printSumDay();
-            this.printPriceForAllDays();
-            this.printTotalPrice()
-        })
-        this.departureInput.change(()=>{
-            this.setSumDay();
-            this.printSumDay();
-            this.printPriceForAllDays();
-            this.printTotalPrice()
-        })
-    }
 
 
     printSumDay(){
@@ -94,6 +74,21 @@ export default class CardOrderClass{
     }
 
 
+    setHandlers(){
+        this.arrivalInput.change(()=>{
+            this.setSumDay();
+            this.printSumDay();
+            this.printPriceForAllDays();
+            this.printTotalPrice();
+        })
+        this.departureInput.change((e)=>{
+            this.setSumDay();
+            this.printSumDay();
+            this.printPriceForAllDays();
+            this.printTotalPrice();
+        })
+    }
+
 
 
     render(){
@@ -107,8 +102,5 @@ export default class CardOrderClass{
 
 
         this.setHandlers();
-
-
-        console.log(this);
     }
 }
