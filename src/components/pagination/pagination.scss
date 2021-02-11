@@ -1,33 +1,66 @@
 .pagination{
     &__pages-block{
-        display: flex;
-    }
-    &__nav-btn{
-        display: block;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-    &__btn-prev{
-        background-color: blueviolet;
-    }
-    &__page-list{
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    &__page-list-item{
-
-    }
-    &__pageLink{
-        display: block;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        background: grey;
-        &_active-page{
-            background: chartreuse;
+        $size-btn-page: 40px;
+        $border-radius-btn-page: 50%;
+        $btn-page-text-color: $color-dark-shade-50;
+        $btn-page-color-active: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        $btn-page-color-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        $nav-btn-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        
+        
+        font-size: 12px;
+        margin: 0 0 9px;
+        ul{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .page-link{
+            height: $size-btn-page;
+            width: $size-btn-page;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $btn-page-text-color;
+            text-decoration: none;
+            &:hover{
+                background: $btn-page-color-hover;
+                color: #fff;
+            }
+            &:active{
+                transform: scale(.85);
+            }
+        }
+        .next, .prev{
+            background: $nav-btn-gradient;
+        }
+        .pagination-nav-arrow{
+            color: #fff;
+            &_prev{
+                transform: rotate(180deg);
+            }
+        }
+        .disabled{
+            display: none;
+        }
+        .current{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $size-btn-page;
+            width: $size-btn-page;
+            border-radius: $border-radius-btn-page;
+            background: $btn-page-color-active;
+            color: #fff;
+        }
+        .ellipse{
+            width: $size-btn-page;
+            height: $size-btn-page;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
