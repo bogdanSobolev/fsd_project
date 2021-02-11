@@ -18,7 +18,6 @@ export default class CardOrderClass{
 
     setSumGuests(){
         let dropdownTextValue = this.$cardOrder.find('.dropdown__values-input-text').text();
-        console.log(this.$cardOrder.find('.dropdown__values-input-text'));
         let regular = /\d+/g;
         this.sumGuests = dropdownTextValue.match(regular)[0];
     }
@@ -27,9 +26,6 @@ export default class CardOrderClass{
     setSumDay(){
         let startDate = this.arrivalInput.val();
         let endtDate = this.departureInput.val();
-
-        console.log();
-
         function transformDate(date){
             let dateArr = date.split('.');
             for(let i = 0; i < dateArr.length; i++){
@@ -55,21 +51,6 @@ export default class CardOrderClass{
     }
 
 
-    setHandlers(){
-        this.arrivalInput.change(()=>{
-            this.setSumDay();
-            this.printSumDay();
-            this.printPriceForAllDays();
-            this.printTotalPrice()
-        })
-        this.departureInput.change(()=>{
-            this.setSumDay();
-            this.printSumDay();
-            this.printPriceForAllDays();
-            this.printTotalPrice()
-        })
-    }
-
 
     printSumDay(){
         this.sumDayOutput.text(this.sumDay);
@@ -93,6 +74,21 @@ export default class CardOrderClass{
     }
 
 
+    setHandlers(){
+        this.arrivalInput.change(()=>{
+            this.setSumDay();
+            this.printSumDay();
+            this.printPriceForAllDays();
+            this.printTotalPrice();
+        })
+        this.departureInput.change((e)=>{
+            this.setSumDay();
+            this.printSumDay();
+            this.printPriceForAllDays();
+            this.printTotalPrice();
+        })
+    }
+
 
 
     render(){
@@ -106,8 +102,5 @@ export default class CardOrderClass{
 
 
         this.setHandlers();
-
-
-        console.log(this);
     }
 }
