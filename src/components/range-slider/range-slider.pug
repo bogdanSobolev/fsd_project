@@ -22,4 +22,4 @@ mixin range-slider(options)
             +title({type: 'small', text: options.title})
         .range-slider__value
         .range-slider__slider
-        input.range-slider__input(type="hidden")
+        input.range-slider__input(type="hidden", name=options.name)
