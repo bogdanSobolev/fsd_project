@@ -21,7 +21,6 @@ module.exports = {
     },
   entry: {
     index: path.resolve(__dirname, './src/pages/index/index.js'),
-    test: path.resolve(__dirname, './src/pages/test/test.js'),
     ui: path.resolve(__dirname, './src/pages/ui/ui.js'),
     registration: path.resolve(__dirname, './src/pages/registration/registration.js'),
     sign_in: path.resolve(__dirname, './src/pages/sign_in/sign_in.js'),
@@ -117,11 +116,6 @@ module.exports = {
             filename: 'index.html', // название выходного файла
             chunks: ['index'],
             template: path.resolve(__dirname, './src/pages/index/index.pug'),
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'test.html', // шаблон
-            chunks: ['test'],
-            template: path.resolve(__dirname, './src/pages/test/test.pug'), // название выходного файла
         }),
         new HtmlWebpackPlugin({
             filename: 'ui.html', // шаблон

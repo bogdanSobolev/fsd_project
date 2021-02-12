@@ -1,4 +1,4 @@
-@include breakpoint(lg) {
+@media (min-width: 992px) {
   .footer-creative_mobile-for-desc.footer-creative {
     display: flex;
     flex-direction: column;

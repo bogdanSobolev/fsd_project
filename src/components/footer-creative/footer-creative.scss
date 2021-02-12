@@ -46,7 +46,7 @@
   }
 }
 
-@include breakpoint(lg) {
+@media (min-width: 992px) {
   .footer-creative {
     display: flex;
     flex-direction: row;
