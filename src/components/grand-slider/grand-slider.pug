@@ -1,13 +1,7 @@
-//-     {
-            dataSlider: [
-                {url: './url/url'}
-            ]
-        }
-
 mixin grand-slider(options)
 
     .grand-slider
 
         each item in options.dataSlider
             .grand-slider__slide
-                img.grand-slider__slide-img(src=item.url)
+                img.grand-slider__slide-img(src=item.url alt="фото комнат")
