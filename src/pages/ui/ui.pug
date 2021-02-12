@@ -43,14 +43,134 @@ html(lang="en")
         title UI
     body
         .wrapper
+            -
+                let pageList = [
+                        {
+                            "page": "О нас",
+                            "url": "/mock-address/change-me",
+                            "list": false
+                        },
+                        {
+                            "page": "Услуги",
+                            "list": [
+                                {
+                                    "page": "Услуга 1",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                },
+                                {
+                                    "page": "Услуга 2",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                },
+                                {
+                                    "page": "Услуга 3",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                }
+                            ]
+                        },
+                        {
+                            "page": "Вакансии",
+                            "url": "/mock-address/change-me",
+                            "list": false
+                        },
+                        {
+                            "page": "Новости",
+                            "url": "/mock-address/change-me",
+                            "list": false
+                        },
+                        {
+                            "page": "Соглашения",
+                            "list": [
+                                {
+                                    "page": "Соглашения 1",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                },
+                                {
+                                    "page": "Соглашения 2",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                },
+                                {
+                                    "page": "Соглашения 3",
+                                    "url": "/mock-address/change-me",
+                                    "list": false
+                                }
+                            ]
+                        }
+                    ];
             section.section-header.ui-section
-                +header({auth: false, activePage: 'О нас'})
+                +header({pageList: pageList, auth: false, activePage: 'О нас', loginLink: "/sign_in.html", regLink: "/registration.html"})
             section.section-header.ui-section
-                +header({auth: true, activePage: 'О нас'})
+                +header({pageList: pageList, auth: true, activePage: 'О нас', loginLink: "/sign_in.html", regLink: "/registration.html"})
             
             
             section.section-footer.ui-section
-                +footer()
+                -
+                    let footerPageList = [
+                        {
+                            title: 'навигация',
+                            list: [
+                                {
+                                    name: "О нас",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Новости",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Служба поддержки",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Услуги",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        },
+                        {
+                            title: 'о нас',
+                            list: [
+                                {
+                                    name: "О сервисе",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Наша команда",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Вакансии",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Инвесторы",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        },
+                        {
+                            title: 'служба поддержки',
+                            list: [
+                                {
+                                    name: "Соглашения",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Сообщества",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Связь с нами",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        }
+                    ] 
+                +footer({pageList: footerPageList})
             section.section-footer-creative.ui-section
                 +footer-creative({type: 'mobile-for-desc'})
             
@@ -253,13 +373,13 @@ html(lang="en")
                     .section-cards__search-card.section-cards__item
                         +card-search()
                     .section-cards__registration-card.section-cards__item
-                        +card-registration()
+                        +card-registration({payLink: "/mock-address/change-me", loginLink: "/sign_in.html"})
 
                 .section-cards__column
                     .section-cards__order-card.section-cards__item
                         +card-order({number: 888, typeRoom: 'люкс', price: 9990, serviceChargeDiscount: '2179', currency: 'rub', startDate: '23.01.2021', endDate: '27.01.2021'})
                     .section-cards__login-card.section-cards__item
-                        +card-login()
+                        +card-login({signInLink: "/mock-address/change-me", regLink: "/registration.html"})
                 
                 .section-cards__column.section-cards__column_short
                     .section-cards__calendar.calendar.calendar_range.section-cards__item

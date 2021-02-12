@@ -5,7 +5,14 @@ include ../dropdown/dropdown
 include ../btn-with-arrow/btn-with-arrow
 
 
-mixin card-search()
+mixin card-search(options)
+    - let btnUrl = false
+
+    if options
+        if options.btnUrl
+            -btnUrl = options.btnUrl
+
+
     form(action="", method="get", name="card-search").card-search
         .card-search__title
             +title({type: 'big', text: 'Найдём номера под ваши пожелания'})
@@ -26,4 +33,4 @@ mixin card-search()
             .card-search__dropdown
                 +dropdown({dropdownType: 'guests'})
         .card-search__btn-with-arrow
-            +btn-with-arrow({text: 'подобрать номер'})
+            +btn-with-arrow({text: 'подобрать номер', url: btnUrl})

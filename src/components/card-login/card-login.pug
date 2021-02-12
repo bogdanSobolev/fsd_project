@@ -4,7 +4,7 @@ include ../btn-with-arrow/btn-with-arrow
 include ../btn-outlined/btn-outlined
 
 
-mixin card-login()
+mixin card-login(options)
     form(action="", method="get", name="card-login").card-login
         .card-login__title
             +title({type: 'big', text: 'Войти'})
@@ -15,9 +15,9 @@ mixin card-login()
             .card-login__input-email.card-login__input
                 +text-field({name: 'password', placeholder: 'Пароль', typeField: "password", value: false})
         .card-login__btn-with-arrow
-            +btn-with-arrow({text: 'Войти'})
+            +btn-with-arrow({text: 'Войти', url: options.signInLink})
 
         .card-login__login-block
             span.card-login__login-text Нет аккаунта на Toxin?
             .card-login__login-btn
-                +btn-outlined({text: 'создать'})
+                +btn-outlined({text: 'создать', url: options.regLink})

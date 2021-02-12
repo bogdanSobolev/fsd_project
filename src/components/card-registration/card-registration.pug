@@ -6,7 +6,7 @@ include ../btn-toggle/btn-toggle
 include ../btn-outlined/btn-outlined
 
 
-mixin card-registration()
+mixin card-registration(options)
     form.card-registration(action="", method="get", name="card-registration")
         .card-registration__title
             +title({type: 'big', text: 'Регистрация аккаунта'})
@@ -38,9 +38,9 @@ mixin card-registration()
             .card-registration__toggle
                 +btn-toggle({name: 'subscribe', text: 'Получать спецпредложения'})
         .card-registration__btn-with-arrow
-            +btn-with-arrow({text: 'перейти к оплате'})
+            +btn-with-arrow({text: 'перейти к оплате', url: options.payLink})
 
         .card-registration__login-block
             span.card-registration__login-text Уже есть аккаунт на Toxin
             .card-registration__login-btn
-                +btn-outlined({text: 'войти'})
+                +btn-outlined({text: 'войти', url: options.loginLink})

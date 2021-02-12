@@ -12,8 +12,128 @@ html(lang="en")
     body
         .wrapper
             .header
-                +header({auth: false, activePage: 'О нас'})
+                -
+                    let pageList = [
+                            {
+                                "page": "О нас",
+                                "url": "/mock-address/change-me",
+                                "list": false
+                            },
+                            {
+                                "page": "Услуги",
+                                "list": [
+                                    {
+                                        "page": "Услуга 1",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    },
+                                    {
+                                        "page": "Услуга 2",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    },
+                                    {
+                                        "page": "Услуга 3",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    }
+                                ]
+                            },
+                            {
+                                "page": "Вакансии",
+                                "url": "/mock-address/change-me",
+                                "list": false
+                            },
+                            {
+                                "page": "Новости",
+                                "url": "/mock-address/change-me",
+                                "list": false
+                            },
+                            {
+                                "page": "Соглашения",
+                                "list": [
+                                    {
+                                        "page": "Соглашения 1",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    },
+                                    {
+                                        "page": "Соглашения 2",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    },
+                                    {
+                                        "page": "Соглашения 3",
+                                        "url": "/mock-address/change-me",
+                                        "list": false
+                                    }
+                                ]
+                            }
+                        ];
+                +header({pageList: pageList, auth: false, activePage: 'О нас', loginLink: "/sign_in.html", regLink: "/registration.html"})
             .content
                 block content
             .footer
-                +footer()
+                -
+                    let footerPageList = [
+                        {
+                            title: 'навигация',
+                            list: [
+                                {
+                                    name: "О нас",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Новости",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Служба поддержки",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Услуги",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        },
+                        {
+                            title: 'о нас',
+                            list: [
+                                {
+                                    name: "О сервисе",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Наша команда",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Вакансии",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Инвесторы",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        },
+                        {
+                            title: 'служба поддержки',
+                            list: [
+                                {
+                                    name: "Соглашения",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Сообщества",
+                                    url: "/mock-address/change-me"
+                                },
+                                {
+                                    name: "Связь с нами",
+                                    url: "/mock-address/change-me"
+                                }
+                            ]
+                        }
+                    ] 
+                +footer({pageList: footerPageList})

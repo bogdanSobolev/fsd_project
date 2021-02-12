@@ -1,5 +1,8 @@
 .card-room {
   $card-bg: #fff;
+  $title-color: $color-dark-shade;
+  $title-color-hover: $color-purple;
+  $title-color-active: $color-dark-shade-50;
   $type-color: $color-purple;
   $price-color: $color-dark-shade-50;
   $borderColor: $color-dark-shade-10;
@@ -115,7 +118,9 @@
     font-weight: 700;
     font-size: 19px;
     line-height: 18px;
-    color: $color-dark-shade;
+    color: $title-color;
+    text-decoration: none;
+    
     &-number-symbol {
       font-size: 14px;
     }
@@ -123,6 +128,12 @@
       color: $type-color;
       font-size: 12px;
       text-transform: uppercase;
+    }
+    &:hover{
+      color: $title-color-hover;
+    }
+    &:active{
+      color: $title-color-active;
     }
   }
   &__room-price {

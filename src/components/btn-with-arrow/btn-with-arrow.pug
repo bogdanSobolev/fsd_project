@@ -6,5 +6,5 @@ mixin btn-with-arrow(options)
         if options.url
             -url = options.url
 
-    button.btn-with-arrow(href="#")= options.text
+    a.btn-with-arrow(href=url)= options.text
         span.material-icons arrow_forward

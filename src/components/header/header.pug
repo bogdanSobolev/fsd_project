@@ -1,75 +1,70 @@
 include ../header-nav/header-nav
 
-//- {
-//-     auth: false,  авторизован ли пользователь
-//-     activePage: 'page'  активная страница
-//- }
-
 mixin header(options)
 
 
-    -
-        let pageList = [
-                {
-                    "page": "О нас",
-                    "url": "/mock-address/change-me",
-                    "list": false
-                },
-                {
-                    "page": "Услуги",
-                    "list": [
-                        {
-                            "page": "Услуга 1",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        },
-                        {
-                            "page": "Услуга 2",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        },
-                        {
-                            "page": "Услуга 3",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        }
-                    ]
-                },
-                {
-                    "page": "Вакансии",
-                    "url": "/mock-address/change-me",
-                    "list": false
-                },
-                {
-                    "page": "Новости",
-                    "url": "/mock-address/change-me",
-                    "list": false
-                },
-                {
-                    "page": "Соглашения",
-                    "list": [
-                        {
-                            "page": "Соглашения 1",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        },
-                        {
-                            "page": "Соглашения 2",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        },
-                        {
-                            "page": "Соглашения 3",
-                            "url": "/mock-address/change-me",
-                            "list": false
-                        }
-                    ]
-                }
-            ];
+    //- -
+    //-     let pageList = [
+    //-             {
+    //-                 "page": "О нас",
+    //-                 "url": "/mock-address/change-me",
+    //-                 "list": false
+    //-             },
+    //-             {
+    //-                 "page": "Услуги",
+    //-                 "list": [
+    //-                     {
+    //-                         "page": "Услуга 1",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     },
+    //-                     {
+    //-                         "page": "Услуга 2",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     },
+    //-                     {
+    //-                         "page": "Услуга 3",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     }
+    //-                 ]
+    //-             },
+    //-             {
+    //-                 "page": "Вакансии",
+    //-                 "url": "/mock-address/change-me",
+    //-                 "list": false
+    //-             },
+    //-             {
+    //-                 "page": "Новости",
+    //-                 "url": "/mock-address/change-me",
+    //-                 "list": false
+    //-             },
+    //-             {
+    //-                 "page": "Соглашения",
+    //-                 "list": [
+    //-                     {
+    //-                         "page": "Соглашения 1",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     },
+    //-                     {
+    //-                         "page": "Соглашения 2",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     },
+    //-                     {
+    //-                         "page": "Соглашения 3",
+    //-                         "url": "/mock-address/change-me",
+    //-                         "list": false
+    //-                     }
+    //-                 ]
+    //-             }
+    //-         ];
         
 
 
 
     header.header.wrp-pd
         include ../logo/logo
-        +header-nav({auth: options.auth, pageList: pageList, activePage: options.activePage})
+        +header-nav({auth: options.auth, pageList: options.pageList, activePage: options.activePage, loginLink: options.loginLink, regLink: options.regLink})

@@ -92,6 +92,7 @@ block content
                 -
                     const calendarListData = [
                         {
+                            roomUrl: "/room_details.html",
                             number: 888,
                             typeRoom: 'люкс', 
                             price: '9990', 
@@ -105,6 +106,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 840,
                             typeRoom: false, 
                             price: '9900', 
@@ -118,6 +120,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 980,
                             typeRoom: 'люкс', 
                             price: '8500', 
@@ -131,6 +134,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 856,
                             typeRoom: false, 
                             price: '7300', 
@@ -144,6 +148,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 740,
                             typeRoom: false, 
                             price: '6000', 
@@ -157,6 +162,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 982,
                             typeRoom: false, 
                             price: '5800', 
@@ -170,6 +176,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 678,
                             typeRoom: false, 
                             price: '5500', 
@@ -183,6 +190,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 450,
                             typeRoom: false, 
                             price: '5300', 
@@ -196,6 +204,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 350,
                             typeRoom: false, 
                             price: '5000', 
@@ -209,6 +218,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 666,
                             typeRoom: false, 
                             price: '5000', 
@@ -222,6 +232,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 444,
                             typeRoom: false, 
                             price: '5000', 
@@ -235,6 +246,7 @@ block content
                             ]
                         },
                         {
+                            roomUrl: "/room_details.html",
                             number: 352,
                             typeRoom: false, 
                             price: '5000', 
@@ -251,7 +263,7 @@ block content
                 
                 each itemRoom in calendarListData
                     .room-list-block__card-room
-                        +card-room({number: itemRoom.number, typeRoom: itemRoom.typeRoom, price: itemRoom.price, rate: itemRoom.rate, quantityReviews: itemRoom.quantityReviews, roomImages: itemRoom.roomImages})
+                        +card-room(itemRoom)
             .room-list-block__pagination
                 +pagination({pagePath: "/pages/", activePage: 1, itemsOnPage: 12, totalFoundItems: 180})
 

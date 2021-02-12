@@ -5,6 +5,7 @@ mixin card-room(options)
     - let currency = '&#8381';
     - let price = '';
     - let typeRoom = '';
+    - let roomUrl = '/mock-address/change-me'
     
     if options
         if options.currency
@@ -23,6 +24,8 @@ mixin card-room(options)
             - price = Number(options.price).toLocaleString();
         if options.typeRoom
             - typeRoom = options.typeRoom
+        if options.roomUrl
+            - roomUrl = options.roomUrl
 
 
     .card-room
@@ -34,9 +37,9 @@ mixin card-room(options)
 
         .card-room__text-wrp
             .card-room__title-n-price
-                .card-room__title
+                a(href=roomUrl).card-room__title
                     span.card-room__title-number-symbol &#8470 
-                    span.card-room__title-number.title= options.number
+                    span.card-room__title-number= options.number
                     span.card-room__title-type= typeRoom
                 .card-room__room-price
                     span.card-room__room-price-wrp

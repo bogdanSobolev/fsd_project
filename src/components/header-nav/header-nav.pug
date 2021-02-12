@@ -36,6 +36,6 @@ mixin header-nav(options)
             else
                 .header-nav__login-block
                     .header-nav__btn
-                        +btn-outlined({type: 'small', text: 'войти', url: '/mock-address/change-me'})
+                        +btn-outlined({type: 'small', text: 'войти', url: options.loginLink})
                     .header-nav__btn
-                        +btn-filled({type: 'small', text: 'зарегистрироваться', url: '/mock-address/change-me'})
+                        +btn-filled({type: 'small', text: 'зарегистрироваться', url: options.regLink})
