@@ -40,10 +40,6 @@ module.exports = {
                 test: /\.pug$/,
                 use: ['html-loader', 'pug-html-loader']
             },
-            // {
-            //     test: /\.pug$/,
-            //     use: ['pug-loader']
-            // },
             {
                 test: /\.(scss|css)$/,
                 use: [MiniCssExtractPlugin.loader,
