@@ -3,16 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-//const сopy = require('copy-webpack-plugin');
 
 module.exports = {
-    //context: path.resolve(__dirname, 'src'),
-    resolveLoader: {
-        alias: {
-            'test-loader': require.resolve('./loaders/testLoader.js'),
-            'test-loader-two': require.resolve('./loaders/testLoaderTwo.js'),
-        }
-    },
     resolve: {
         extensions: ['.js',],
         alias: {
@@ -113,34 +105,34 @@ module.exports = {
     },
   plugins: [
         new HtmlWebpackPlugin({
-            filename: 'index.html', // название выходного файла
+            filename: 'index.html',
             chunks: ['index'],
             template: path.resolve(__dirname, './src/pages/index/index.pug'),
         }),
         new HtmlWebpackPlugin({
-            filename: 'ui.html', // шаблон
+            filename: 'ui.html',
             chunks: ['ui'],
-            template: path.resolve(__dirname, './src/pages/ui/ui.pug'), // название выходного файла
+            template: path.resolve(__dirname, './src/pages/ui/ui.pug'),
         }),
         new HtmlWebpackPlugin({
-            filename: 'registration.html', // шаблон
+            filename: 'registration.html',
             chunks: ['registration'],
-            template: path.resolve(__dirname, './src/pages/registration/registration.pug'), // название выходного файла
+            template: path.resolve(__dirname, './src/pages/registration/registration.pug'),
         }),
         new HtmlWebpackPlugin({
-            filename: 'sign_in.html', // шаблон
+            filename: 'sign_in.html',
             chunks: ['sign_in'],
-            template: path.resolve(__dirname, './src/pages/sign_in/sign_in.pug'), // название выходного файла
+            template: path.resolve(__dirname, './src/pages/sign_in/sign_in.pug'),
         }),
         new HtmlWebpackPlugin({
-            filename: 'search_room.html', // шаблон
+            filename: 'search_room.html',
             chunks: ['search_room'],
-            template: path.resolve(__dirname, './src/pages/search_room/search_room.pug'), // название выходного файла
+            template: path.resolve(__dirname, './src/pages/search_room/search_room.pug'),
         }),
         new HtmlWebpackPlugin({
-            filename: 'room_details.html', // шаблон
+            filename: 'room_details.html',
             chunks: ['room_details'],
-            template: path.resolve(__dirname, './src/pages/room_details/room_details.pug'), // название выходного файла
+            template: path.resolve(__dirname, './src/pages/room_details/room_details.pug'),
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
