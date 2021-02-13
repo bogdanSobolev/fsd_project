@@ -1,15 +1,12 @@
 import $ from 'jquery';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.scss'; 
-//import 'slick-carousel/slick/slick-theme.scss';
-
-
 
 const cardRoomList = $('.card-room');
 
-
 cardRoomList.each(function(){
     let $slider = $(this).find('.card-room__slider');
+    
     $slider.slick({
         infinite: true,
         dots: true,
@@ -18,5 +15,5 @@ cardRoomList.each(function(){
         
     });
     
-      $slider.find('.slick-dots button').empty();
+    $slider.find('.slick-dots button').empty();
 });

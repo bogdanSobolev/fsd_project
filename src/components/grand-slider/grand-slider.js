@@ -13,5 +13,4 @@ $grandSliderList.each(function(){
         arrows: false,
         zIndex: 2
     })
-    
 });

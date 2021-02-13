@@ -50,8 +50,6 @@ export default class CardOrderClass{
         this.sumDay = daysBetween(startDate, endtDate);
     }
 
-
-
     printSumDay(){
         this.sumDayOutput.text(this.sumDay);
     }
@@ -73,7 +71,6 @@ export default class CardOrderClass{
         this.totalPriceOutput.text(totalPrice.toLocaleString());
     }
 
-
     setHandlers(){
         this.arrivalInput.change(()=>{
             this.setSumDay();
@@ -89,18 +86,12 @@ export default class CardOrderClass{
         })
     }
 
-
-
     render(){
         this.setSumGuests();
         this.setSumDay();
-
         this.printSumDay();
         this.printPriceForAllDays();
         this.printTotalPrice();
-
-
-
         this.setHandlers();
     }
 }

@@ -1,4 +1,3 @@
-//- mixin expandable-checkbox-list(name, checkboxData)
 include ../title/title
 include ../btn-checkbox/btn-checkbox
 
@@ -10,9 +9,7 @@ mixin expandable-checkbox-list(options)
         if options.active
             - mod += ' expandable-checkbox-list_active'
 
-
     .expandable-checkbox-list(class=mod)
-        //- .expandable-checkbox-list__title.title.title_small= name
         .expandable-checkbox-list__title
             +title({type: 'small', text: options.name})
             span.material-icons.expandable-checkbox-list__arrow expand_more

@@ -8,5 +8,5 @@ import $ from 'jquery';
 $('.search-room__filter-btn').on('click', (e) => {
     $(e.currentTarget).toggleClass('search-room__filter-btn_active');
     $(e.currentTarget).siblings('.search-room__aside-form').toggleClass('search-room__aside-form_active');
-    console.log($(e.currentTarget).siblings('.search-room__aside-form'));
+     ($(e.currentTarget).siblings('.search-room__aside-form'));
 });

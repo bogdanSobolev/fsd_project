@@ -1,9 +1,7 @@
 include ../title/title
-
 include ../calendar-field/calendar-field
 include ../dropdown/dropdown
 include ../btn-with-arrow/btn-with-arrow
-
 
 mixin card-search(options)
     - let btnUrl = false
@@ -11,7 +9,6 @@ mixin card-search(options)
     if options
         if options.btnUrl
             -btnUrl = options.btnUrl
-
 
     form(action="", method="get", name="card-search").card-search
         .card-search__title

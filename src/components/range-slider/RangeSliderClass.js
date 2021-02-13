@@ -1,7 +1,6 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 
-
 export default class RangeSlider {
     constructor($rangeSlider){
         this.$rangeSlider = $rangeSlider;
@@ -11,9 +10,6 @@ export default class RangeSlider {
         this.endValue = $rangeSlider.data('end-value') ? $rangeSlider.data('end-value') : this.maxValue;
         this.postfix = '&#8381';
     }
-
-
-
 
     render(){
         const rangeSliderSlider = this.$rangeSlider.find('.range-slider__slider')[0];
@@ -31,18 +27,10 @@ export default class RangeSlider {
             step: 1,
 
             format: {
-                // 'to' the formatted value. Receives a number.
                 to: function (value) {
-                    // return Math.floor(value) + '&#8381';
                     return Math.floor(value);
                 },
-                // 'from' the formatted value.
-                // Receives a string, should return a number.
                 from: function (value) {
-                    // let numberValue = Number(value.replace('&#8381', ''))
-                    // let floorValue = Math.floor(numberValue);
-                    // return floorValue;
-
                     let numberValue = Number(value)
                     let floorValue = Math.floor(numberValue);
                     return floorValue;
@@ -51,28 +39,12 @@ export default class RangeSlider {
         });
 
         rangeSliderSlider.noUiSlider.on('update', function (values, handle) {
-            //console.log(values);
-
             let valuesWithPostfix = values.map(value => {
                 let valueString = value.toLocaleString();
-
-                //let valueWithPostfix = value + postfix;
-
                 let valueWithPostfix = valueString + postfix;
-
-                //console.log(this);
-                //console.log(valueWithPostfix);
                 return valueWithPostfix;
             });
-
-            
-
             rangeSliderValueElement.innerHTML = valuesWithPostfix.join(' - ');
-            // let floorValues = values.map(value => {
-            //     let numberValue = Number(value.replace('&#8381', ''))
-            //     let floorValue = Math.floor(numberValue);
-            //     return floorValue;
-            // });
             rangeSliderInput.value = values;
         });
     }

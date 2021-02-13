@@ -1,5 +1,3 @@
-
-
 mixin __item(item)
     if item.list
         .header-nav__item.header-nav__drop-down
@@ -10,7 +8,6 @@ mixin __item(item)
                 each listItem in item.list 
                     - let active = listItem.active ? "header-nav__link_active-page" : false
                     a.header-nav__drop-down-link.header-nav__link(href=listItem.url, class=active)= listItem.page
-
 
     else
         - let active = item.active ? "header-nav__link_active-page" : false

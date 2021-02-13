@@ -1,15 +1,10 @@
 import $ from 'jquery';
 import Chart from 'chart.js';
 
-
 const $diagramList = $('.impression-diagram__diagram');
-
-
 
 $diagramList.each(function(){
     let voteData = $(this).data('vote');
-
-    
     let diagramChart = new Chart($(this), {
         type: 'doughnut',
         data: {

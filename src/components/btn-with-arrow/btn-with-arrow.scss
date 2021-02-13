@@ -9,7 +9,6 @@
   text-decoration: none;
   position: relative;
   box-sizing: border-box;
-  // outline: none;
   border: none;
   font-family: $font-family;
   font-weight: 700;
@@ -23,9 +22,6 @@
   &:active {
     opacity: 0.75;
   }
-  // &:focus{
-  //   opacity: 0.5;
-  // }
   span {
     position: absolute;
     top: 0;

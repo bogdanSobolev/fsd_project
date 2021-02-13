@@ -7,5 +7,5 @@ mixin __widgets-list(options)
             span.material-icons expand_more
         ul.footer-widgets__widget-list-items
             each item in options.list
-                li
+                li.footer-widgets__widget-list-item
                     a.footer-widgets__widget-list-link(href=item.url)= item.name

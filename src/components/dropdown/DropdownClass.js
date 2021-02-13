@@ -27,7 +27,6 @@ export default class DropdownClass {
         return result;
     }
 
-
     setValues(){
         console.error('метод setValues() не определен');
     }
@@ -61,7 +60,6 @@ export default class DropdownClass {
             input.value = value;
         }
     }
-
 
     setValuesFromDataValues(values){
         values.forEach(value => {
@@ -98,7 +96,6 @@ export default class DropdownClass {
         });
     }
 
-
     changeInputValue(input, operation){
         switch(operation){
             case "+":{
@@ -120,7 +117,6 @@ export default class DropdownClass {
         }
     }
 
-
     updateInput($inputItem, $inputField, $inputValue, input, operation){
         this.changeInputValue(input, operation);
         $inputField.val(input.value);
@@ -128,8 +124,6 @@ export default class DropdownClass {
         this.printValues();
         this.whichBtnIsDisabled($inputItem, $inputValue, input);
     }
-
-    
 
     printValues(){
         this.setValues();
@@ -186,8 +180,6 @@ export default class DropdownClass {
         return input;
     }
 
-    
-
     renderInputList(){
         let $dropdownInputList = this.$dropdown.find('.dropdown__input-list');
 
@@ -196,12 +188,11 @@ export default class DropdownClass {
         }
 
         this.setHandlers();
-
         this.printValues();
         $dropdownInputList.empty ();
         this.inputList.forEach(input => {
             const $inputItem = jQuery(inputItem);
-            
+    
             let $inputField = $inputItem.find('.dropdown__input');
             $inputField.attr("name", input.name);
             $inputField.val(input.value);

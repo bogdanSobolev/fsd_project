@@ -28,7 +28,7 @@ function getNowDate(){
     return `${now.getFullYear()}-${getMonth()}-${getDay()}`;
 }
 
-console.log(getNowDate());
+ (getNowDate());
 
 dateMasks.forEach((item) => {
     item.setAttribute('placeholder', 'ДД.ММ.ГГГГ');

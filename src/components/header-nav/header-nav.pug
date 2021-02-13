@@ -1,11 +1,6 @@
 include __item/header-nav__item
-
 include ../btn-outlined/btn-outlined
 include ../btn-filled/btn-filled
-
-
-
-
 
 mixin header-nav(options)
     - let activePage = options.activePage
@@ -28,7 +23,6 @@ mixin header-nav(options)
                         }
 
                         let active = setActive(options.pageList, activePage);
-
 
                     +__item(item)
             if options.auth

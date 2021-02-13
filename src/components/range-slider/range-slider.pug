@@ -16,7 +16,6 @@ mixin range-slider(options)
         if options.endValue
             - endValue = options.endValue
     
-
     .range-slider(data-min-value=minValue, data-max-value=maxValue, data-start-value=startValue, data-end-value=endValue)
         .range-slider__title
             +title({type: 'small', text: options.title})

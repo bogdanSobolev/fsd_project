@@ -1,7 +1,5 @@
 import $ from 'jquery'
 
-
-
 const $cardSearchList = $('.card-search');
 
 function setWrap($card){
@@ -16,13 +14,10 @@ function setWrap($card){
     } else{
         if(fieldsBlock.css('flex-wrap') == 'wrap'){
             fieldsBlock.css('flex-wrap', 'nowrap')
-            //console.log(fieldsBlock.find('.card-search__date-dropdown-wrp'));
-            // fieldsBlock.find('.card-search__date-dropdown-wrp')[0].css('margin-right', '20px');
             fieldsBlock.find('.card-search__date-dropdown-wrp:first').css('margin-right', '20px');
         }
     }
 };
-
 
 $cardSearchList.each(function(){
     setWrap($(this));

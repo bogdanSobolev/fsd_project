@@ -9,15 +9,15 @@ $paginationList.each(function(){
     let activePage = $(this).data('activePage');
     let hrefTextPrefix = $(this).data('pagePath');
 
-    console.log(items);
-    console.log(itemsOnPage);
-    console.log(activePage);
-    console.log(hrefTextPrefix);
+     (items);
+     (itemsOnPage);
+     (activePage);
+     (hrefTextPrefix);
 
 
     $(this).pagination({
-        items: items, //pug
-        itemsOnPage: itemsOnPage, //pug
+        items: items,
+        itemsOnPage: itemsOnPage,
         currentPage: activePage,
         displayedPages: 3,
         edges: 1,

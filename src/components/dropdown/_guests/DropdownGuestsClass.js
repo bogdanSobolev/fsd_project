@@ -9,7 +9,6 @@ export default class DropdownGuestsClass extends DropdownClass {
         super(dropdown, inputList);
     }
 
-
     setValues(){
         let guestsSum = 0;
 

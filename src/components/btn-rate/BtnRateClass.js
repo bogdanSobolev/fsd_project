@@ -33,10 +33,10 @@ export default class BtnRateClass {
     }
 
     updateValuNInput(){
-        console.log(this.$activeBtnIcon.parent().index('.btn-rate__btn-block'));
+         (this.$activeBtnIcon.parent().index('.btn-rate__btn-block'));
         let indexBtn = this.$activeBtnIcon.parent().index('.btn-rate__btn-block');
         this.setValue(++indexBtn);
-        console.log(this.value);
+         (this.value);
 
         this.updateInputValue();
     }

@@ -2,8 +2,6 @@ import $ from 'jquery';
 
 import CardOrderClass from './CardOrderClass';
 
-
-
 const $cardOrderList = $('.card-order');
 
 function setWrap($card){

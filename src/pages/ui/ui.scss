@@ -1,5 +1,4 @@
 body{
-    // background-color: #E5E5E5;
     background: #F4F4F6;
 }
 
@@ -13,9 +12,6 @@ body{
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
-.section-header{
-}
-
 .section-footer-creative{
     max-width: 768px;
     margin: 40px auto;
@@ -27,10 +23,8 @@ body{
 .section-form-elements{
     $state-color: $color-dark-shade-50;
 
-
     padding-top: 145px;
     padding-bottom: 130px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,7 +74,6 @@ body{
       margin: 0 0 40px;
     }
     &__date-dropdown{
-
       &:nth-child(1){
           margin-right: 20px;
       }
@@ -100,9 +93,6 @@ body{
         margin-bottom: 20px;
     }
    
-    
-    
-    
 
     &__btns-list{
         .section-form-elements__name-field{
@@ -114,7 +104,6 @@ body{
         margin-bottom: 41px;
     }
     
-
     &__checkbox-btn{
         margin: 0 0 10px;
         &:last-child{
@@ -168,13 +157,6 @@ body{
         }
     }
 
-
-    
-
-    // &__range-slider{
-    //     //max-width: 320px;
-    // }
-
     &__btns-block_long{
         width: 100%;
     }
@@ -189,10 +171,6 @@ body{
     &__click-me{
         margin: 0 20px 0 0;
     }
-
-
-
-
 
     &__dropdowns-location-list{
         height: 290px;
@@ -209,26 +187,21 @@ body{
         height: 260px;
     }
 
-
     &__expandable-checkbox-list{
         margin-bottom: 14px;
     }
 
     &__rich-checkbox-btns-list{
-        //padding: 18px 0 0;
         margin-bottom: 40px;
-        
         .section-form-elements__name-field{
             padding: 16px 0;
             margin: 0;
-            //margin-bottom: 16px;
         }
     }
 
     &__bullet-list-list{
         margin-bottom: 40px;
         .section-form-elements__name-field{
-            //margin-bottom: 16px;
             padding: 17px 0 13px;
             margin: 0;
         }
@@ -237,23 +210,17 @@ body{
         max-width: 263px;
     }
 
-    // &__dignity-list{
-    //     margin-bottom: 20px;
-    // }
-
     &__dignity{
         margin-bottom: 20px;
         max-width: 280px;
     }
     
-
     &__item.section-form-elements__dignity-list{
         margin-bottom: 20px;
         padding: 7px 0 0;
     }
 
     &__item.section-form-elements__review-list{
-        //width: (100%/3*2)-(10.9/2); //для больших разрешений
         width: 100%;
         margin-right: 0;
         margin-bottom: 0;
@@ -279,7 +246,6 @@ body{
         &__date-dropdown{
             max-width: 150px;
             &:nth-child(1){
-                //margin-right: 0;
                 margin: 0 0 20px;
             }
         }
@@ -292,16 +258,11 @@ body{
             margin-bottom: 10px;
         }
 
-
         &__rich-checkbox-btn{
             margin-bottom: 10px;
         }
-        
-
 
         &__item.section-form-elements__review-list{
-            //width: (100%/3*2)-(10.9/2); //для больших разрешений
-            //width: 100%;
             max-width: 100%;
             margin-right: 12%;
         }
@@ -324,7 +285,6 @@ body{
         &__date-dropdown{
             max-width: 150px;
             &:nth-child(1){
-                //margin-right: 0;
                 margin: 0 20px 0 0;
             }
         }
@@ -338,8 +298,6 @@ body{
         }
 
         &__item.section-form-elements__review-list{
-            //width: (100%/3*2)-(10.9/2); //для больших разрешений
-            //width: 100%;
             margin-right: 17%;
         }
     }
@@ -356,8 +314,6 @@ body{
         }
 
         &__item.section-form-elements__review-list{
-            //width: (100%/3*2)-(10.9/2); //для больших разрешений
-            //width: 100%;
             max-width: 711px;
             margin-right: 17%;
         }
@@ -382,7 +338,7 @@ body{
         }
 
         &__item.section-form-elements__review-list{
-            width: (100%/3*2)-(10.6%/2); //для больших разрешений
+            width: (100%/3*2)-(10.6%/2);
             margin-right: 0;
         }
 
@@ -420,9 +376,6 @@ body{
     }
 }
 
-
-
-
 .section-cards{
     background: none;
     box-shadow: none;
@@ -436,7 +389,6 @@ body{
         max-width: 380px;
         margin-bottom: 40px;
         &:last-child{
-            //margin: 0;
         }
         &_short{
             width: 100%;
@@ -460,16 +412,10 @@ body{
 
 }
 
-@media (min-width: 576px) {
-}
-
 @media (min-width: 768px) {
     .section-cards{
         &__column{
             width: 47.12%;
-            &:last-child{
-                //margin: 0;
-            }
             &_short{
                 width: 100%;
                 max-width: 100%;
@@ -490,9 +436,6 @@ body{
         &__column{
             width: 32.75%;
             margin-bottom: 0;
-            &:last-child{
-                //margin: 0;
-            }
             &_short{
                 width: 27.58%;
                 display: block;

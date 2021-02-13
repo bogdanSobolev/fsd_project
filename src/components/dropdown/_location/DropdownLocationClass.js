@@ -3,7 +3,7 @@ import DropdownClass from '../DropdownClass';
 
 export default class DropdownLocationClass extends DropdownClass {
     constructor(dropdown, inputList){
-        super(dropdown, inputList);  // inputList: [{name: string, value: int, maxValue: int, minValue: int, cases: ["спальня", "спальни", "спален"]}]
+        super(dropdown, inputList);
     }
 
     setValues(){

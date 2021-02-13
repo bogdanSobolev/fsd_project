@@ -3,7 +3,6 @@ include ../calendar-field/calendar-field
 include ../dropdown/dropdown
 include ../btn-with-arrow/btn-with-arrow
 
-
 mixin card-order(options)
 
     - let currencyIcon = '&#8381';
@@ -12,7 +11,6 @@ mixin card-order(options)
     - let price = ''
     - let startDate = false
     - let endDate = false
-
 
     if options
         if options.currency
@@ -37,9 +35,6 @@ mixin card-order(options)
             - startDate = options.startDate
         if options.endDate
             - endDate = options.endDate
-
-
-
 
     form(action="", method="get", name="card-order").card-order
         .card-order__header
@@ -69,7 +64,6 @@ mixin card-order(options)
                 +title({type: 'small', text: 'гости'})
             .card-order__dropdown
                 +dropdown({dropdownType: 'guests', dataValues: [{name: "взрослые", value: 2},{name:"дети", value: 1}]})
-
 
         .card-order__list
             .card-order__list-item.card-order__list-item-row-name
@@ -112,7 +106,6 @@ mixin card-order(options)
             .card-order__total-price-wrp
                 span.card-order__total-price 38 081
                 span!= currencyIcon
-
 
         .card-order__btn-with-arrow
             +btn-with-arrow({text: 'забронировать'})

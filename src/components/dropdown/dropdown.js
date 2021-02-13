@@ -4,7 +4,6 @@ import './_active/dropdown_active.scss';
 import DropdownGuestsClass from './_guests/DropdownGuestsClass';
 import DropdownLocationClass from './_location/DropdownLocationClass';
 
-
 const modificatorList = [
     {
         name: 'dropdown_guests',

@@ -26,7 +26,7 @@ export default class CalendarClass {
         prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",
         offset: 5,
         onShow: function(inst, animationCompleted) {
-            console.log(inst);
+             (inst);
             let arrowInput = inst.$el.siblings(".calendar-field__arrow");
             if(animationCompleted){
                 arrowInput.css({'z-index': '1'});
@@ -77,7 +77,7 @@ export default class CalendarClass {
 
     selectDate(){
         if(this.input.val()){
-            console.log(this.input.val());
+             (this.input.val());
             let pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
             let date = new Date(this.input.val().replace(pattern,'$3-$2-$1'));
             this.$calendar.selectDate(date);
