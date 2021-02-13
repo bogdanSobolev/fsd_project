@@ -85,7 +85,6 @@ module.exports = {
                     loader: 'file-loader',
                     options:{
                         name: '[name].[ext]',
-                        // outputPath :  'fonts/',
                         esModule: false,
                         outputPath: 'fonts/',
                         publicPath: url => '../fonts/' + url
