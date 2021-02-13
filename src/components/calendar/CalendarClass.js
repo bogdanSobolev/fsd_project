@@ -20,7 +20,7 @@ export default class CalendarClass {
         toggleSelected: false,
         keyboardNav: false,
         navTitles: {
-            days: "<h3 class='title title_middle datepicker__title'>MM yyyy<h3/>"
+            days: "<h3 class='datepicker__title'>MM yyyy<h3/>"
         },
         nextHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_next'>arrow_forward</span>",
         prevHtml: "<span class='material-icons calendar__calendar-arrow calendar__calendar-arrow_prev'>arrow_forward</span>",

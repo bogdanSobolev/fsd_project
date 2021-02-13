@@ -22,7 +22,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
+        publicPath: '',
         filename: 'js/[name].bundle.js',
 
     },
@@ -85,8 +85,10 @@ module.exports = {
                     loader: 'file-loader',
                     options:{
                         name: '[name].[ext]',
-                        outputPath :  'fonts/',
+                        // outputPath :  'fonts/',
                         esModule: false,
+                        outputPath: 'fonts/',
+                        publicPath: url => '../fonts/' + url
                     }
                 },
             ],
